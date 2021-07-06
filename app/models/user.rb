@@ -9,5 +9,5 @@ class User < ApplicationRecord
   has_many :experience, dependent: :destroy
 
   validates :username, presence: true
-  validates :email, uniquness: true
+  # validates :email, uniquness: true
 end
