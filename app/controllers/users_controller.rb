@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   def show
 
     @skill = Skill.new
-    @skills =
+    @skills = Skill.all
 
   end
 
