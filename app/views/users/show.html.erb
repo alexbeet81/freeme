@@ -1,0 +1,25 @@
+<% @skills.each do |skill| %>
+  <h2><%= skill.skill_name %></h2>
+  <h2><%= skill.level %></h2>
+  <h2><%= skill.years_of_experience %></h2>
+<% end %>
+
+<p>----------------------------</p>
+
+
+<% @projects.each do |project| %>
+  <h2><%= project.title %></h2>
+  <h2><%= project.description %></h2>
+<% end %>
+
+
+<p>----------------------------</p>
+
+<% @experiences.each do |experience| %>
+  <h2><%= experience.experience_name %></h2>
+  <h2><%= experience.company %></h2>
+  <h2><%= experience.role %></h2>
+  <h2><%= experience.locaiton %></h2>
+<% end %>
+
+
