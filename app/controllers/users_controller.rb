@@ -1,11 +1,16 @@
 class UsersController < ApplicationController
-  before_action :set_userm only: [:show]
+  before_action :set_user, only: [:show]
 
   def show
-
     @skill = Skill.new
-    @skills = Skill.all
+    # show only the current users skills
+    @skills = Skill.where(user_id: @user.id)
 
+    @project = Project.new
+    @projects = Project.where(user_id: @user.id)
+
+    @experience = Experience.new
+    @experiences = Experience.where(user_id: @user.id)
   end
 
   private
