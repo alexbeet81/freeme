@@ -1,4 +1,6 @@
 class SkillsController < ApplicationController
+  before_action :set_user
+  before_action :set_skill, only: [:destroy, :update]
 
   def create
     @skill = Skill.new(skill_params)
@@ -37,7 +39,7 @@ class SkillsController < ApplicationController
     @user = User.find(params[:id])
   end
 
-  def set_skills
+  def set_skill
     @skill = Skill.find(params[:id])
   end
 end
