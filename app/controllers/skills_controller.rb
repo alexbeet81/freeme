@@ -13,6 +13,7 @@ class SkillsController < ApplicationController
 
   def destroy
     @skill.destroy
+
     redirect_to user_path(@user)
   end
 
@@ -24,5 +25,9 @@ class SkillsController < ApplicationController
 
   def set_user
     @user = User.find(params[:id])
+  end
+
+  def set_skills
+    @skill = Skill.find(params[:id])
   end
 end
