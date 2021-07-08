@@ -7,7 +7,7 @@ class SkillsController < ApplicationController
       redirect_to user_path(@user)
     else
       # Can't render show - where should this lead to?
-      render :show
+      render 'users/show'
     end
   end
 

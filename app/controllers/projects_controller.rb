@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
   def create
-    @project = Skill.new(project_params)
+    @project = Project.new(project_params)
 
     if @project.save
       redirect_to user_path(@user)
