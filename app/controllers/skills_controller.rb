@@ -11,6 +11,16 @@ class SkillsController < ApplicationController
     end
   end
 
+  def update
+    @skill.update(skill_params)
+
+    if @skill.save
+      redirect_to user_path(@user)
+    else
+      render 'users/show'
+    end
+  end
+
   def destroy
     @skill.destroy
 
