@@ -15,4 +15,8 @@ class ProjectsController < ApplicationController
   def project_params
     params.require(:project).permit(:title, :decription)
   end
+
+  def set_user
+    @user = User.find(params[:id])
+  end
 end
