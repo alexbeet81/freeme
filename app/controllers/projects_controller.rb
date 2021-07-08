@@ -16,6 +16,16 @@ class ProjectsController < ApplicationController
     redirect_to user_path(@user)
   end
 
+  def update
+    @project.update(project_params)
+
+    if @project.save
+      redirect_to user_path(@user)
+    else
+      render 'users/show'
+    end
+  end
+
   private
 
   def project_params
