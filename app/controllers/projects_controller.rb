@@ -1,4 +1,7 @@
 class ProjectsController < ApplicationController
+    before_action :set_user
+    before_action :set_projcet, only: [:destroy, :update]
+
   def create
     @project = Project.new(project_params)
 
