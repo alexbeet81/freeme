@@ -5,7 +5,7 @@ class UsersController < ApplicationController
     @skill = Skill.new
     # show only the current users skills
     @skills = Skill.where(user_id: @user.id)
-    @edit_skill = Skill.(params[:id])
+    @edit_skill = Skill.find(params[:id])
 
     @project = Project.new
     @projects = Project.where(user_id: @user.id)
