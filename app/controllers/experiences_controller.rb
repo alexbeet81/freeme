@@ -1,4 +1,6 @@
 class ExperiencesController < ApplicationController
+  before_action :set_user
+  before_action :set_experience, only: [:destroy, :update]
   def create
     @experience = Experience.new(experience_params)
 
@@ -25,7 +27,6 @@ class ExperiencesController < ApplicationController
       render 'users/show'
     end
   end
-
 
   private
 
