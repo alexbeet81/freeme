@@ -16,6 +16,17 @@ class ExperiencesController < ApplicationController
     redirect_to user_path(@user)
   end
 
+  def update
+    @experience.update(experience_params)
+
+    if @experience.save
+      redirect_to user_path(@user)
+    else
+      render 'users/show'
+    end
+  end
+
+
   private
 
   def experience_params
