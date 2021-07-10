@@ -3,7 +3,8 @@
 .sc-main-container {
 	width:  100%;
 	margin:  0 auto;
-	background: #F8EFD0;
+	background: #FFFFFF;
+	padding: 0 4rem 2rem 4rem;
 	/*display:  flex;*/
 }
 
@@ -12,9 +13,11 @@
 
 nav {
   width: 100%;
-  background-color: white;
+  background-color: #FFFFFF;
   padding-left: 30px;
-  padding-right: 10px;
+  padding-right: 20px;
+  position: sticky;
+  top:  0;
 }
 
 .sc-navbar {
@@ -30,6 +33,7 @@ nav {
 	font-size: 50px;
 	letter-spacing: 6;
 	color: #303031;
+	margin-left: 2rem;
   /*background-image: linear-gradient(to right, #ff416c, #ff4b2b);
   background-size: 100%;
   background-repeat: repeat;
@@ -44,6 +48,7 @@ nav {
   list-style: none;
   display: flex;
   font-family: 'Open Sans', sans-serif;
+  margin-right: 2rem;
 }
 
 .sc-nav-item a {
@@ -72,7 +77,7 @@ nav {
 
 .sc-banner-container {
 	height: 400px;
-	background-color: red;
+	background-color: #FFFFFF;
 	display: flex;
 	margin: 2rem;
 	justify-content: space-between;
@@ -82,27 +87,62 @@ nav {
 
 .sc-banner-title {
 	height: 300px;
-	width: 300px;
-	background-color: yellow;
+	width: 600px;
+	background-color: #FFFFFF;
+}
+
+.sc-banner-title h1 {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: bold;
+	font-size: 68px;
+}
+
+.sc-banner-title h2 {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 500;
+	font-size: 24px;
+	color: slategray;
+	margin-top: 2rem;
+}
+
+.sc-banner-title h3 {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	font-size: 24px;
+	color: lightgrey;
+	margin-top: 2rem;
 }
 
 .sc-profile-pic {
 	height: 300px;
 	width:  300px;
-	background-color: blue;
+	object-fit: cover;
+	border-radius: 8px 8px 50px 8px;
 }
 
 /* below is the arrow navigation */
 
 .sc-arrow-nav {
-	background-color: green;
 	margin: 0 2rem 0 2rem;
+	width: 25px;
+	height: 25px;
+	opacity: 0.7;
 }
+
+/* below is the container header skills / projects / exp */
+.sc-cont-header {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+	color: slategray;
+	font-size: 2rem;
+	margin-left: 4rem;
+}
+
 
 /* below is the skills section */
 
 .sc-skills-container {
-	background-color: red;
+	background-color: #FFFFFF;
 	display: flex;
 	margin: 2rem;
 	padding: 2rem 2rem;
@@ -120,7 +160,9 @@ nav {
 .sc-skills-card {
 	width: 200px;
 	height: 150px;
-	background-color: blue;
+	background-color: ghostwhite;
+	border-radius: 8px 8px 50px 8px;
+	box-shadow: rgba(66, 77, 88, 0.4) -5px 5px, rgba(66, 77, 88, 0.3) -10px 10px, rgba(66, 77, 88, 0.2) -15px 15px, rgba(66, 77, 88, 0.1) -20px 20px, rgba(66, 77, 88, 0.05) -25px 25px;
 }
 
 /* below is the projects section */
@@ -179,8 +221,9 @@ nav {
  	background-color: blue;
  }
 
+/* below is the footer */
+
  .sc-footer {
- 	margin-top: 4rem;
  	height: 500px;
  	background-color: green;
  }
