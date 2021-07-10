@@ -1,14 +1,25 @@
 class ProjectsController < ApplicationController
-    before_action :set_user
+    before_action :set_user, only: [:create]
     before_action :set_projcet, only: [:destroy, :update]
 
   def create
     @project = Project.new(project_params)
+    @project.user = @user
 
     if @project.save
       redirect_to user_path(@user)
     else
       # Can't render show - where should this lead to?
+      render 'users/show'
+    end
+  end
+
+  def update
+    @project.update(project_params)
+
+    if @project.save
+      redirect_to (user_path(@project.user) + "#project-#{@project.id}")
+    else
       render 'users/show'
     end
   end
@@ -19,16 +30,6 @@ class ProjectsController < ApplicationController
     redirect_to user_path(@user)
   end
 
-  def update
-    @project.update(project_params)
-
-    if @project.save
-      redirect_to user_path(@user)
-    else
-      render 'users/show'
-    end
-  end
-
   private
 
   def project_params
@@ -36,7 +37,7 @@ class ProjectsController < ApplicationController
   end
 
   def set_user
-    @user = User.find(params[:id])
+    @user = User.find(params[:user_id])
   end
 
   def set_projcet
