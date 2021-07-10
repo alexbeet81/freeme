@@ -22,7 +22,7 @@
     <%= simple_form_for(project) do |f| %>
       <%= f.input :title %>
       <%= f.input :description %>
-      <%= f.input :photos, as: :file, input_html: { multople: true} %>
+      <%= f.input :photos, as: :file, input_html: { multiple: true} %>
       <%= f.submit "edit project", class: "btn" %>
     <% end %>
   </div>
