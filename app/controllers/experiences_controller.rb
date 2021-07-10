@@ -32,7 +32,7 @@ class ExperiencesController < ApplicationController
   private
 
   def experience_params
-    params.require(:experience).permit(:experience_name, :company, :role, :start_date, :end_datem, :location, :website_url)
+    params.require(:experience).permit(:experience_name, :company, :role, :start_date, :end_date, :location, :website_url, :summary)
   end
 
   def set_user

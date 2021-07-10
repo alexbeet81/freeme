@@ -1,9 +1,10 @@
 class SkillsController < ApplicationController
-  before_action :set_user
+  before_action :set_user, only: [:create]
   before_action :set_skill, only: [:destroy, :update]
 
   def create
     @skill = Skill.new(skill_params)
+    @skill.user = @user
 
     if @skill.save
       redirect_to user_path(@user)
@@ -17,7 +18,7 @@ class SkillsController < ApplicationController
     @skill.update(skill_params)
 
     if @skill.save
-      redirect_to user_path(@user)
+      redirect_to (user_path(@skill.user) + "#skill-#{@skill.id}")
     else
       render 'users/show'
     end
@@ -36,7 +37,7 @@ class SkillsController < ApplicationController
   end
 
   def set_user
-    @user = User.find(params[:id])
+    @user = User.find(params[:user_id])
   end
 
   def set_skill
