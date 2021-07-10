@@ -24,7 +24,7 @@ nav {
   display: flex;
  	justify-content: space-between;
  	align-items: center;
-
+ 	z-index: 10;
 }
 
 .sc-logo {
@@ -34,6 +34,7 @@ nav {
 	letter-spacing: 6;
 	color: #303031;
 	margin-left: 2rem;
+	background-color: #FFFFFF;
   /*background-image: linear-gradient(to right, #ff416c, #ff4b2b);
   background-size: 100%;
   background-repeat: repeat;
@@ -79,7 +80,7 @@ nav {
 	height: 400px;
 	background-color: #FFFFFF;
 	display: flex;
-	margin: 2rem;
+	margin: 2rem 2rem 0 2rem;
 	justify-content: space-between;
 	align-items: center;
 	padding: 0 2rem;
@@ -123,10 +124,11 @@ nav {
 /* below is the arrow navigation */
 
 .sc-arrow-nav {
-	margin: 0 2rem 0 2rem;
+	margin: 0 4rem 2rem 4rem;
 	width: 25px;
 	height: 25px;
 	opacity: 0.7;
+	text-align: right;
 }
 
 /* below is the container header skills / projects / exp */
@@ -160,43 +162,52 @@ nav {
 .sc-skills-card {
 	width: 200px;
 	height: 150px;
+	font-family: 'Open Sans', sans-serif;
+	padding: 1rem;
 	background-color: ghostwhite;
 	border-radius: 8px 8px 50px 8px;
-	box-shadow: rgba(66, 77, 88, 0.4) -5px 5px, rgba(66, 77, 88, 0.3) -10px 10px, rgba(66, 77, 88, 0.2) -15px 15px, rgba(66, 77, 88, 0.1) -20px 20px, rgba(66, 77, 88, 0.05) -25px 25px;
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+	/*box-shadow: rgba(66, 77, 88, 0.4) -5px 5px, rgba(66, 77, 88, 0.3) -10px 10px, rgba(66, 77, 88, 0.2) -15px 15px, rgba(66, 77, 88, 0.1) -20px 20px, rgba(66, 77, 88, 0.05) -25px 25px;*/
+}
+
+.sc-skills-card h5 {
+	font-size: 24px;
+	font-weight: bold;
 }
 
 /* below is the projects section */
 
 .sc-projects-container {
-	background-color: red;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	margin: 2rem;
 	padding: 0 2rem;
+
 }
 
 .sc-project-card {
 	height: 300px;
 	width:  100%;
-	background-color: blue;
+	background-color: ghostwhite;
 	display: flex;
-	padding:  1rem;
 	margin: 1rem;
+	border-radius: 8px 8px 50px 8px;
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
 }
 
 .sc-project-card-body {
-	background-color: white;
+	font-family: 'Open Sans', sans-serif;
+	padding:  1rem;
 	height: 100%;
 	width: 60%;
-
 }
 
 .sc-project-card-img {
-	background-color: yellow;
-	height: 100%;
-	width: 40%;
+	height:  300px;
+	border-bottom-right-radius: 50px;
 }
+
 
 /* below is the experience section */
 
