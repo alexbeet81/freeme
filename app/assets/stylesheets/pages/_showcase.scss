@@ -100,8 +100,57 @@ nav {
 }
 
 .sc-skills-container {
-	
+	background-color: red;
+	display: flex;
+	margin: 2rem;
+	padding: 2rem 2rem;
 }
 
+.sc-skills-grid {
+	display: grid;
+  grid-template-columns: repeat(auto-fit, 200px);
+  grid-gap: 2rem;
+  flex-grow: 1;
+  justify-content: center;
+	align-items: center;
+}
 
+.sc-skills-card {
+	width: 200px;
+	height: 150px;
+	background-color: blue;
+}
+
+/* below is the projects section */
+
+.sc-projects-container {
+	background-color: red;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 2rem;
+	padding: 0 2rem;
+}
+
+.sc-project-card {
+	height: 300px;
+	width:  100%;
+	background-color: blue;
+	display: flex;
+	padding:  1rem;
+	margin: 1rem;
+}
+
+.sc-project-card-text {
+	background-color: white;
+	height: 100%;
+	width: 70%;
+
+}
+
+.sc-project-card-img {
+	background-color: yellow;
+	height: 100%;
+	width: 30%;
+}
 
