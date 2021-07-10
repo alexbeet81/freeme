@@ -1,9 +1,10 @@
 class ProjectsController < ApplicationController
     before_action :set_user, only: [:create]
-    before_action :set_projcet, only: [:destroy, :update]
+    before_action :set_project, only: [:destroy, :update]
 
   def create
     @project = Project.new(project_params)
+    authorize @project
     @project.user = @user
 
     if @project.save
@@ -40,7 +41,9 @@ class ProjectsController < ApplicationController
     @user = User.find(params[:user_id])
   end
 
-  def set_projcet
+  def set_project
     @project = Project.find(params[:id])
+    authorize @project
+
   end
 end

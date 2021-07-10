@@ -4,6 +4,7 @@ class SkillsController < ApplicationController
 
   def create
     @skill = Skill.new(skill_params)
+    authorize @skill
     @skill.user = @user
 
     if @skill.save
@@ -42,5 +43,6 @@ class SkillsController < ApplicationController
 
   def set_skill
     @skill = Skill.find(params[:id])
+    authorize @skill
   end
 end

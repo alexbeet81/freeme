@@ -4,6 +4,7 @@ class ExperiencesController < ApplicationController
 
   def create
     @experience = Experience.new(experience_params)
+    authorize @experience
     @experience.user = @user
 
     if @experience.save
@@ -42,5 +43,6 @@ class ExperiencesController < ApplicationController
 
   def set_experience
     @experience = Experience.find(params[:id])
+    authorize @experience
   end
 end
