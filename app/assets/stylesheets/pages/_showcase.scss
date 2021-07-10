@@ -99,6 +99,8 @@ nav {
 	margin: 0 2rem 0 2rem;
 }
 
+/* below is the skills section */
+
 .sc-skills-container {
 	background-color: red;
 	display: flex;
@@ -141,16 +143,42 @@ nav {
 	margin: 1rem;
 }
 
-.sc-project-card-text {
+.sc-project-card-body {
 	background-color: white;
 	height: 100%;
-	width: 70%;
+	width: 60%;
 
 }
 
 .sc-project-card-img {
 	background-color: yellow;
 	height: 100%;
-	width: 30%;
+	width: 40%;
 }
 
+/* below is the experience section */
+
+.sc-exp-container {
+	background-color: red;
+	display: flex;
+	margin: 2rem;
+	padding: 2rem 2rem;
+}
+
+.sc-exp-grid	{
+	display: grid;
+	grid-template-columns: repeat(auto-fit, 500px);
+  grid-gap: 2rem;
+  flex-grow: 1;
+  justify-content: space-evenly;
+	align-items: center;
+}
+ .sc-exp-card {
+ 	height: 350px;
+ 	width: 500px;
+ 	background-color: blue;
+ }
+
+ .sc-footer {
+ 	
+ }
