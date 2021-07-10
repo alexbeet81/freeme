@@ -18,7 +18,7 @@ class ExperiencesController < ApplicationController
     @experience.update(experience_params)
 
     if @experience.save
-      redirect_to (user_path(@experience.user) + "#experience-#{experience.id}")
+      redirect_to (user_path(@experience.user) + "#experience-#{@experience.id}")
     else
       render 'users/show'
     end
