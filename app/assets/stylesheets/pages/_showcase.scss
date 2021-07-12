@@ -128,8 +128,10 @@ nav {
 	width: 25px;
 	height: 25px;
 	opacity: 0.7;
-	text-align: right;
+	display: flex;
+	justify-content: right;
 }
+
 
 /* below is the container header skills / projects / exp */
 .sc-cont-header {
