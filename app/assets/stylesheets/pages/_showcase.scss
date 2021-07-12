@@ -8,72 +8,6 @@
 	/*display:  flex;*/
 }
 
-
-/* below is the navbar */
-
-nav {
-  width: 100%;
-  background-color: #FFFFFF;
-  padding-left: 30px;
-  padding-right: 20px;
-  position: sticky;
-  top:  0;
-}
-
-.sc-navbar {
-  display: flex;
- 	justify-content: space-between;
- 	align-items: center;
- 	z-index: 10;
-}
-
-.sc-logo {
-  display: inline-block;
-  font-family: 'Monda', sans-serif;
-	font-size: 2rem;
-	letter-spacing: 6;
-	color: #303031;
-	margin-left: 2rem;
-	background-color: #FFFFFF;
-  /*background-image: linear-gradient(to right, #ff416c, #ff4b2b);
-  background-size: 100%;
-  background-repeat: repeat;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; 
-  -moz-background-clip: text;
-  -moz-text-fill-color: transparent;*/
-}
-
-
-.sc-nav-links {
-  list-style: none;
-  display: flex;
-  font-family: 'Open Sans', sans-serif;
-  margin-right: 2rem;
-}
-
-.sc-nav-item a {
-  display: inline-block;
-  padding: 10px 15px;
-  text-decoration: none;
-  color: #303031;
-  opacity: 0.7;
-}
-
-.sc-nav-item:hover a {
-	color: #303031;
-  opacity: 1;
-  /*background-image: linear-gradient(to right, #ff416c, #ff4b2b);
-  background-size: 100%;
-  background-repeat: repeat;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; 
-  -moz-background-clip: text;
-  -moz-text-fill-color: transparent;
-  opacity: 1;*/
-}
-
-
 /* below is the banner profile  */
 
 .sc-banner-container {
@@ -90,6 +24,7 @@ nav {
 	height: 300px;
 	width: 600px;
 	background-color: #FFFFFF;
+	padding-right: 1rem;
 }
 
 .sc-banner-title h1 {
