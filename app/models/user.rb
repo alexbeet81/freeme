@@ -9,4 +9,5 @@ class User < ApplicationRecord
   has_many :experience, dependent: :destroy
 
   # validates :email, uniquness: true
+  has_one_attached :photo
 end
