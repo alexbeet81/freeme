@@ -3,6 +3,13 @@ class UsersController < ApplicationController
   skip_before_action :authenticate_user!, only: :show
 
   def show
+    authorize @new_skill
+    authorize @skills
+    authorize @new_project
+    authorize @projects
+    authorize @new_experience
+    authorize @experiences
+
     @new_skill = Skill.new
     # show only the current users skills
     @skills = Skill.where(user_id: @user.id)
