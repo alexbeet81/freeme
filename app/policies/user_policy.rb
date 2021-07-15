@@ -5,7 +5,7 @@ class UserPolicy < ApplicationPolicy
     end
   end
 
-  def profile?
+  def showcase?
     true
   end
 
