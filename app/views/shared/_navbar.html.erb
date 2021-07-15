@@ -5,9 +5,13 @@
       <li class="nav-item"><a href="#">showcase</a></li>
       <li class="nav-item"><a href="#">about</a></li>
       <% if user_signed_in? %>
-        <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-item" %>
+        <li class="nav-item">
+          <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+        </li>
       <% else %>
-        <li class="nav-item"><a href="#">login</a></li>
+        <li class="nav-item">
+          <%= link_to "Login", new_user_session_path %>
+        </li>
       <% end %>
     </ul>
 </nav>
