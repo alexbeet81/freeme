@@ -7,7 +7,7 @@
           <%= link_to "profile", user_path(current_user) %>
         </li>
         <li class="nav-item">
-          <%= link_to "showcase", user_showcase_path(current_user) %>
+          <%= link_to "showcase", user_showcase_path(current_user), target: :_blank %>
         </li>
         <li class="nav-item">
           <%= link_to "Log out", destroy_user_session_path, method: :delete %>
