@@ -1,2 +1,5 @@
-<%= render 'shared/showcase' %>
-<%= render 'shared/profile' %>
+<% if current_user == @user %>
+  <%= render 'shared/profile' %>
+<% else %>
+  <%= render 'shared/showcase' %>
+<% end %>
