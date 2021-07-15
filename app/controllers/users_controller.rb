@@ -2,7 +2,6 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show]
   skip_before_action :authenticate_user!, only: :show
 # Paul added to get to user profile page to edit
-  before_action :skip_authorization
 
   def show
     authorize @user
