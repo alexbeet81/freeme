@@ -1,18 +1,14 @@
 <nav class="navbar">
     <h1 class="logo">FreeMe.</h1>
     <ul class="nav-links">
-      <li class="nav-item">
-        <%= link_to "profile", user_path(current_user) %>
-      </li>
-      <li class="nav-item">
-        <%= link_to "showcase", user_showcase_path(current_user) %>
-      </li>
       <li class="nav-item"><a href="#">about</a></li>
       <% if user_signed_in? %>
         <li class="nav-item">
-          <%= link_to "profile", user_path(@user) %>
+          <%= link_to "profile", user_path(current_user) %>
         </li>
-        <li class="nav-item"><a href="#">showcase</a></li>
+        <li class="nav-item">
+          <%= link_to "showcase", user_showcase_path(current_user) %>
+        </li>
         <li class="nav-item">
           <%= link_to "Log out", destroy_user_session_path, method: :delete %>
         </li>
