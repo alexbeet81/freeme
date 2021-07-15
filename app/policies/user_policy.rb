@@ -5,6 +5,10 @@ class UserPolicy < ApplicationPolicy
     end
   end
 
+  def showcase?
+    true
+  end
+
   def index?
     true
   end

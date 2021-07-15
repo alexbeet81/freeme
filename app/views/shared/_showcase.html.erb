@@ -31,6 +31,11 @@
 <!-- end of arrow navigation -->
 
 <!-- skills section below -->
+  <% @skills.each do |skill| %>
+    <%= skill.skill_name %>
+    <%= skill.level %>
+    <%= skill.years_of_experience %>
+  <% end %>
   <h1 class="sc-cont-header">Skills</h1>
   <div class="sc-skills-container">
     <div class="sc-skills-grid">

@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :skills, only: [:create]
     resources :projects, only: [:create]
     resources :experiences, only: [:create]
+    get "/showcase", to: "users#showcase"
   end
   resources :skills, only: [:update, :destroy]
   resources :projects, only: [:update, :destroy]
