@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show]
-  skip_before_action :authenticate_user!, only: [:show, :profile]
+  skip_before_action :authenticate_user!, only: [:show, :showcase]
 # Paul added to get to user profile page to edit
 
   def show
@@ -18,9 +18,11 @@ class UsersController < ApplicationController
     @experiences = Experience.where(user_id: @user.id)
   end
 
-  def profile
+  def showcase
     @user = User.find(params[:user_id])
     authorize @user
+
+    @skills = Skill.where(user_id: @user.id)
   end
 
   private
