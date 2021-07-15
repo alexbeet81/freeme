@@ -5,6 +5,8 @@ class UsersController < ApplicationController
   before_action :skip_authorization
 
   def show
+    authorize @user
+
     @new_skill = Skill.new
     # show only the current users skills
     @skills = Skill.where(user_id: @user.id)
