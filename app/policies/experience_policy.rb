@@ -4,4 +4,5 @@ class ExperiencePolicy < CustomPolicy
       scope.all
     # scope.where(user: user)
     end
+  end
 end
