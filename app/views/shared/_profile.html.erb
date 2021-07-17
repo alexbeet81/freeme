@@ -91,7 +91,7 @@
     <div class="project" id="project-<%= project.id %>">
       <h2><%= project.title %></h2>
       <h2><%= project.description %></h2>
-      <%#= image_tag "source", alt: "alttext" %>
+      <%= cl_image_tag project.photo.key, width: 500, crop: :pad %>
       <%= simple_form_for(project) do |f| %>
         <%= f.input :title %>
         <%= f.input :description %>
