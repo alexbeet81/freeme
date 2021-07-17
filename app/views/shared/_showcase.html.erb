@@ -19,7 +19,7 @@
       <h3>Available for hire NOW!</h3>
     </div>
     <div class="sc-profile-pic">
-      <%= image_tag "mark_profile", class: "sc-profile-pic" %>
+      <%= cl_image_tag @user.photo.key, class: "sc-profile-pic" %>
     </div>
   </div>
 <!-- end of banner section -->
@@ -63,7 +63,7 @@
     <% @experiences.each do |experience| %>
     <div class="sc-exp-card">
       <div class="sc-exp-card-img">
-        <%= cl_image_tag project.photo.key, class: 'sc-exp-card-img' %>
+        <%= cl_image_tag experience.photo.key, class: 'sc-exp-card-img' %>
       </div>
       <div class="sc-exp-card-body">
         <h2><%= experience.role %></h2>
