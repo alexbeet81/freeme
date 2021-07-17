@@ -12,6 +12,12 @@
         <h2><%= @user.headline %></h2>
         <h3>Available for hire NOW!</h3>
       </div>
+      <div>
+        <%= simple_form_for(@user) do |f| %>
+          <%= f.input :username %>
+          <%= f.submit "add name", class: "btn-edit" %>
+        <% end %>
+      </div>
       <div class="sc-profile-pic">
         <% if @user.photo.attached? %>
           <%= cl_image_tag @user.photo.key, class: "sc-profile-pic" %>
