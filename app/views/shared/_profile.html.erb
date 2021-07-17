@@ -91,11 +91,11 @@
     <div class="project" id="project-<%= project.id %>">
       <h2><%= project.title %></h2>
       <h2><%= project.description %></h2>
-      <%#= image_tag "source", alt: "alttext" %>
+      <%= cl_image_tag project.photo.key, width: 500, crop: :pad %>
       <%= simple_form_for(project) do |f| %>
         <%= f.input :title %>
         <%= f.input :description %>
-        <%= f.input :photo, as: :file, input_html: { multiple: true} %>
+        <%= f.input :photo, as: :file %>
         <%= f.submit "edit project", class: "btn" %>
       <% end %>
     </div>
@@ -103,7 +103,7 @@
   <%= simple_form_for([@user, @new_project]) do |f| %>
     <%= f.input :title %>
     <%= f.input :description %>
-    <%= f.input :photo, as: :file, input_html: { multiple: true} %>
+    <%= f.input :photo, as: :file %>
     <%= f.submit "add project", class: "btn" %>
   <% end %>
   <div class="sc-projects-container">
