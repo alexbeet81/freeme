@@ -172,77 +172,87 @@
   <button type="button" class="btn-modal btn-primary" data-toggle="modal" data-target="#addProjectModal">Add</button>
 <!-- end of projects section -->
   <!-- end of main div -->
-</div>
+
 
 
 
 <!-- experience section -->
-<h1 class="sc-cont-header">Experience</h1>
+  <h1 class="sc-cont-header">Experience</h1>
 
-<div class="sc-exp-container">
-  <% @experiences.each do |experience| %>
-    <div class="experience" id="experience-<%= experience.id %>">
-      <h2><%= experience.experience_name %></h2>
-      <h2><%= experience.company %></h2>
-      <h2><%= experience.role %></h2>
-      <h2><%= experience.location %></h2>
-      <h2><%= experience.summary %></h2>
-      <%= simple_form_for(experience) do |f| %>
-        <%= f.input :experience_name %>
-        <%= f.input :company %>
-        <%= f.input :role %>
-        <%= f.input :start_date %>
-        <%= f.input :end_date %>
-        <%= f.input :location %>
-        <%= f.input :website_url %>
-        <%= f.input :summary %>
-        <%= f.submit "edit experience", class: "btn" %>
-      <% end %>
-    </div>
-  <% end %>
-</div>
-<%= simple_form_for([@user, @new_experience]) do |f| %>
-    <%= f.input :experience_name %>
-    <%= f.input :company %>
-    <%= f.input :role %>
-    <%= f.input :start_date %>
-    <%= f.input :end_date %>
-    <%= f.input :location %>
-    <%= f.input :website_url %>
-    <%= f.input :summary %>
-    <%= f.submit "add experience", class: "btn" %>
-  <% end %>
-  <div class="sc-exp-grid">
-    <div class="sc-exp-card">
-      <div class="sc-exp-card-img">
-        <%= image_tag "ibm-logo-transparent", class: "sc-exp-card-img" %>
+  <div class="sc-exp-container">
+
+
+    <% @experiences.each do |experience| %>
+    <div class="sc-exp-grid">
+      <div class="sc-exp-card-card">
+        <div class="experience" id="experience-<%= experience.id %>">
+          <h2><%= experience.experience_name %></h2>
+          <h2><%= experience.company %></h2>
+          <h2><%= experience.role %></h2>
+          <h2><%= experience.location %></h2>
+          <h2><%= experience.summary %></h2>
+          <button type="button" class="btn-modal btn-primary" data-toggle="modal" data-target="#editExperienceModal<%= experience.id %>">Edit</button>
+        </div>
       </div>
-      <div class="sc-exp-card-body">
-        <h2>Full-Stack Developer</h2>
-        <p>Created web based solutions to real world problems from start to finish, front to back.</p>
+      <div class="modal fade" id="editExperienceModal<%= experience.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Edit Experience</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <%= simple_form_for(experience) do |f| %>
+                <%= f.input :experience_name %>
+                <%= f.input :company %>
+                <%= f.input :role %>
+                <%= f.input :start_date %>
+                <%= f.input :end_date %>
+                <%= f.input :location %>
+                <%= f.input :website_url %>
+                <%= f.input :summary %>
+                <%= f.submit "edit experience", class: "btn" %>
+            <% end %>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="sc-exp-card">
-      <div class="sc-exp-card-img">
-        <%= image_tag "google-logo", class: "sc-exp-card-img" %>
-      </div>
-      <div class="sc-exp-card-body">
-        <h2>Full-Stack Developer</h2>
-        <p>Created web based solutions to real world problems from start to finish, front to back.</p>
-      </div>
-    </div>
-    <div class="sc-exp-card">
-      <div class="sc-exp-card-img">
-        <%= image_tag "squarespace_logo", class: "sc-exp-card-img" %>
-      </div>
-      <div class="sc-exp-card-body">
-        <h2>Full-Stack Developer</h2>
-        <p>Created web based solutions to real world problems from start to finish, front to back.</p>
-      </div>
-    </div>
+    <% end %>
   </div>
+  <div class="modal fade" id="addExperienceModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Add Experience</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <%= simple_form_for([@user, @new_experience]) do |f| %>
+              <%= f.input :experience_name %>
+              <%= f.input :company %>
+              <%= f.input :role %>
+              <%= f.input :start_date %>
+              <%= f.input :end_date %>
+              <%= f.input :location %>
+              <%= f.input :website_url %>
+              <%= f.input :summary %>
+              <%= f.submit "add experience", class: "btn" %>
+            <% end %>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button type="button" class="btn-modal btn-primary" data-toggle="modal" data-target="#addExperienceModal">Add</button>
 
-<!-- end of experience section -->
+
+
+  <!-- end of experience section -->
 
 </div>
 
