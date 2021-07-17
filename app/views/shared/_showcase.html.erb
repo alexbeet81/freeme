@@ -19,7 +19,11 @@
       <h3>Available for hire NOW!</h3>
     </div>
     <div class="sc-profile-pic">
-      <%= cl_image_tag @user.photo.key, class: "sc-profile-pic" %>
+      <% if @user.photo.attached? %>
+          <%= cl_image_tag @user.photo.key, class: "sc-profile-pic" %>
+        <% else %>
+          <%= image_tag "avatar", class: "sc-profile-pic" %>
+        <% end %>
     </div>
   </div>
 <!-- end of banner section -->

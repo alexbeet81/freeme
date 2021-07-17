@@ -16,7 +16,7 @@
         <% if @user.photo.attached? %>
           <%= cl_image_tag @user.photo.key, class: "sc-profile-pic" %>
         <% else %>
-          <%= image_tag "mark_profile", class: "sc-profile-pic" %>
+          <%= image_tag "avatar", class: "sc-profile-pic" %>
         <% end %>
 
         <div>
