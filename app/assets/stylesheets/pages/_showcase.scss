@@ -187,8 +187,14 @@
 	font-family: 'Open Sans', sans-serif;
 }
 
-.sc-exp-card-body h2 {
+.sc-exp-card-body h2, p {
 	font-family: 'Open Sans', sans-serif;
+}
+
+.sc-exp-card-body-date {
+	font-style: italic;
+	color: slategray;
+	font-weight: 300;
 }
 
 /* below is the footer */
