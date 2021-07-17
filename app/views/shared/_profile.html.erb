@@ -112,7 +112,7 @@
         <button type="button" class="btn-modal btn-primary" data-toggle="modal" data-target="#editProjectModal<%= project.id %>">Edit</button>
       </div>
       <div class="sc-project-card-img">
-        <%= cl_image_tag project.photo.key %>
+        <%= cl_image_tag project.photo.key, class: 'sc-project-card-img' %>
 
       </div>
     </div>
