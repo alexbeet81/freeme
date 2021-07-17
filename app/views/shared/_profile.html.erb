@@ -57,55 +57,84 @@
       <% end %>
     </div>
   <!-- modal add skill form -->
-  <div class="modal fade" id="addSkillModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-        <%= simple_form_for([@user, @new_skill]) do |f| %>
-          <%= f.input :skill_name %>
-          <%= f.input :level %>
-          <%= f.input :years_of_experience %>
-          <div class="modal-footer">
-            <%= f.submit "add skill", class: "btn" %>
+    <div class="modal fade" id="addSkillModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
           </div>
-        <% end %>
+          <div class="modal-body">
+          <%= simple_form_for([@user, @new_skill]) do |f| %>
+            <%= f.input :skill_name %>
+            <%= f.input :level %>
+            <%= f.input :years_of_experience %>
+            <div class="modal-footer">
+              <%= f.submit "add skill", class: "btn" %>
+            </div>
+          <% end %>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+    <button type="button" class="btn-modal btn-primary" data-toggle="modal" data-target="#addSkillModal">Add</button>
   </section>
-  <!-- add skillmodal button -->
-  <button type="button" class="btn-modal btn-primary" data-toggle="modal" data-target="#addSkillModal">Add</button>
-<!-- end of skills section -->
 
-<!-- projects section below -->
+  <!-- add skillmodal button -->
+
+  <!-- end of skills section -->
+
+  <!-- projects section below -->
 
   <h1 class="sc-cont-header">Projects</h1>
-  <% @projects.each do |project| %>
-    <div class="project" id="project-<%= project.id %>">
-      <h2><%= project.title %></h2>
-      <h2><%= project.description %></h2>
-      <%= cl_image_tag project.photo.key, width: 500, crop: :pad %>
-      <%= simple_form_for(project) do |f| %>
-        <%= f.input :title %>
-        <%= f.input :description %>
-        <%= f.input :photo, as: :file %>
-        <%= f.submit "edit project", class: "btn" %>
-      <% end %>
+
+  <div class="sc-projects-container">
+    <% @projects.each do |project| %>
+    <div class="sc-project-card">
+      <div class="project" id="project-<%= project.id %>">
+        <h2><%= project.title %></h2>
+        <h2><%= project.description %></h2>
+        <%= cl_image_tag project.photo.key, width: 500, crop: :pad %>
+        <button type="button" class="btn-modal btn-primary" data-toggle="modal" data-target="#editprojectModal<%= project.id %>">Edit</button>
+      </div>
     </div>
-  <% end %>
+    <div class="modal fade" id="editProjectModal<%= project.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Edit Skill</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="project" id="project-<%= project.id %>">
+                <%= project.title %>
+                <%= simple_form_for(project) do |f| %>
+                  <%= f.input :title %>
+                  <%= f.input :description %>
+                  <%= f.input :photo, as: :file %>
+                  <%= f.submit "edit project", class: "btn" %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+    </div>
+
+
+  
   <%= simple_form_for([@user, @new_project]) do |f| %>
     <%= f.input :title %>
     <%= f.input :description %>
     <%= f.input :photo, as: :file %>
     <%= f.submit "add project", class: "btn" %>
   <% end %>
+
   <div class="sc-projects-container">
     <div class="sc-project-card">
       <div class="sc-project-card-body">
