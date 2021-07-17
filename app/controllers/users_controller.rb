@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show]
+  before_action :set_user, only: [:show, :update]
   before_action :set_visitor, only: [:showcase]
   before_action :set_projects
   before_action :set_skills
@@ -16,6 +16,16 @@ class UsersController < ApplicationController
     @new_project = Project.new
 
     @new_experience = Experience.new
+  end
+
+  def update
+    @user.update(user_params)
+
+    if @user.save
+      redirect_to user_path(@user)
+    else
+      render show
+    end
   end
 
   def showcase; end
@@ -41,5 +51,9 @@ class UsersController < ApplicationController
 
   def set_experiences
     @experiences = Experience.where(user_id: @user.id)
+  end
+
+  def user_params
+    params.require(:user).permit(:photo)
   end
 end
