@@ -15,7 +15,7 @@ class UsersController < ApplicationController
     @projects = Project.where(user_id: @user.id)
 
     @new_experience = Experience.new
-    @experiences = Experience.where(user_id: @user.id)
+    @experiences = @user.experiences
   end
 
   def showcase
