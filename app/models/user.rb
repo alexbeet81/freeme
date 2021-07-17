@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
   has_many :skills, dependent: :destroy
   has_many :projects, dependent: :destroy
-  has_many :experience, dependent: :destroy
+  has_many :experiences, dependent: :destroy
 
   # validates :email, uniquness: true
   has_one_attached :photo
