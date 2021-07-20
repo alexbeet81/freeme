@@ -1,17 +1,21 @@
 <%= render 'shared/navbar' %>
 
   <div class="container1">
+    <div class="text1">
+
+        <p class="landing-motto">Your launchpad for a rewarding <br>career in tech.</p>
+
+        <br>
+
+        <%= link_to 'Get Started', new_user_registration_path, class: 'getting-started' %>
+    </div>
 
     <div class="home-img-1">
       <%= image_tag 'manonbeachlaptop.png', class: 'first-img' %>
+
+
+
     </div>
-
-    <div class="text1">
-
-      <p>Your launchpad for a rewarding career in tech.</p>
-      <%= link_to 'Get Started', new_user_registration_path, class: 'btn' %>
-    </div>
-
   </div>
 
 
