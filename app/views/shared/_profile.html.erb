@@ -90,6 +90,9 @@
               <%= skill.years_of_experience %>
               <button type="button" class="btn-modal btn-primary" data-toggle="modal" data-target="#editSkillModal<%= skill.id %>"><i class="fad fa-edit">Edit</i>
               </button>
+              <%= link_to "delete", skill_path(skill), method: :delete,
+                                                       class: 'fad fa-edit',
+                                                       data: { confirm: 'Are you sure you want to delete this skill?'} %>
             </div>
           </li>
         </ul>
