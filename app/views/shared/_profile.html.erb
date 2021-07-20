@@ -6,6 +6,9 @@
 
   <!-- banner section contains profile pic and headline -->
     <div class="pr-banner-container">
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editInfoModal">
+          Edit User
+          </button>
 
 
       <div class="pr-banner-title">
@@ -40,9 +43,7 @@
             <h3>Available for hire NOW!</h3>
 
           </div>
-           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editInfoModal">
-          Edit User
-          </button>
+
         </div>
 
         <div class="middle-column">
@@ -92,7 +93,7 @@
               </button>
             </div>
           </li>
-        </ul>
+
 
         <div class="modal fade" id="editSkillModal<%= skill.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
@@ -118,7 +119,7 @@
           </div>
         </div>
         <% end %>
-
+        </ul>
         <div class="modal fade" id="addSkillModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
