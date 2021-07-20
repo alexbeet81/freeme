@@ -28,7 +28,7 @@
                     <%= f.input :username %>
                     <%= f.input :headline %>
                     <%= f.input :photo, as: :file %>
-                    <%= f.submit "Edit", class: "btn" %>
+                    <%= f.submit "Edit", class: "site-btn" %>
                   <% end %>
                 </div>
               </div>
@@ -44,7 +44,9 @@
             <h3>Available for hire NOW!</h3>
 
           </div>
-
+           <button type="button" class="site-btn" data-toggle="modal" data-target="#editInfoModal">
+          Update
+          </button>
         </div>
 
         <div class="middle-column">
@@ -90,7 +92,7 @@
               <%= skill.skill_name %>
               <%= skill.level %>
               <%= skill.years_of_experience %>
-              <button type="button" class="btn-modal btn-primary" data-toggle="modal" data-target="#editSkillModal<%= skill.id %>"><i class="fad fa-edit">Edit</i>
+              <button type="button" class="icon-btn" data-toggle="modal" data-target="#editSkillModal<%= skill.id %>"><i class="fa fa-edit"></i>
               </button>
               <%= link_to "delete", skill_path(skill), method: :delete,
                                                        class: 'btn-modal btn-primary',
@@ -115,7 +117,7 @@
                     <%= f.input :skill_name %>
                     <%= f.input :level %>
                     <%= f.input :years_of_experience %>
-                    <%= f.submit "edit skill", class: "btn-edit" %>
+                    <%= f.submit "Update", class: "site-btn" %>
                   <% end %>
                 </div>
               </div>
@@ -139,7 +141,7 @@
                 <%= f.input :level %>
                 <%= f.input :years_of_experience %>
                 <div class="modal-footer">
-                  <%= f.submit "add skill", class: "btn" %>
+                  <%= f.submit "add skill", class: "site-btn" %>
                 </div>
               <% end %>
               </div>
@@ -147,7 +149,7 @@
           </div>
         </div>
  <!-- add skillmodal button -->
-        <button type="button" class="btn-modal btn-primary" data-toggle="modal" data-target="#addSkillModal">Add</button>
+        <button type="button" class="site-btn" data-toggle="modal" data-target="#addSkillModal">Add</button>
       </div>
     </div>
   </section>
@@ -164,7 +166,7 @@
         <div class="pr-project-card-body">
           <h2><%= project.title %></h2>
           <p><%= project.description %></p>
-          <button type="button" class="btn-modal btn-primary" data-toggle="modal" data-target="#editProjectModal<%= project.id %>">Edit</button>
+          <button type="button" class="icon-btn" data-toggle="modal" data-target="#editProjectModal<%= project.id %>"><i class="fa fa-edit"></i></button>
         </div>
         <%= link_to "delete", project_path(project), method: :delete,
                                                        class: 'btn-modal btn-primary',
@@ -191,7 +193,7 @@
                     <%= f.input :title %>
                     <%= f.input :description %>
                     <%= f.input :photo, as: :file %>
-                    <%= f.submit "edit project", class: "btn" %>
+                    <%= f.submit "Update", class: "site-btn" %>
                   <% end %>
                 </div>
               </div>
@@ -200,7 +202,7 @@
         </div>
       <% end %>
 
-      <button type="button" class="btn-modal btn-primary" data-toggle="modal" data-target="#addProjectModal">Add</button>
+      <button type="button" class="site-btn" data-toggle="modal" data-target="#addProjectModal">Add</button>
 
     </div>
 
@@ -219,7 +221,7 @@
                 <%= f.input :description %>
                 <%= f.input :photo, as: :file %>
                 <div class="modal-footer">
-                  <%= f.submit "add project", class: "btn" %>
+                  <%= f.submit "add project", class: "site-btn" %>
                 </div>
               <% end %>
           </div>
@@ -248,7 +250,7 @@
             <h2><%= experience.summary %></h2>
           </div>
 
-          <button type="button" class="btn-modal btn-primary" data-toggle="modal" data-target="#editExperienceModal<%= experience.id %>">Edit</button>
+          <button type="button" class="icon-btn" data-toggle="modal" data-target="#editExperienceModal<%= experience.id %>"><i class="fa fa-edit"></i></button>
 
           <%= link_to "delete", experience_path(experience), method: :delete,
                                                        class: 'btn-modal btn-primary',
