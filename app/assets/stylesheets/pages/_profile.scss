@@ -1,14 +1,16 @@
+
 /* below is the container for all page & components */
 
 
 :root{
-  --mainText: black;
-  --secondaryText: white;
+  --mainText: lightgrey;
+  --secondaryText: purple;
 
   --borderColor: red;
 
   --maincolor: rgba(248, 239, 208, 0.7);
   --secondaryColor: #6E8FBC;
+  --backgroundcolor: ghostwhite;
 
   --themeDotBorder: #24292e;
 
@@ -18,7 +20,6 @@
   --btnColor: black;
 }
 
-
 .pr-main-container {
   width:  100%;
   margin:  0 auto;
@@ -27,11 +28,9 @@
   /*display:  flex;*/
 }
 
-/* below is the banner profile  */
-
 .pr-banner-container {
   height: 400px;
-  background-color: white;
+  background-color: var(--backgroundcolor);
   display: flex;
   margin: 2rem 2rem 0 2rem;
   justify-content: space-between;
@@ -42,7 +41,7 @@
 .pr-banner-title {
   height: 300px;
   width: 600px;
-  background-color: #FFFFFF;
+  background-color: var(--backgroundcolor);
   padding-right: 1rem;
 }
 
@@ -56,7 +55,7 @@
   font-family: 'Open Sans', sans-serif;
   font-weight: 500;
   font-size: 24px;
-  color: slategray;
+  color: var(--secondaryText);
   margin-top: 2rem;
 }
 
@@ -64,8 +63,52 @@
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
   font-size: 24px;
-  color: lightgrey;
+  color: var(--mainText);
   margin-top: 2rem;
+}
+.left-column{
+  padding: 0;
+  margin: 0;
+  display: inline;
+}
+.middle-column{
+  padding-left: 350px;
+}
+
+#theme-option-wrapper{
+  display: flex;
+  justify-content: center;
+}
+
+.theme-dot{
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  margin: 5px;
+  background-color: black;
+  border: 2px solid var(--themeDotBorder);
+  box-shadow: 6px 6px 4px 2px rgba(0, 0, 0, .1);
+  cursor: pointer;
+}
+
+.theme-dot:hover{
+  border-width: 5px;
+}
+
+#light-mode{
+  background-color: #fff;
+}
+
+#blue-mode{
+  background-color: blue;
+}
+
+#green-mode{
+  background-color: green;
+}
+
+#purple-mode{
+  background-color: purple;
 }
 
 .pr-profile-pic {
@@ -73,6 +116,38 @@
   width:  300px;
   object-fit: cover;
   border-radius: 8px 8px 50px 8px;
+}
+
+#settings-note{
+  font-size: 12px;
+  font-style: italic;
+  text-align: center;
+
+}
+
+
+
+
+#sortlist{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: contents;
+}
+
+#sortlist li{
+  margin: 10px;
+  padding: 10px;
+  border: 1px dashed coral
+}
+
+#sortlist li.hint{
+  background-color: yellow;
+
+}
+#sortlist li.active{
+  background-color: red;
+
 }
 
 /* below is the arrow navigation */
@@ -91,16 +166,15 @@
 .pr-cont-header {
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
-  color: slategray;
+  color: var(--mainText);
   font-size: 2rem;
   margin-left: 4rem;
 }
 
-
 /* below is the skills section */
 
 .pr-skills-container {
-  background-color: #FFFFFF;
+  background-color: var(--backgroundcolor);
   display: flex;
   margin: 2rem;
   padding: 2rem 2rem;
@@ -118,11 +192,12 @@
 }
 
 .pr-skills-card {
+  cursor: move;
   width: 200px;
   height: 150px;
   font-family: 'Open Sans', sans-serif;
   padding: 1rem;
-  background-color: ghostwhite;
+  background-color: var(--backgroundcolor);
   border-radius: 8px 8px 50px 8px;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
   /*box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;*/
@@ -138,7 +213,7 @@
 
 .pr-projects-container {
   display: flex;
-  background-color: #FFFFFF;
+  background-color: var(--backgroundcolor);
   flex-direction: column;
   align-items: center;
   margin: 2rem;
@@ -149,7 +224,7 @@
 .pr-project-card {
   height: 300px;
   width:  100%;
-  background-color: ghostwhite;
+  background-color: var(--backgroundcolor);
   display: flex;
   margin: 1rem;
   border-radius: 8px 8px 50px 8px;
@@ -177,13 +252,11 @@
 .pr-exp-container {
   display: flex;
 
-  background-color: ghostwhite;
+  background-color: var(--backgroundcolor);
   margin: 2rem;
   padding: 2rem 2rem;
 }
-.pr-exp-container::-webkit-scrollbar{
-  width: 0px;
- }
+
 .pr-exp-grid  {
   display: flex;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
@@ -193,14 +266,11 @@
   justify-content: space-evenly;
   align-items: center;
 }
-.pr-exp-grid::-webkit-scrollbar{
-  width: 0;
-}
 
  .pr-exp-card {
   height: 350px;
   width: 500px;
-  background-color: ghostwhite;
+  background-color: var(--backgroundcolor);
   border-radius: 8px 8px 50px 8px;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
  }
@@ -232,7 +302,7 @@
 
 .pr-exp-card-body-date {
   font-style: italic;
-  color: slategray;
+  color: var(--mainText);
   font-weight: 300;
 }
 
@@ -240,7 +310,7 @@
 
  .pr-footer {
   height: 350px;
-  background-color: #F5F5F5;
+  background-color: var(--mainbackground);
   padding: 4rem 0 0 8rem;
  }
 
@@ -250,5 +320,5 @@
  }
 
  .pr-footer h5 {
-  color: slategray;
+  color: var(--mainText);
  }
