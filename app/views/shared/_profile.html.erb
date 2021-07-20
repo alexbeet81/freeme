@@ -23,6 +23,7 @@
                 <div>
                   <%= simple_form_for(@user) do |f| %>
                     <%= f.input :username %>
+                    <%= f.input :headline %>
                     <%= f.input :photo, as: :file %>
                     <%= f.submit "Edit", class: "btn" %>
                   <% end %>
