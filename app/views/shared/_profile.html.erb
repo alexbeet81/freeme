@@ -50,7 +50,7 @@
         <% if @user.photo.attached? %>
           <%= cl_image_tag @user.photo.key, class: "pr-profile-pic" %>
         <% else %>
-          <%= image_tag "avatar", class: "pr-profile-pic" %>
+          <%= image_tag "avatar.svg", class: "sc-profile-pic" %>
         <% end %>
 
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
