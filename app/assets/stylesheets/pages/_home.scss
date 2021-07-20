@@ -28,7 +28,30 @@ html {
   padding: 0;
 }
 
+.site-btn {
+  color: white;
+  background: #6E8FBC;
+  height: auto;
+  width: 80px;
+  border: none;
+}
 
+.site-btn:hover {
+  color: white;
+  background-color: #0275d8; 
+}
+
+.icon-btn {
+  color: #6E8FBC;
+  border: none;
+  background-color: #f5f5f5;
+}
+
+.icon-btn:hover {
+  color: #0275d8;
+  border: none;
+  background-color: #f5f5f5;
+}
 
 .container1 {
   height: 100%;
@@ -65,7 +88,7 @@ html {
   background-size: 500px;
 }
 
-.btn{
+.home-btn{
   color: white;
   font-size: 30px;
   width: 207px;
