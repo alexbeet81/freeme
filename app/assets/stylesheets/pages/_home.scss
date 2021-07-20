@@ -28,11 +28,18 @@ html {
   padding: 0;
 }
 
+
+
 .container1 {
-  height: 80%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center
+}
+
+.first-img{
+  height: 600px;
+  z-index: inherit;
 }
 
 /*img {

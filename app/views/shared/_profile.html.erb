@@ -92,6 +92,7 @@
               <%= skill.years_of_experience %>
               <button type="button" class="btn-modal btn-primary" data-toggle="modal" data-target="#editSkillModal<%= skill.id %>"><i class="fad fa-edit">Edit</i>
               </button>
+
             </div>
           </li>
 
@@ -162,6 +163,7 @@
           <h2><%= project.title %></h2>
           <p><%= project.description %></p>
           <button type="button" class="btn-modal btn-primary" data-toggle="modal" data-target="#editProjectModal<%= project.id %>">Edit</button>
+
         </div>
         <div class="pr-project-card-img">
           <%= cl_image_tag project.photo.key, class: 'pr-project-card-img' %>
