@@ -330,7 +330,11 @@
   <h1 class="pr-cont-header">CV</h1>
 
     <div class="pr-exp-container">
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addCVModal">Add CV</button>
+      <% if @user.cv.present? %>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addCVModal">Update CV</button>
+      <% else %>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addCVModal">Add CV</button>
+      <% end %>
       <div class="modal fade" id="addCVModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
