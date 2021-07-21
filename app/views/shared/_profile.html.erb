@@ -6,9 +6,9 @@
 
   <!-- banner section contains profile pic and headline -->
     <div class="pr-banner-container">
+
       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editInfoModal">
-          Edit User
-          </button>
+          Edit User</button>
 
 
       <div class="pr-banner-title">
@@ -79,7 +79,7 @@
   <!-- skills section below -->
   <section class="s2">
     <h1 class="pr-cont-header">Skills</h1>
-
+    <button type="button" class="btn-modal btn-primary" data-toggle="modal" data-target="#addSkillModal">Add</button>
     <div class="pr-skills-container">
       <div class="pr-skills-grid">
 
@@ -145,7 +145,7 @@
           </div>
         </div>
  <!-- add skillmodal button -->
-        <button type="button" class="btn-modal btn-primary" data-toggle="modal" data-target="#addSkillModal">Add</button>
+
       </div>
     </div>
   </section>
@@ -154,6 +154,9 @@
   <!-- projects section below -->
   <section class="s3">
     <h1 class="pr-cont-header">Projects</h1>
+
+    <button type="button" class="btn-modal btn-primary" data-toggle="modal" data-target="#addProjectModal">Add</button>
+
 
     <div class="pr-projects-container">
 
@@ -196,7 +199,6 @@
         </div>
       <% end %>
 
-      <button type="button" class="btn-modal btn-primary" data-toggle="modal" data-target="#addProjectModal">Add</button>
 
     </div>
 
@@ -230,6 +232,7 @@
 <!-- experience section -->
   <section class="s4">
   <h1 class="pr-cont-header">Experience</h1>
+   <button id="addExpBtn" type="button" class="btn-modal btn-primary" data-toggle="modal" data-target="#addExperienceModal">Add</button>
 
     <div class="pr-exp-container">
 
@@ -276,7 +279,7 @@
         <% end %>
       </div>
 
-      <button id="addExpBtn" type="button" class="btn-modal btn-primary" data-toggle="modal" data-target="#addExperienceModal">Add</button>
+
 
 
       <div class="modal fade" id="addExperienceModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
