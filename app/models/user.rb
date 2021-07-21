@@ -13,9 +13,13 @@ class User < ApplicationRecord
   # validates :email, uniquness: true
   has_one_attached :photo
 
+  def to_param
+    "#{id}-#{slug}"
+  end
+
   private
 
   def set_slug
-    self.slug = first_name.to_s.parameterize
+    self.slug = "#{first_name}_#{last_name}".parameterize
   end
 end
