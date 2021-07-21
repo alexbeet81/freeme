@@ -324,6 +324,40 @@
 
   <!-- end of experience section -->
 
+  <!-- CV section -->
+
+  <section class="s5">
+  <h1 class="pr-cont-header">CV</h1>
+
+    <div class="pr-exp-container">
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addCVModal">Add CV</button>
+      <div class="modal fade" id="addCVModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Copy and paste a link to your CV</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div>
+                  <%= simple_form_for(@user) do |f| %>
+                    <%= f.input :cv %>
+                    <%= f.submit "Add CV", class: "site-btn" %>
+                  <% end %>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+    </div>
+
+  </section>
+
+  <!-- end of CV section -->
 
 <!-- footer section -->
   <div class="pr-footer">
