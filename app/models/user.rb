@@ -6,6 +6,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  include Mongoid::Document
+  acts_as_token_authenticatable
+  field :authentication_token
+
   validates :first_name, :last_name, presence: true
 
   has_many :skills, dependent: :destroy
