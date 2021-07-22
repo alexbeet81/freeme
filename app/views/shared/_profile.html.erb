@@ -135,7 +135,7 @@
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Project</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
@@ -163,6 +163,7 @@
   <!-- projects section below -->
   <section class="s3">
     <h1 class="pr-cont-header">Projects</h1>
+    <button type="button" class="site-btn" data-toggle="modal" data-target="#addProjectModal">Add</button>
 
     <div class="pr-projects-container">
 
@@ -212,7 +213,7 @@
         </div>
       <% end %>
 
-      <button type="button" class="site-btn" data-toggle="modal" data-target="#addProjectModal">Add</button>
+      
 
     </div>
 
@@ -246,7 +247,7 @@
 <!-- experience section -->
   <section class="s4">
   <h1 class="pr-cont-header">Experience</h1>
-
+  <button id="addExpBtn" type="button" class="site-btn" data-toggle="modal" data-target="#addExperienceModal">Add</button>
     <div class="pr-exp-container">
 
       <div class="pr-exp-grid">
@@ -300,7 +301,6 @@
         <% end %>
       </div>
 
-      <button id="addExpBtn" type="button" class="site-btn" data-toggle="modal" data-target="#addExperienceModal">Add</button>
 
 
       <div class="modal fade" id="addExperienceModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
