@@ -35,25 +35,27 @@
 
         <div class="left-column">
           <div class="user-info">
-            <h1>Hi, I'm <%= @user.first_name %><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editInfoModal">
-          Edit User</button></h1>
+            <button id="user-info-btn" type="button" class="btn btn-primary" data-toggle="modal" data-target="#editInfoModal">
+          <i class="fa fa-edit"></i></button>
+            <h1>Hi, I'm <%= @user.first_name %></h1>
             <h2><%= @user.headline %></h2>
             <h3>Available for hire NOW!</h3>
 
           </div>
-        </div>
+          <div class="theme-container">
+            <h5 style="text-align: center; line-height: 0;">Personalize Theme</h5>
 
-        <div class="middle-column">
-          <h5 style="text-align: center; line-height: 0;">Personalize Theme</h5>
-
-          <div id="theme-option-wrapper">
-            <div data-mode='light' id="light-mode" class="theme-dot"></div>
-            <div data-mode='blue' id="blue-mode" class="theme-dot"></div>
-            <div data-mode='green' id="green-mode" class="theme-dot"></div>
-            <div data-mode='purple' id="purple-mode" class="theme-dot"></div>
+            <div id="theme-option-wrapper">
+              <div data-mode='light' id="light-mode" class="theme-dot"></div>
+              <div data-mode='blue' id="blue-mode" class="theme-dot"></div>
+              <div data-mode='green' id="green-mode" class="theme-dot"></div>
+              <div data-mode='purple' id="purple-mode" class="theme-dot"></div>
+            </div>
+            <p id="settings-note" >*Theme setting will be saved for <br>Next visit!</p>
           </div>
-          <p id="settings-note" >*Theme setting will be saved for <br>Next visit!</p>
         </div>
+
+
 
       </div>
       <!-- user basic info end -->
@@ -236,8 +238,9 @@
 
 <!-- experience section -->
   <section class="s4">
-  <h1 class="pr-cont-header">Experience</h1>
-   <button id="addExpBtn" type="button" class="btn-modal btn-primary" data-toggle="modal" data-target="#addExperienceModal">Add</button>
+
+    <h1 class="pr-cont-header">Experience<button id="addExpBtn" type="button" class="btn-modal btn-primary" data-toggle="modal" data-target="#addExperienceModal">Add</button></h1>
+
 
     <div class="pr-exp-container">
 
@@ -286,9 +289,6 @@
         <% end %>
       </div>
 
-
-
-
       <div class="modal fade" id="addExperienceModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -316,9 +316,6 @@
       </div>
     </div>
   </section>
-
-
-
   <!-- end of experience section -->
 
   <!-- CV section -->
@@ -357,7 +354,7 @@
     </div>
 
   </section>
-
+</div>
   <!-- end of CV section -->
 
 <!-- footer section -->
