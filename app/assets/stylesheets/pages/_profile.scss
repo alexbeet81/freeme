@@ -40,9 +40,10 @@
 
 .pr-banner-title {
   height: 300px;
-  width: 600px;
+  width: 720px;
   background-color: var(--backgroundcolor);
   padding-right: 1rem;
+
 }
 
 .pr-banner-title h1 {
@@ -67,12 +68,28 @@
   margin-top: 2rem;
 }
 .left-column{
-  padding: 0;
-  margin: 0;
-  display: inline;
+  padding: 10;
+  margin: 1;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
 }
-.middle-column{
-  padding-left: 350px;
+
+.user-info{
+  height: 200px;
+}
+
+#user-info-btn{
+  position: absolute;
+  left: 780px;
+  top: 200px;
+}
+
+.theme-container{
+  height:100px;
+  width: 300px;
+  align-self: end;
 }
 
 #theme-option-wrapper{
@@ -149,6 +166,11 @@
 #sortlist li.active{
   background-color: red;
 
+}
+
+#sortlist li.ghost {
+  filter: grayscale(1);
+  opacity: 0.5;
 }
 
 /* below is the arrow navigation */
@@ -238,6 +260,7 @@
   padding:  1rem;
   height: 100%;
   width: 60%;
+  display: flex;
 }
 
 .pr-project-card-img {
@@ -247,7 +270,10 @@
   border-top-right-radius: 8px;
 }
 
-
+.pr-card-descrition{
+  position:relative;
+  top: 100px;
+}
 /* below is the experience section */
 
 .pr-exp-container {
