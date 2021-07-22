@@ -80,8 +80,8 @@
       <div class="pr-skills-grid">
 
         <ul id="sortlist">
-        <% @skills.each do |skill| %>
-          <li draggable='true'>
+        <% @skills.each_with_index do |skill, index| %>
+          <li draggable='true' data-id="<%= index %>">
             <div class="pr-skills-card">
               <%= skill.skill_name %>
               <%= skill.level %>
@@ -120,6 +120,7 @@
           </div>
         </div>
         <% end %>
+        <button id="save-skill">SAVE!</button>
         </ul>
         <div class="modal fade" id="addSkillModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">

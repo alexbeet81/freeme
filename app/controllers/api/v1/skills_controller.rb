@@ -20,7 +20,7 @@ class Api::V1::SkillsController < Api::V1::BaseController
   end
 
   def skill_params
-    params.require(:skill).permit(:skill_name)
+    params.require(:skill).permit(:position)
   end
 
   def render_error
