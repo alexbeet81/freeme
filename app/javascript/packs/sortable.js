@@ -5,6 +5,9 @@ const initSortable = () => {
   Sortable.create(list, {
     ghostClass: "ghost",
     animation: 150,
+    onEnd: (event) => {
+      // fetch POST
+    }
   });
 };
 
