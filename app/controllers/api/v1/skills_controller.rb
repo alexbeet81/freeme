@@ -1,5 +1,5 @@
 class Api::V1::SkillsController < Api::V1::BaseController
-  acts_as_token_authentication_handler_for User, only: [:update]
+  # acts_as_token_authentication_handler_for User, only: [:update]
   before_action :set_skill, only: [:update]
 
   def update
