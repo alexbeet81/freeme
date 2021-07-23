@@ -1,5 +1,5 @@
 <nav class="navbar">
-    <h1 class="logo">FreeMe.</h1>
+    <h1><%= link_to "FreeMe.", root_path, class: "logo" %></h1>
     <ul class="nav-links">
       <li class="nav-item"><a href="#">about</a></li>
       <% if user_signed_in? %>
