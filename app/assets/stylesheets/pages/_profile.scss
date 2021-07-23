@@ -249,17 +249,22 @@
 
 }
 
-h2.project-left {
+h.project-left {
 
 }
 
-span.project-right {
-
+.project-right {
+  text-align:right;
 }
 
 p.pr-card-descrition{
   grid-column: 1 / 3;
   grid-row: 2;
+  display: -webkit-box;
+  overflow : hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
 }
 
 .pr-project-card-img {
