@@ -8,6 +8,7 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import { initSortable } from './sortable'; // <-- add this
+import { getIcon } from './iconEvent';
 
 Rails.start()
 Turbolinks.start()
@@ -30,6 +31,8 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
 });
 
+
+getIcon('html')
 
 
 
