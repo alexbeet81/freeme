@@ -7,7 +7,7 @@ import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
-import { initSortable } from './sortable'; // <-- add this
+import { initSortable } from './sortable.js'; // <-- add this
 import { getIcon } from './iconEvent';
 
 Rails.start()
