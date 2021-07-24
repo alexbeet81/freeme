@@ -3,9 +3,7 @@ class Api::V1::SkillsController < Api::V1::BaseController
   before_action :set_skill, only: [:show, :update]
   before_action :set_user, only: [:update]
 
-  def show
-    binding.pry
-  end
+  def show; end
 
   def update
     if @skill.update(skill_params)
