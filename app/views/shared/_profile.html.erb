@@ -261,69 +261,50 @@
     <div class="pr-exp-container">
 
       <div class="pr-exp-grid">
-        <% @experiences.each do |experience| %>
-        <div class="pr-exp-card">
-          <div class="sc-exp-card-body">
-        <h2><%= experience.role %></h2>
-        <h3><%= experience.company %>, <%= experience.location %></h3>
-        <p><%= experience.summary %></p>
-        <p class="sc-exp-card-body-date"><%= experience.start_date.strftime("%B #{experience.start_date.day.ordinalize} %Y") %> to <%= experience.end_date.strftime("%B #{experience.end_date.day.ordinalize} %Y") %></p>
-        <button type="button" class="icon-btn" data-toggle="modal" data-target="#editExperienceModal<%= experience.id %>"><i class="fa fa-edit"></i></button>
+        <ul id="sort-experience" class="sort-list">
+          <% @experiences.each_with_index do |experience, index| %>
+          <li draggable="true" data-experience="<%= experience.id %>" data-id="<%= index %>">
+            <div class="pr-exp-card">
+              <div class="sc-exp-card-body">
+                <h2><%= experience.role %></h2>
+                <h3><%= experience.company %>, <%= experience.location %></h3>
+                <p><%= experience.summary %></p>
+                <p class="sc-exp-card-body-date"><%= experience.start_date.strftime("%B #{experience.start_date.day.ordinalize} %Y") %> to <%= experience.end_date.strftime("%B #{experience.end_date.day.ordinalize} %Y") %></p>
+                <button type="button" class="icon-btn" data-toggle="modal" data-target="#editExperienceModal<%= experience.id %>"><i class="fa fa-edit"></i></button>
 
-          <%= link_to experience_path(experience), method: :delete, class: 'icon-btn', data: { confirm: 'Are you sure you want to delete this experience?'} do %>
-            <i class="far fa-trash-alt"></i>
-              <% end %>
-      </div>
-          <!-- <div class="pr-exp-body">
-
-
-
-            <div class="one"><h2><%= experience.company %></h2></div>
-
-            <div class="two"><h2><%= experience.role %></h2></div>
-
-            <div class="three"><h6><%= experience.summary %></h6></div>
-
-            <div class="four"><h2><%= experience.start_date.strftime("%B #{experience.start_date.day.ordinalize} %Y") %></h2>
-            <h2><%= experience.end_date.strftime("%B #{experience.end_date.day.ordinalize} %Y") %></h2></div>
-            <div class="five">
-            <button type="button" class="icon-btn" data-toggle="modal" data-target="#editExperienceModal<%= experience.id %>"><i class="fa fa-edit"></i></button>
-
-          <%= link_to experience_path(experience), method: :delete, class: 'icon-btn', data: { confirm: 'Are you sure you want to delete this experience?'} do %>
-            <i class="far fa-trash-alt"></i>
-              <% end %>
-            </div>
-          </div> -->
-
-
-
-        </div>
-
-        <div class="modal fade" id="editExperienceModal<%= experience.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Edit Experience</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
+                  <%= link_to experience_path(experience), method: :delete, class: 'icon-btn', data: { confirm: 'Are you sure you want to delete this experience?'} do %>
+                    <i class="far fa-trash-alt"></i>
+                      <% end %>
               </div>
-              <div class="modal-body">
-                <%= simple_form_for(experience) do |f| %>
+            </div>
+          </li>
 
-                  <%= f.input :company %>
-                  <%= f.input :role %>
-                  <%= f.input :start_date %>
-                  <%= f.input :end_date %>
+          <div class="modal fade" id="editExperienceModal<%= experience.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Edit Experience</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <%= simple_form_for(experience) do |f| %>
 
-                  <%= f.input :summary %>
-                  <%= f.submit "Update", class: "site-btn" %>
-              <% end %>
+                    <%= f.input :company %>
+                    <%= f.input :role %>
+                    <%= f.input :start_date %>
+                    <%= f.input :end_date %>
+
+                    <%= f.input :summary %>
+                    <%= f.submit "Update", class: "site-btn" %>
+                <% end %>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <% end %>
+          <% end %>
+        </ul>
       </div>
 
 
