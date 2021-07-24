@@ -74,7 +74,7 @@
 	font-weight: 400;
 	color: slategray;
 	font-size: 2rem;
-	margin-left: 4rem;
+	margin-left: 6rem;
 }
 
 
@@ -83,7 +83,7 @@
 .sc-skills-container {
 	background-color: #FFFFFF;
 	display: flex;
-	margin: 2rem;
+	margin: 2rem 4rem;
 	padding: 2rem 2rem;
 }
 
@@ -119,7 +119,7 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	margin: 2rem;
+	margin: 2rem 4rem;
 	padding: 0 2rem;
 
 }
@@ -154,7 +154,7 @@
 
 .sc-exp-container {
 	display: flex;
-	margin: 2rem;
+	margin: 2rem 4rem;
 	padding: 2rem 2rem;
 }
 
@@ -163,7 +163,7 @@
 	grid-template-columns: repeat(auto-fit, 500px);
   grid-gap: 2rem;
   flex-grow: 1;
-  justify-content: space-evenly;
+  justify-content: space-between;
 	align-items: center;
 }
 
@@ -187,7 +187,7 @@
 	font-family: 'Open Sans', sans-serif;
 }
 
-.sc-exp-card-body h2, p {
+.sc-exp-card-body h2, h3, h4, p {
 	font-family: 'Open Sans', sans-serif;
 }
 
@@ -208,8 +208,27 @@
  .sc-footer h2, h5 {
    font-family: 'Open Sans', sans-serif;
    padding-top: 1rem;
+   margin-left: 2rem;
  }
 
  .sc-footer h5 {
  	color: slategray;
  }
+
+/* size control on large screens */
+
+ @media screen and (min-width: 1440px) {
+  .sc-main-container {
+    width: 1438px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  .sc-main-container {
+    width: 1438px;
+  }
+}
+@media screen and (min-width: 1900px) {
+  .sc-main-container {
+    width: 1438px;
+  }
+}

@@ -1,8 +1,9 @@
 nav {
-  width: 100%;
+  width: 1438px;
   background-color: none;
   padding-left: 30px;
   padding-right: 10px;
+  margin: 0 auto
 }
 .navbar {
   display: flex;
@@ -10,19 +11,26 @@ nav {
   align-items: center;
 }
 .logo {
-  padding-top: 20px;
   display: inline-block;
   font-family: ‘Monda’, sans-serif;
-  font-size: 50px;
+  font-size: 44px;
   letter-spacing: 6;
-  background-image: linear-gradient(to right, #6B5416, #FF4B2B);
+  color: #4C4C4C;
+  text-decoration: none;
+ /* background-image: linear-gradient(to right, #6B5416, #FF4B2B);
   background-size: 100%;
   background-repeat: repeat;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   -moz-background-clip: text;
-  -moz-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;*/
 }
+
+.logo:hover {
+  color: #4C4C4C;
+  text-decoration: none;
+}
+
 .nav-links {
   list-style: none;
   display: flex;
@@ -33,7 +41,7 @@ nav {
 
   padding: 10px 15px;
   text-decoration: none;
-  color: #6B5416;
+  color: #4c4c4c;
   opacity: 0.7;
 }
 .nav-item:hover a {
