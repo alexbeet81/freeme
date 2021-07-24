@@ -6,7 +6,7 @@ class SkillsController < ApplicationController
     @skill = Skill.new(skill_params)
     authorize @skill
     @skill.user = @user
-
+    
     if @skill.save
       redirect_to user_path(@user)
     else
