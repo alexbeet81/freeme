@@ -15,9 +15,8 @@ class Api::V1::ExperiencesController < Api::V1::BaseController
 
   def update_positions
     params[:position].each do |e|
-      e[:position]
-      e[:experience]
       experience = Experience.find_by_id(e[:experience])
+      # binding.pry
       experience.position = e[:position]
 
       experience.save

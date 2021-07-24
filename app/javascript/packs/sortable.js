@@ -70,7 +70,7 @@ const initSortable = () => {
     const newPositions = []
 
     document.querySelectorAll('#sort-experience li').forEach((e, index) => {
-      newPositions.push({project: e.dataset.project, position: index})
+      newPositions.push({experience: e.dataset.experience, position: index})
     })
 
     fetch(`http://localhost:3000/api/v1/experiences`, {

@@ -6,7 +6,7 @@ class ExperiencePolicy < CustomPolicy
     end
   end
 
-  def update_positions
+  def update_positions?
     true
   end
 end
