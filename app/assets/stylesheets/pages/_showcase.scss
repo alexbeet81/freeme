@@ -214,3 +214,21 @@
  .sc-footer h5 {
  	color: slategray;
  }
+
+/* size control on large screens */
+
+ @media screen and (min-width: 1440px) {
+  .sc-main-container {
+    width: 1438px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  .sc-main-container {
+    width: 1438px;
+  }
+}
+@media screen and (min-width: 1900px) {
+  .sc-main-container {
+    width: 1438px;
+  }
+}
