@@ -48,7 +48,15 @@ const initSortable = () => {
       newPositions.push({project: e.dataset.project, position: index})
     })
 
-
+    fetch(`http://localhost:3000/api/v1/projects`, {
+      method: 'POST',
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify({
+        position: newPositions
+      })
+    })
   })
 };
 
