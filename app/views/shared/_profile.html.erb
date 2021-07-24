@@ -38,22 +38,26 @@
 
             <button id="user-info-btn" type="button" class="icon-btn" data-toggle="modal" data-target="#editInfoModal"><i class="fa fa-edit"></i></button>
 
-            <h1>Hi, I'm <%= @user.first_name %></h1>
-            <h2><%= @user.headline %></h2>
-            <h3>Available for hire NOW!</h3>
-
-          </div>
-          <div class="theme-container">
+            <div class="oneUser"><h1>Hi, I'm <%= @user.first_name %></h1></div>
+            <div class="twoUser"><h2><%= @user.headline %></h2></div>
+            <div class="threeUser"><h3>Available for hire NOW!</h3></div>
+            <div class="oneTheme">
               <h5 style="text-align: center; line-height: 0;">Personalize Theme</h5>
+            </div>
+            <div class="twoTheme">
+              <div data-mode='light' id="light-mode" class="theme-dot"></div>
+              <div data-mode='blue' id="blue-mode" class="theme-dot"></div>
+              <div data-mode='green' id="green-mode" class="theme-dot"></div>
+              <div data-mode='purple' id="purple-mode" class="theme-dot"></div>
+            </div>
+            <div class="threeTheme">
+              <p id="settings-note" >*Theme setting will be saved for next visit!</p>
+            </div>
 
-          <div id="theme-option-wrapper">
-            <div data-mode='light' id="light-mode" class="theme-dot"></div>
-            <div data-mode='blue' id="blue-mode" class="theme-dot"></div>
-            <div data-mode='green' id="green-mode" class="theme-dot"></div>
-            <div data-mode='purple' id="purple-mode" class="theme-dot"></div>
           </div>
-          <p id="settings-note" >*Theme setting will be saved for <br>Next visit!</p>
-        </div>
+          <!-- <div class="theme-container">
+
+        </div> -->
       </div>
     </div>
       <!-- user basic info end -->
