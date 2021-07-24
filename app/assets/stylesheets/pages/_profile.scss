@@ -192,22 +192,23 @@
 
 }
 
+/* sort-list */
 
-#sortlist{
+.sort-list{
   list-style: none;
   margin: 0;
   padding: 0;
   display: contents;
 }
 
-#sortlist li{
+.sort-list li{
   list-style: none;
   margin: 10px;
   padding: 10px;
 }
 
 
-#sortlist li.ghost {
+.sort-list li.ghost {
   filter: grayscale(1);
   opacity: 0.5;
 }

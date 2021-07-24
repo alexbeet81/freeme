@@ -9,7 +9,6 @@ class Api::V1::SkillsController < Api::V1::BaseController
   def update
     if @skill.update(skill_params)
       redirect_to api_v1_user_path(@user)
-      # render 'users/show'
     else
       render_error
     end
@@ -27,10 +26,6 @@ class Api::V1::SkillsController < Api::V1::BaseController
   end
 
   private
-
-  # def set_skills
-  #   @skills = @user.skills
-  # end
 
   def set_skill
     @skill = Skill.find(params[:id])

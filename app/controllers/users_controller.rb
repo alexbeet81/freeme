@@ -47,7 +47,7 @@ class UsersController < ApplicationController
   end
 
   def set_projects
-    @projects = Project.where(user_id: @user.id)
+    @projects = Project.where(user_id: @user.id).order(position: :asc)
   end
 
   def set_experiences

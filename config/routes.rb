@@ -8,9 +8,11 @@ Rails.application.routes.draw do
       resources :experiences, only: [:create]
       end
       resources :skills, only: [:show, :update, :destroy]
-      resources :projects, only: [:update, :destroy]
-      resources :experiences, only: [:update, :destroy]
+      resources :projects, only: [:show, :update, :destroy]
+      resources :experiences, only: [:show, :update, :destroy]
       post "/skills", to: "skills#update_positions"
+      post "/projects", to: "projects#update_positions"
+      post "/experiences", to: "experiences#update_positions"
     end
   end
 
