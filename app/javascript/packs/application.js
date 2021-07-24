@@ -8,7 +8,7 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import { initSortable } from './sortable.js'; // <-- add this
-import { getIcon } from './iconEvent.js';
+// import { getIcon } from './iconEvent.js';
 
 Rails.start()
 Turbolinks.start()
