@@ -20,10 +20,23 @@
   --btnColor: black;
 }
 
+.icon-btn-plus {
+  color: #6E8FBC;
+  border: none;
+  background-color: transparent;
+  margin-left: 1rem;
+}
+
+.icon-btn-plus:hover {
+  color: #0275d8;
+  border: none;
+  background-color: #f5f5f5;
+}
+
 .pr-main-container {
   width:  100%;
   margin:  0 auto;
-  background: var(--maincolor);
+  background: linear-gradient(180deg, rgba(248, 239, 208, 0), rgba(248, 239, 208, 0.8) 90% );
   padding: 0 4rem 2rem 4rem;
   /*display:  flex;*/
 }
@@ -56,7 +69,6 @@
   font-weight: 500;
   font-size: 24px;
   color: var(--secondaryText);
-
 }
 
 .pr-banner-title h3 {
@@ -74,7 +86,7 @@
   height: 300px;
   display: flex;
   flex-direction: column;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+  /*box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;*/
 }
 
 
@@ -216,6 +228,7 @@
 .pr-cont-header {
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
+
   color: var(--secondaryText);
   font-size: 2rem;
   margin: 2rem;
@@ -332,7 +345,7 @@ p.pr-card-descrition{
 .pr-exp-grid  {
   display: grid;
   grid-template-columns: repeat(auto-fit, 500px);
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+  /*box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;*/
 
   grid-gap: 2rem;
   justify-content: space-around;
