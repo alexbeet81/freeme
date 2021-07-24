@@ -1,5 +1,7 @@
 class Api::v1::ProjectsController < Api::V1::BaseController
   before_action :set_project, only: [:show, :update]
+  before_action :set_user, only: [:update]
+  skip_after_action :verify_authorized
 
   def show; end
 
