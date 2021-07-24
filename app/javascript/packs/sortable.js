@@ -1,23 +1,29 @@
 import Sortable from 'sortablejs';
 
 const initSortable = () => {
-  const list = document.querySelector('#sort-skill');
+  const sortSkills = document.querySelector('#sort-skill');
 
-  let sortable = Sortable.create(list, {
+  let sortableSkill = Sortable.create(sortSkills, {
+    ghostClass: "ghost",
+    animation: 150,
+  });
+
+  const sortProject = document.querySelector('#sort-project');
+
+  let sortableProject = Sortable.create(sortProject, {
     ghostClass: "ghost",
     animation: 150,
   });
 
 
-
   document.querySelector('#save-skill').addEventListener('click', (e) => {
-    let order = sortable.toArray();
+    let order = sortableSkill.toArray();
 
     // set all posotions
     const newPositions = []
     // get all skill ids
     document.querySelectorAll('#sort-skill li').forEach((e, index) => {
-      console.log(e.dataset.skill, index)
+      // console.log(e.dataset.skill, index)
       newPositions.push({skill: e.dataset.skill, position: index})
     })
 
@@ -30,6 +36,19 @@ const initSortable = () => {
         position: newPositions
       })
     })
+  })
+
+  document.querySelector('#save-project').addEventListener('click', (e) => {
+    let order = sortableProject.toArray();
+
+    const newPositions = []
+
+    document.querySelectorAll('#sort-project li').forEach((e, index) => {
+      console.log(e.dataset.project, index)
+      newPositions.push({project: e.dataset.project, position: index})
+    })
+
+
   })
 };
 
