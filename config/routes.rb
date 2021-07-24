@@ -7,7 +7,7 @@ Rails.application.routes.draw do
       resources :projects, only: [:create]
       resources :experiences, only: [:create]
       end
-      resources :skills, only: [:update, :destroy]
+      resources :skills, only: [:show, :update, :destroy]
       resources :projects, only: [:update, :destroy]
       resources :experiences, only: [:update, :destroy]
     end

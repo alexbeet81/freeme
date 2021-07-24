@@ -1,7 +1,11 @@
 class Api::V1::SkillsController < Api::V1::BaseController
   # acts_as_token_authentication_handler_for User, only: [:update]
-  before_action :set_skill, only: [:update]
+  before_action :set_skill, only: [:show, :update]
   before_action :set_user, only: [:update]
+
+  def show
+    binding.pry
+  end
 
   def update
     if @skill.update(skill_params)
@@ -13,6 +17,10 @@ class Api::V1::SkillsController < Api::V1::BaseController
   end
 
   private
+
+  # def set_skills
+  #   @skills = @user.skills
+  # end
 
   def set_skill
     @skill = Skill.find(params[:id])
@@ -29,6 +37,5 @@ class Api::V1::SkillsController < Api::V1::BaseController
 
   def set_user
     @user = User.where(id: @skill.user_id)
-    binding.pry
   end
 end
