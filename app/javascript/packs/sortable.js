@@ -65,22 +65,22 @@ const initSortable = () => {
   })
 
   document.querySelector('#save-experience').addEventListener('click', (e) => {
-    let order = sortExperience.toArray();
+    let order = sortableExperience.toArray();
 
     const newPositions = []
 
     document.querySelectorAll('#sort-experience li').forEach((e, index) => {
       newPositions.push({project: e.dataset.project, position: index})
     })
-  })
 
-  fetch(`http://localhost:3000/api/v1/experience`, {
-    method: 'POST',
-    headers: {
-      "Content-type": "application/json",
-    },
-    body: JSON.stringify({
-      position: newPositions
+    fetch(`http://localhost:3000/api/v1/experiences`, {
+      method: 'POST',
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify({
+        position: newPositions
+      })
     })
   })
 };
