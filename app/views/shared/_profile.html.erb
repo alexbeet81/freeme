@@ -92,23 +92,10 @@
               <div class="pr-skill-edit-btn">
                 <button type="button" class="icon-btn" data-toggle="modal" data-target="#editSkillModal<%= skill.id %>"><i class="fa fa-edit"></i>
                 </button>
-
                 <%= link_to skill_path(skill), method: :delete,class: 'icon-btn', data: { confirm: 'Are you sure you want to delete this skill?' } do %>
                   <i class="far fa-trash-alt"></i>
                <% end %>
-
               </div>
-            
-              <%= skill.skill_name %>
-              <%= skill.level %>
-              <%= skill.years_of_experience %>
-              <button type="button" class="icon-btn" data-toggle="modal" data-target="#editSkillModal<%= skill.id %>"><i class="fa fa-edit"></i>
-              </button>
-              <%= link_to skill_path(skill), method: :delete,
-                                                       class: 'icon-btn',
-                                                       data: { confirm: 'Are you sure you want to delete this skill?' } do %>
-                                                       <i class="far fa-trash-alt"></i>
-                                                       <% end %>
             </div>
           </li>
 
@@ -196,8 +183,8 @@
 
       <% @projects.each do |project| %>
       <div class="pr-project-card">
-        <div class="pr-project-card-body">
 
+        <div class="pr-project-card-body">
           <div class="project-left">
             <h2><%= project.title %></h2>
           </div>
@@ -208,21 +195,10 @@
                   <i class="far fa-trash-alt"></i>
             <% end %>
           </div>
-        
-          <div>
-          <h2><%= project.title %></h2>
+
 
           <p class="pr-card-descrition"><%= project.description %></p>
-            <div>
-              <button type="button" class="icon-btn" data-toggle="modal" data-target="#editProjectModal<%= project.id %>"><i class="fa fa-edit"></i></button>
 
-              <%= link_to project_path(project), method: :delete,
-                                                           class: 'icon-btn',
-                                                           data: { confirm: 'Are you sure you want to delete this project?'} do %>
-                                                           <i class="far fa-trash-alt"></i>
-                                                           <% end %>
-            </div>
-          </div>
         </div>
 
         <div class="pr-project-card-img">
@@ -254,6 +230,10 @@
           </div>
         </div>
       <% end %>
+
+
+
+
     </div>
 
     <div class="modal fade" id="addProjectModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
