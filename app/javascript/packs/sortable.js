@@ -50,7 +50,6 @@ const initSortable = () => {
     const newPositions = []
 
     document.querySelectorAll('#sort-project li').forEach((e, index) => {
-      console.log(e.dataset.project, index)
       newPositions.push({project: e.dataset.project, position: index})
     })
 
