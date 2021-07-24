@@ -82,8 +82,8 @@
       <div class="pr-skills-grid">
 
         <ul id="sortlist">
-        <% @skills.each do |skill| %>
-          <li draggable='true'>
+        <% @skills.each_with_index do |skill, index| %>
+          <li draggable='true' data-skill="<%= skill.id %>" data-id="<%= index %>">
             <div class="pr-skills-card">
               <div class="pr-skills-info">
                 <%= skill.skill_name %>
@@ -127,6 +127,7 @@
           </div>
         </div>
         <% end %>
+        <button id="save-skill">SAVE!</button>
         </ul>
 
       </div>
@@ -146,27 +147,6 @@
               <%= f.input :years_of_experience %>
               <div class="modal-footer">
                 <%= f.submit "add skill", class: "site-btn" %>
-
-        <div class="modal fade" id="addSkillModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Project</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-              <%= simple_form_for([@user, @new_skill]) do |f| %>
-                <%= f.input :skill_name %>
-                <%= f.input :level %>
-                <%= f.input :years_of_experience %>
-                <div class="modal-footer">
-                  <%= f.submit "add skill", class: "site-btn" %>
-                </div>
-              <% end %>
-
-              </div>
             <% end %>
             </div>
           </div>
