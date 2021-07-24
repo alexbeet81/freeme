@@ -28,6 +28,23 @@ html {
   padding: 0;
 }
 
+.get-started-btn {
+  font-size: 24px;
+  color: white;
+  background: #6E8FBC;
+  height: auto;
+  width: 80px;
+  border: none;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.get-started-btn:hover {
+  color: white;
+  background-color: #0275d8;
+  text-decoration: none;
+}
+
 .site-btn {
   color: white;
   background: #6E8FBC;
@@ -54,25 +71,22 @@ html {
 }
 
 .container1 {
-  height: 60%;
   display: flex;
+  height: 90vh;
   align-items: center;
-  justify-content: right;
+  justify-content: center;
 }
 
 .first-img{
-  height: 600px;
-  position: relative;
-  right: 60%;
+  height: 500px;
 }
 
-.text1{
-  position: absolute;
+.text1 {
+  color: #4C4C4C;
   text-align: right;
-  padding: 50px;
   font-size: 44px;
-  line-height: 70px;
-  z-index: 1;
+  line-height: 1.6;
+  font-weight: 300;
 }
 
 .image{
@@ -81,8 +95,7 @@ html {
 }
 
 
-.home-btn{
-
+.home-btn {
   color: white;
   font-size: 30px;
   padding:10px;
