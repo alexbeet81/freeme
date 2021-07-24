@@ -17,6 +17,8 @@ class Api::V1::ProjectsController < Api::V1::BaseController
     params[:position].each do |e|
       project = Project.find_by_id(e[:project])
       project.position = e[:position]
+
+      project.save
     end
   end
 
