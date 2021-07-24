@@ -23,4 +23,4 @@ const fetch = require('node-fetch')
 // })
 // }
 
-export {getIcon}
+// export {getIcon}

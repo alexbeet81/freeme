@@ -5,4 +5,8 @@ class ExperiencePolicy < CustomPolicy
     # scope.where(user: user)
     end
   end
+
+  def update_positions?
+    true
+  end
 end

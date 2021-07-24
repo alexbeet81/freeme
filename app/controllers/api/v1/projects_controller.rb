@@ -16,6 +16,7 @@ class Api::V1::ProjectsController < Api::V1::BaseController
   def update_positions
     params[:position].each do |e|
       project = Project.find_by_id(e[:project])
+      # binding.pry
       project.position = e[:position]
 
       project.save

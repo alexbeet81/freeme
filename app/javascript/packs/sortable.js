@@ -15,6 +15,12 @@ const initSortable = () => {
     animation: 150,
   });
 
+  const sortExperience = document.querySelector('#sort-experience');
+
+  let sortableExperience = Sortable.create(sortExperience, {
+    ghostClass: "ghost",
+    animation: 150,
+  })
 
   document.querySelector('#save-skill').addEventListener('click', (e) => {
     let order = sortableSkill.toArray();
@@ -44,11 +50,30 @@ const initSortable = () => {
     const newPositions = []
 
     document.querySelectorAll('#sort-project li').forEach((e, index) => {
-      console.log(e.dataset.project, index)
       newPositions.push({project: e.dataset.project, position: index})
     })
 
     fetch(`http://localhost:3000/api/v1/projects`, {
+      method: 'POST',
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify({
+        position: newPositions
+      })
+    })
+  })
+
+  document.querySelector('#save-experience').addEventListener('click', (e) => {
+    let order = sortableExperience.toArray();
+
+    const newPositions = []
+
+    document.querySelectorAll('#sort-experience li').forEach((e, index) => {
+      newPositions.push({experience: e.dataset.experience, position: index})
+    })
+
+    fetch(`http://localhost:3000/api/v1/experiences`, {
       method: 'POST',
       headers: {
         "Content-type": "application/json",
