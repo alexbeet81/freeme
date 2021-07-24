@@ -4,4 +4,8 @@ class ProjectPolicy < CustomPolicy
       scope.all
     end
   end
+
+  def update_positions
+    true
+  end
 end
