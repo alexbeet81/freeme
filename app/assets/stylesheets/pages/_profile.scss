@@ -20,6 +20,19 @@
   --btnColor: black;
 }
 
+.icon-btn-plus {
+  color: #6E8FBC;
+  border: none;
+  background-color: transparent;
+  margin-left: 1rem;
+}
+
+.icon-btn-plus:hover {
+  color: #0275d8;
+  border: none;
+  background-color: #f5f5f5;
+}
+
 .pr-main-container {
   width:  100%;
   margin:  0 auto;
@@ -177,7 +190,7 @@
 .pr-cont-header {
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
-  color: var(--mainText);
+  color: slategrey;
   font-size: 2rem;
   margin: 2rem;
   padding: 1rem 1rem;
