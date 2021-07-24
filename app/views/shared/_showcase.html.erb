@@ -66,11 +66,12 @@
   <div class="sc-exp-grid">
     <% @experiences.each do |experience| %>
     <div class="sc-exp-card">
-      <div class="sc-exp-card-img">
+      <!-- <div class="sc-exp-card-img">
         <%= cl_image_tag experience.photo.key, class: 'sc-exp-card-img' %>
-      </div>
+      </div> -->
       <div class="sc-exp-card-body">
         <h2><%= experience.role %></h2>
+        <h3><%= experience.company %>, <%= experience.location %></h3>
         <p><%= experience.summary %></p>
         <p class="sc-exp-card-body-date"><%= experience.start_date.strftime("%B #{experience.start_date.day.ordinalize} %Y") %> to <%= experience.end_date.strftime("%B #{experience.end_date.day.ordinalize} %Y") %></p>
       </div>
