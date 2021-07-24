@@ -10,6 +10,7 @@ Rails.application.routes.draw do
       resources :skills, only: [:show, :update, :destroy]
       resources :projects, only: [:update, :destroy]
       resources :experiences, only: [:update, :destroy]
+      post "/skills", to: "skills#update_positions"
     end
   end
 

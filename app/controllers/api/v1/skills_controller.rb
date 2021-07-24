@@ -2,6 +2,7 @@ class Api::V1::SkillsController < Api::V1::BaseController
   # acts_as_token_authentication_handler_for User, only: [:update]
   before_action :set_skill, only: [:show, :update]
   before_action :set_user, only: [:update]
+  skip_after_action :verify_authorized
 
   def show; end
 
@@ -11,6 +12,17 @@ class Api::V1::SkillsController < Api::V1::BaseController
       # render 'users/show'
     else
       render_error
+    end
+  end
+
+  def update_positions
+    params[:position].each do |e|
+      e[:position]
+      e[:skill]
+      skill = Skill.find_by_id(e[:skill])
+      skill.position = e[:position]
+
+      skill.save
     end
   end
 
@@ -26,7 +38,7 @@ class Api::V1::SkillsController < Api::V1::BaseController
   end
 
   def skill_params
-    params.require(:skill).permit(:position)
+    params.require(:skill).permit(:skill_name, :position)
   end
 
   def render_error

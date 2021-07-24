@@ -81,7 +81,7 @@
 
         <ul id="sortlist">
         <% @skills.each_with_index do |skill, index| %>
-          <li draggable='true' data-id="<%= index %>">
+          <li draggable='true' data-skill="<%= skill.id %>" data-id="<%= index %>">
             <div class="pr-skills-card">
               <%= skill.skill_name %>
               <%= skill.level %>

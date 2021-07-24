@@ -55,34 +55,54 @@ const initSortable = () => {
 
   document.querySelector('#save-skill').addEventListener('click', (e) => {
     let order = sortable.toArray();
-    // console.log(order)
-    // order.forEach( e => console.log(e))
+    console.log(order)
+    console.log(order.indexOf('2'));
 
+    // set all posotions
 
-    // order.forEach( position => {
-    //   fetch(`http://localhost:3000/api/v1/users/6-super_mario`, {
-    //     method: 'PATCH',
-    //     headers: {
-    //       "Content-type": "application/json",
-    //       "X-User-Email": "super@mario.com",
-    //       "X-User-Token": "2cXcadDzZk4s8fXySgFb"
-    //     },
-    //     body: JSON.stringify([{
-    //       "op": "replace",
-    //       "path": "/skills/0/position",
-    //       "value": "2"
-    //     }])
-    //   })
-      // .then( response => response.json())
-      // .then( response => response.skills.forEach( e => console.log(e)))
+    const newPositions = []
+    // get all skill ids
+    document.querySelectorAll('#sortlist li').forEach((e, index) => {
+      console.log(e.dataset.skill, index)
+      newPositions.push({skill: e.dataset.skill, position: index})
+    })
+
+    console.log(newPositions);
+    // get all positions
+    // document.querySelectorAll('#sortlist li').forEach( e => {
+    //   console.log(e.dataset.id)
     // })
+    // get all new positions
+    // update all positions
 
+    fetch(`http://localhost:3000/api/v1/skills`, {
+      method: 'POST',
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify({
+        position: newPositions
+      })
+    })
 
-    fetch(`http://localhost:3000/api/v1/users/6-super_mario`)
-      .then(res => res.json())
-      .then(res => res.skills.forEach( skill => {
-        console.log(skill.id)
-      }))
+    // fetch(`http://localhost:3000/api/v1/users/6-super_mario`)
+    //   .then(res => res.json())
+    //   .then(res => res.skills.forEach( skill => {
+    //     // console.log(skill.id)
+    //     fetch(`http://localhost:3000/api/v1/skills/${skill.id}`, {
+    //       method: 'PATCH',
+    //       headers: {
+    //         "Content-type": "application/json",
+    //         // "X-User-Email": "super@mario.com",
+    //         // "X-User-Token": "2cXcadDzZk4s8fXySgFb"
+    //       },
+    //       body: JSON.stringify({
+    //         skill_name: "this is a test"
+    //       })
+    //     })
+    //     .then(res => res.json())
+    //     .then(res => console.log(res))
+    //   }))
     // fetch(`http://localhost:3000/api/v1/users/6-super_mario`, {
     //   method: 'PATCH',
     //   headers: {
