@@ -43,7 +43,7 @@ class UsersController < ApplicationController
   end
 
   def set_skills
-    @skills = Skill.where(user_id: @user.id)
+    @skills = Skill.where(user_id: @user.id).order(position: :asc)
   end
 
   def set_projects

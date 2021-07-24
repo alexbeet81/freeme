@@ -78,8 +78,8 @@
       <div class="pr-skills-grid">
 
         <ul id="sortlist">
-        <% @skills.each do |skill| %>
-          <li draggable='true'>
+        <% @skills.each_with_index do |skill, index| %>
+          <li draggable='true' data-skill="<%= skill.id %>" data-id="<%= index %>">
             <div class="pr-skills-card">
               <div class="pr-skills-info">
                 <%= skill.skill_name %>
@@ -123,6 +123,7 @@
           </div>
         </div>
         <% end %>
+        <button id="save-skill">SAVE!</button>
         </ul>
 
       </div>
