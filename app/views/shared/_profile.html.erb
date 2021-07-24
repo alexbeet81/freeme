@@ -274,23 +274,24 @@
       <div class="pr-exp-grid">
         <% @experiences.each do |experience| %>
         <div class="pr-exp-card">
-          <div class="experience" id="experience-<%= experience.id %>">
-            <h2><%= experience.experience_name %></h2>
-            <h2><%= experience.company %></h2>
-            <h2><%= experience.role %></h2>
-            <h2><%= experience.location %></h2>
-            <h2><%= experience.summary %></h2>
-            <h2><%= experience.start_date.strftime("%B #{experience.start_date.day.ordinalize} %Y") %></h2>
-            <h2><%= experience.end_date.strftime("%B #{experience.end_date.day.ordinalize} %Y") %></h2>
+          <div class="pr-exp-body">
+
+            <div class="one"><h2><%= experience.company %></h2></div>
+
+            <div class="two"><h2><%= experience.role %></h2></div>
+
+            <div class="three"><h6><%= experience.summary %></h6></div>
+
+            <div class="four"><h2><%= experience.start_date.strftime("%B #{experience.start_date.day.ordinalize} %Y") %></h2>
+            <h2><%= experience.end_date.strftime("%B #{experience.end_date.day.ordinalize} %Y") %></h2></div>
+
           </div>
 
           <button type="button" class="icon-btn" data-toggle="modal" data-target="#editExperienceModal<%= experience.id %>"><i class="fa fa-edit"></i></button>
 
-          <%= link_to experience_path(experience), method: :delete,
-                                                       class: 'icon-btn',
-                                                       data: { confirm: 'Are you sure you want to delete this experience?'} do %>
-                                                       <i class="far fa-trash-alt"></i>
-                                                       <% end %>
+          <%= link_to experience_path(experience), method: :delete, class: 'icon-btn', data: { confirm: 'Are you sure you want to delete this experience?'} do %>
+            <i class="far fa-trash-alt"></i>
+                  <% end %>
 
         </div>
 
@@ -305,13 +306,12 @@
               </div>
               <div class="modal-body">
                 <%= simple_form_for(experience) do |f| %>
-                  <%= f.input :experience_name %>
+
                   <%= f.input :company %>
                   <%= f.input :role %>
                   <%= f.input :start_date %>
                   <%= f.input :end_date %>
-                  <%= f.input :location %>
-                  <%= f.input :website_url %>
+
                   <%= f.input :summary %>
                   <%= f.submit "edit experience", class: "site-btn" %>
               <% end %>
@@ -335,14 +335,13 @@
           </div>
           <div class="modal-body">
             <%= simple_form_for([@user, @new_experience]) do |f| %>
-              <%= f.input :experience_name %>
+
               <%= f.input :company %>
               <%= f.input :role %>
               <%= f.input :start_date %>
               <%= f.input :end_date %>
               <%= f.input :location %>
-              <%= f.input :website_url %>
-              <%= f.input :summary %>
+
               <%= f.submit "add experience", class: "site-btn" %>
             <% end %>
           </div>
