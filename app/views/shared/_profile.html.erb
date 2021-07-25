@@ -412,7 +412,11 @@
                     <div class="under-input-text">paste a link to your CV</div>
                     <div class="modal-footer">
                       <button type="button" class="modal-cancel-button" data-dismiss="modal">cancel</button>
-                      <%= f.submit "Add", class: "modal-button" %>
+                        <% if @user.cv.present? %>
+                          <%= f.submit "Update", class: "modal-button" %>
+                        <% else %>
+                          <%= f.submit "Add", class: "modal-button" %>
+                        <% end %>
                     </div>
                   <% end %>
                 </div>
@@ -444,8 +448,15 @@
           <div class="modal-body">
             <div>
               <%= simple_form_for(@user) do |f| %>
-                <%= f.input :about %>
-                <%= f.submit "Add", class: "site-btn" %>
+                <%= f.input :about, as: :text, placeholder: "Write a little bit about yourself." %>
+                <div class="modal-footer">
+                <button type="button" class="modal-cancel-button" data-dismiss="modal">cancel</button>
+                  <% if @user.about.present? %>
+                    <%= f.submit "Update", class: "modal-button" %>
+                  <% else %>
+                    <%= f.submit "Add", class: "modal-button" %>
+                  <% end %>
+                </div>
               <% end %>
             </div>
           </div>
