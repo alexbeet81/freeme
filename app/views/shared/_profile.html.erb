@@ -269,7 +269,11 @@
                 <h2><%= experience.role %></h2>
                 <h3><%= experience.company %>, <%= experience.location %></h3>
                 <p><%= experience.summary %></p>
-                <p class="sc-exp-card-body-date"><%= experience.start_date.strftime("%B #{experience.start_date.day.ordinalize} %Y") %> to <%= experience.end_date.strftime("%B #{experience.end_date.day.ordinalize} %Y") %></p>
+                <% if experience.end_date == nil %>
+                  <p class="sc-exp-card-body-date"><%= experience.start_date.strftime("%B #{experience.start_date.day.ordinalize} %Y") %> to Present</p>
+                <% else %>
+                  <p class="sc-exp-card-body-date"><%= experience.start_date.strftime("%B #{experience.start_date.day.ordinalize} %Y") %> to <%= experience.end_date.strftime("%B #{experience.end_date.day.ordinalize} %Y") %></p>
+                <% end %>
                 <button type="button" class="icon-btn" data-toggle="modal" data-target="#editExperienceModal<%= experience.id %>"><i class="fa fa-edit"></i></button>
 
                   <%= link_to experience_path(experience), method: :delete, class: 'icon-btn', data: { confirm: 'Are you sure you want to delete this experience?'} do %>
@@ -324,8 +328,8 @@
 
               <%= f.input :company %>
               <%= f.input :role %>
-              <%= f.input :start_date %>
-              <%= f.input :end_date %>
+              <%= f.input :start_date, as: :date %>
+              <%= f.input :end_date, as: :date, include_blank: true, prompt: "Present" %>
               <%= f.input :location %>
 
               <%= f.submit "add experience", class: "site-btn" %>

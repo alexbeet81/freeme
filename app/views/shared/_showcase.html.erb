@@ -72,7 +72,11 @@
         <h2><%= experience.role %></h2>
         <h3><%= experience.company %>, <%= experience.location %></h3>
         <p><%= experience.summary %></p>
-        <p class="sc-exp-card-body-date"><%= experience.start_date.strftime("%B #{experience.start_date.day.ordinalize} %Y") %> to <%= experience.end_date.strftime("%B #{experience.end_date.day.ordinalize} %Y") %></p>
+        <% if experience.end_date == nil %>
+          <p class="sc-exp-card-body-date"><%= experience.start_date.strftime("%B #{experience.start_date.day.ordinalize} %Y") %> to Present</p>
+        <% else %>
+          <p class="sc-exp-card-body-date"><%= experience.start_date.strftime("%B #{experience.start_date.day.ordinalize} %Y") %> to <%= experience.end_date.strftime("%B #{experience.end_date.day.ordinalize} %Y") %></p>
+        <% end %>
       </div>
     </div>
     <% end %>
