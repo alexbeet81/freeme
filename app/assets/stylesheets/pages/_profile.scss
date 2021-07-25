@@ -284,6 +284,15 @@
 
 }
 
+.pr-projects-container-no-projects {
+  display: flex;
+  background-color: var(--backgroundcolor);
+  align-items: center;
+  height: 6rem;
+  margin: 2rem;
+  padding: 0 2rem;
+}
+
 .pr-project-card {
   height: 300px;
   width:  100%;
@@ -335,7 +344,7 @@ p.pr-card-descrition{
 
 /* below is the experience section */
 
-.pr-exp-container {
+.pr-exp-container, .pr-exp-container-no-exp {
   display: grid;
 
   background-color: var(--backgroundcolor);
