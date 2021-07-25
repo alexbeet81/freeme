@@ -22,9 +22,12 @@
                   <%= simple_form_for(@user) do |f| %>
                     <%= f.input :first_name %>
                     <%= f.input :last_name %>
-                    <%= f.input :headline %>
+                    <%= f.input :headline, placeholder: "write a short attention getter!" %>
                     <%= f.input :photo, as: :file %>
-                    <%= f.submit "Edit", class: "site-btn" %>
+                    <div class="modal-footer">
+                      <button type="button" class="modal-cancel-button" data-dismiss="modal">cancel</button>
+                      <%= f.submit "update", class: "modal-button" %>
+                    </div>
                   <% end %>
                 </div>
               </div>
