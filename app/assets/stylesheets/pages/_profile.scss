@@ -344,7 +344,7 @@ p.pr-card-descrition{
 
 /* below is the experience section */
 
-.pr-exp-container {
+.pr-exp-container, .pr-exp-container-no-exp {
   display: grid;
 
   background-color: var(--backgroundcolor);

@@ -228,12 +228,8 @@
           <% end %>
           <button id="save-project">SAVE!</button>
         </ul>
+      </div>
       <% end %>
-
-
-
-
-    </div>
 
     <div class="modal fade" id="addProjectModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
@@ -267,7 +263,11 @@
 
     <h1 class="pr-cont-header">Experience<button id="addExpBtn" type="button" class="icon-btn-plus" data-toggle="modal" data-target="#addExperienceModal"><i class="fa fa-plus" aria-hidden="true"></i>
     </button></h1>
-
+    <% if @experiences.empty? %>
+    <div class="pr-exp-container-no-exp">
+        <h3>You must have some kind of experience, right?</h3>
+    </div>
+    <% else %>
     <div class="pr-exp-container">
 
       <div class="pr-exp-grid">
@@ -323,8 +323,7 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel"><i class="fa fa-plus" aria-hidden="true"></i>
-</h5>
+            <h5 class="modal-title" id="exampleModalLabel"><i class="fa fa-plus" aria-hidden="true"></i></h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -345,6 +344,7 @@
         </div>
       </div>
     </div>
+    <% end %>
   </section>
   <!-- end of experience section -->
 
