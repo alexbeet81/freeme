@@ -298,8 +298,7 @@
                     <%= f.input :company %>
                     <%= f.input :role %>
                     <%= f.input :start_date %>
-                    <%= f.input :end_date %>
-
+                    <%= f.input :end_date, as: :date, include_blank: true, prompt: "Present" %>
                     <%= f.input :summary %>
                     <%= f.submit "Update", class: "site-btn" %>
                 <% end %>
