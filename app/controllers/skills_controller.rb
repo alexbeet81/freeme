@@ -8,7 +8,7 @@ class SkillsController < ApplicationController
     @skill.user = @user
     
     if @skill.save
-      redirect_to user_path(@user)
+      redirect_to (user_path(@skill.user) + "#skill-#{@skill.id}")
     else
       # Can't render show - where should this lead to?
       render 'users/show'

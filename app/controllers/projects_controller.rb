@@ -8,7 +8,7 @@ class ProjectsController < ApplicationController
     @project.user = @user
 
     if @project.save
-      redirect_to user_path(@user)
+      redirect_to (user_path(@project.user) + "#project-#{@project.id}")
     else
       # Can't render show - where should this lead to?
       render 'users/show'
