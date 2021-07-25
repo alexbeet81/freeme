@@ -325,8 +325,8 @@
           <div class="modal-body">
             <%= simple_form_for([@user, @new_experience]) do |f| %>
 
-              <%= f.input :company %>
-              <%= f.input :role %>
+              <%= f.input :company, placeholder: "ex: google" %>
+              <%= f.input :role, placeholder: "ex: CEO" %>
               <div class="d-flex justify-content-between">
                 <%= f.input :start_date, as: :date, label: "Start Date",
                             start_year: 1970, end_year: Date.today.year,
@@ -336,7 +336,8 @@
                             start_year: 1970, discard_day: true %>
               </div>
               <%= f.input :location, placeholder: "ex: Shanghai" %>
-              <%= f.input :summary, as: :text, placeholder: "say more about this experience" %>
+              <%= f.input :summary, as: :text, placeholder: "What was it like being CEO of google?" %>
+              <div class="under-input-text">Character limit: 250</div>
           </div>
           <div class="modal-footer">
             <button type="button" class="modal-cancel-button" data-dismiss="modal">cancel</button>
