@@ -218,10 +218,14 @@
                     <div class="project" id="project-<%= project.id %>">
                       <%= project.title %>
                       <%= simple_form_for(project) do |f| %>
-                        <%= f.input :title %>
-                        <%= f.input :description, maxlength: true %>
+                        <%= f.input :title, placeholder: "What is the name of the project?" %>
+                        <%= f.input :description, as: :text, placeholder: "describe your project.", maxlength: true %>
+                        <div class="under-input-text">Character limit: 250</div>
                         <%= f.input :photo, as: :file %>
-                        <%= f.submit "Update", class: "site-btn" %>
+                        <div class="modal-footer">
+                          <button type="button" class="modal-cancel-button" data-dismiss="modal">cancel</button>
+                          <%= f.submit "update", class: "modal-button" %>
+                        </div>
                       <% end %>
                     </div>
                   </div>
@@ -238,18 +242,20 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <h5 class="modal-title" id="exampleModalLabel">Project</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body">
             <%= simple_form_for([@user, @new_project]) do |f| %>
-                <%= f.input :title %>
-                <%= f.input :description, maxlength: true %>
+                <%= f.input :title, placeholder: "What is the name of the project?" %>
+                <%= f.input :description, as: :text, placeholder: "describe your project.", maxlength: true %>
+                <div class="under-input-text">Character limit: 250</div>
                 <%= f.input :photo, as: :file %>
                 <div class="modal-footer">
-                  <%= f.submit "add project", class: "site-btn" %>
+                  <button type="button" class="modal-cancel-button" data-dismiss="modal">cancel</button>
+                  <%= f.submit "add", class: "modal-button" %>
                 </div>
               <% end %>
           </div>
@@ -319,7 +325,9 @@
                                   start_year: 1970, discard_day: true %>
                     </div>
                     <%= f.input :location, placeholder: "ex: Shanghai" %>
-                    <%= f.input :summary, as: :text, placeholder: "What was it like being CEO of google?" %>
+                    <%= f.input :summary, as: :text,
+                                placeholder: "What was it like being CEO of google?",
+                                maxlength: true %>
                     <div class="under-input-text">Character limit: 250</div>
                 </div>
                 <div class="modal-footer">
@@ -361,7 +369,8 @@
                             start_year: 1970, discard_day: true %>
               </div>
               <%= f.input :location, placeholder: "ex: Shanghai" %>
-              <%= f.input :summary, as: :text, placeholder: "What was it like being CEO of google?" %>
+              <%= f.input :summary, as: :text, placeholder: "What was it like being CEO of google?",
+                          maxlength: true %>
               <div class="under-input-text">Character limit: 250</div>
           </div>
           <div class="modal-footer">
@@ -399,8 +408,12 @@
               <div class="modal-body">
                 <div>
                   <%= simple_form_for(@user) do |f| %>
-                    <%= f.input :cv %>
-                    <%= f.submit "Add CV", class: "site-btn" %>
+                    <%= f.input :cv, label: "CV" %>
+                    <div class="under-input-text">paste a link to your CV</div>
+                    <div class="modal-footer">
+                      <button type="button" class="modal-cancel-button" data-dismiss="modal">cancel</button>
+                      <%= f.submit "Add", class: "modal-button" %>
+                    </div>
                   <% end %>
                 </div>
               </div>
