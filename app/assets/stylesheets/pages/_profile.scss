@@ -431,6 +431,19 @@ p.pr-card-descrition{
   color: var(--mainText);
  }
 
+/* below is s5 and s6 */
+
+.s5, .s6 {
+  width: 50%;
+}
+
+/* font options for blue-text */
+
+.blue-text-h3 {
+  font-size: 18px;
+  color: #6e8fbd;
+}
+
 /* custom modal */
 
 .modal-body
