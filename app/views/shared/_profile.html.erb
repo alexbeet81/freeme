@@ -327,18 +327,20 @@
 
               <%= f.input :company %>
               <%= f.input :role %>
-              <%= f.input :start_date, as: :date, label: "Start Date",
-                          start_year: 1970, end_year: Date.today.year,
-                          end_date: Date.today, discard_day: true %>
-              <%= f.input :end_date, as: :date, include_blank: true,
-                          prompt: "Present", label: "End Date (optional)",
-                          start_year: 1970, discard_day: true %>
+              <div class="d-flex justify-content-between">
+                <%= f.input :start_date, as: :date, label: "Start Date",
+                            start_year: 1970, end_year: Date.today.year,
+                            end_date: Date.today, discard_day: true %>
+                <%= f.input :end_date, as: :date, include_blank: true,
+                            prompt: "Present", label: "End Date (optional)",
+                            start_year: 1970, discard_day: true %>
+              </div>
               <%= f.input :location, placeholder: "ex: Shanghai" %>
               <%= f.input :summary, as: :text, placeholder: "say more about this experience" %>
           </div>
           <div class="modal-footer">
             <button type="button" class="modal-cancel-button" data-dismiss="modal">cancel</button>
-            <%= f.submit "add experience", type: 'button', class: "modal-button " %>
+            <%= f.submit "add", type: 'button', class: "modal-button " %>
           </div>
             <% end %>
           </div>
