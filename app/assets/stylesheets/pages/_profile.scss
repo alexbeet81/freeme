@@ -473,3 +473,23 @@ p.pr-card-descrition{
   font-weight: bold;
   color: white;
 }
+
+.modal-button, .modal-cancel-button {
+  border: none;
+  border-radius: 2px;
+  color: white;
+  height: 38;
+  padding: 0.375rem 0.75rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1rem;
+}
+
+.modal-cancel-button {
+  background-color: grey;
+}
+
+.modal-button {
+  background-color: #6e8fbd;
+}
