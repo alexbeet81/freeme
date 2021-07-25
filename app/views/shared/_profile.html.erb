@@ -168,7 +168,7 @@
 
         <% @projects.each_with_index do |project, index| %>
         <li draggable="true" data-project="<%= project.id %>" data-id="<%= index %>">
-          <div class="pr-project-card">
+          <div class="pr-project-card" id="project-<%= project.id %>">
 
             <div class="pr-project-card-body">
               <div class="project-left">
@@ -264,7 +264,7 @@
         <ul id="sort-experience" class="sort-list">
           <% @experiences.each_with_index do |experience, index| %>
           <li draggable="true" data-experience="<%= experience.id %>" data-id="<%= index %>">
-            <div class="pr-exp-card">
+            <div class="pr-exp-card" id="experience-<%= experience.id %>">
               <div class="sc-exp-card-body">
                 <h2><%= experience.role %></h2>
                 <h3><%= experience.company %>, <%= experience.location %></h3>
