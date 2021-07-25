@@ -346,15 +346,15 @@
 
     <div class="pr-exp-container">
       <% if @user.cv.present? %>
-        <button type="button" class="site-btn" data-toggle="modal" data-target="#addCVModal">Update CV</button>
+        <h3 class="blue-text-h3">Your CV will redirect to the following link: <%= @user.cv %></h1>
       <% else %>
-        <button type="button" class="site-btn" data-toggle="modal" data-target="#addCVModal">Add CV</button>
+        <h2>Create a link to your CV</h2>
       <% end %>
       <div class="modal fade" id="addCVModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Copy and paste a link to your CV</h5>
+                <h5 class="modal-title" id="exampleModalLabel">link to your CV</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
