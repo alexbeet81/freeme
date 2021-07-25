@@ -8,7 +8,7 @@ class ExperiencesController < ApplicationController
     @experience.user = @user
 
     if @experience.save
-      redirect_to user_path(@user)
+      redirect_to (user_path(@experience.user) + "#experience-#{@experience.id}")
     else
       # Can't render show - where should this lead to?
       render 'users/show'
