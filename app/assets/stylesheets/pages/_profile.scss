@@ -430,3 +430,46 @@ p.pr-card-descrition{
  .pr-footer h5 {
   color: var(--mainText);
  }
+
+/* custom modal */
+
+.modal-body
+{
+    background-color: #faf4e1;
+}
+
+.modal-content
+{
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    background-color: #faf4e1;
+}
+
+.modal-footer
+{
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    -webkit-border-bottom-left-radius: 6px;
+    -webkit-border-bottom-right-radius: 6px;
+    -moz-border-radius-bottomleft: 6px;
+    -moz-border-radius-bottomright: 6px;
+}
+
+.modal-header
+{
+    background-color: #6e8fbd;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    -webkit-border-top-left-radius: 6px;
+    -webkit-border-top-right-radius: 6px;
+    -moz-border-radius-topleft: 6px;
+    -moz-border-radius-topright: 6px;
+}
+
+.modal-title {
+  padding: 0;
+  font-size: 26px;
+  font-weight: bold;
+  color: white;
+}
