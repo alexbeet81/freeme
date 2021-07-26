@@ -258,6 +258,14 @@
   background-color: #587499;
 }
 
+.custom-control-input:checked ~ .custom-control-label::before {
+  background-color: #6e8fbd;
+  border-color: #6e8fbd;
+}
+
+.custom-control-label::before {
+  border-color: #6e8fbd;
+}
 /* below is the skills section */
 
 .pr-skills-container,
