@@ -257,6 +257,38 @@
 .save-button:hover {
   background-color: #587499;
 }
+/* below is the what to do section */
+
+.pr-whattodo-container {
+  // display: flex;
+  background-color: var(--backgroundcolor);
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem;
+  padding: 0 2rem;
+
+}
+
+.pr-whattodo-container, h2, h3 {
+  color: #6e8fbd;
+}
+
+.pr-whattodo-container, h2 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.pr-whattodo-container, h3 {
+  font-size: 18px;
+}
+
+.whattodo-div {
+  padding: 1rem 0rem 1rem 0rem;
+}
+
+.whattodo-header {
+  padding: 1rem 0rem 0rem 0rem;
+}
 
 /* below is the skills section */
 
@@ -264,7 +296,8 @@
 .pr-projects-container,
 .pr-exp-container,
 .pr-projects-container-no-projects,
-.pr-exp-container-no-exp {
+.pr-exp-container-no-exp,
+.pr-whattodo-container {
   box-shadow: 1px 1px 4px 0px rgba(0,0,0,0.2);
   -webkit-box-shadow: 1px 1px 4px 0px rgba(0,0,0,0.2);
   -moz-box-shadow: 1px 1px 4px 0px rgba(0,0,0,0.2);
