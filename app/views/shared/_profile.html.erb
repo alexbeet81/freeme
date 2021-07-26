@@ -79,8 +79,17 @@
 
   <!-- skills section below -->
   <section class="s2">
-    <h1 class="pr-cont-header">Skills<button type="button" class="icon-btn-plus" data-toggle="modal" data-target="#addSkillModal"><i class="fa fa-plus" aria-hidden="true"></i>
-    </button></h1>
+    <div class="pr-cont-header">
+      <h1>Skills</h1>
+      <button type="button" class="icon-btn-plus" data-toggle="modal" data-target="#addSkillModal">
+        <i class="fa fa-plus" aria-hidden="true"></i>
+      </button>
+      <% unless @skills.empty? %>
+        <button class="save-button" id="save-skill">
+          save card order
+        </button>
+      <% end  %>
+    </div>
     <div class="pr-skills-container">
 
       <% if @skills.empty? %>
@@ -138,7 +147,6 @@
           </div>
           <% end %>
           </ul>
-          <button id="save-skill">SAVE!</button>
         </div>
 
       <% end %>

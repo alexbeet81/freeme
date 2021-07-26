@@ -227,15 +227,31 @@
 
 /* below is the container header skills / projects / exp */
 .pr-cont-header {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 400;
-
   color: var(--secondaryText);
   font-size: 2rem;
   margin: 2rem;
   padding: 1rem 1rem;
+  display: flex;
+  justify-content: flex-start;
 }
 
+.pr-cont-header, h1 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+}
+
+.pr-cont-header, .save-button {
+  align-self: center;
+}
+
+.save-button {
+  background-color: #6e8fbd;
+  margin-left: 1rem;
+}
+
+.save-button:hover {
+  background-color: #587499;
+}
 /* below is the skills section */
 
 .pr-skills-container {
@@ -497,7 +513,7 @@ p.pr-card-descrition{
   color: white;
 }
 
-.modal-button, .modal-cancel-button {
+.modal-button, .modal-cancel-button, .save-button {
   border: none;
   border-radius: 4px;
   color: white;
