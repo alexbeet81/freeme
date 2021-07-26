@@ -1,6 +1,7 @@
 const available = () => {
-  document.querySelector('#available-switch').addEventListener('click', (e) => {
-    console.log('test');
+  document.querySelector('#test-button').addEventListener('click', (e) => {
+    console.log(e)
+    console.log('test')
   })
 }
 
