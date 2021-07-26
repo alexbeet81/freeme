@@ -46,8 +46,7 @@
               <div class="threeUser"><h3>Available for hire NOW!</h3></div>
               <div class="avaible-container">
                 <h2>click this switch to let people know you are available for hire!</h2>
-                <button style="button" id="test-button">TEST BUTTON</button>
-                <div class="custom-control custom-switch" id="available-switch">
+                <div class="custom-control custom-switch" data-user="<%= @user.id %>" id="available-switch">
                   <input type="checkbox" class="custom-control-input" id="avaibleSwitch">
                   <label class="custom-control-label" for="avaibleSwitch">available</label>
                 </div>
