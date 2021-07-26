@@ -32,10 +32,13 @@
   color: #587499;
 }
 
+.pr-background {
+  background: linear-gradient(180deg, rgba(248, 239, 208, 0), rgba(248, 239, 208, 0.8) 90% );
+}
+
 .pr-main-container {
   width:  100%;
   margin:  0 auto;
-  background: linear-gradient(180deg, rgba(248, 239, 208, 0), rgba(248, 239, 208, 0.8) 90% );
   padding: 0 4rem 2rem 4rem;
   /*display:  flex;*/
 }
@@ -561,4 +564,22 @@ p.pr-card-descrition{
   font-size: 14px;
   margin-top: -16px;
   color: grey;
+}
+
+/* size control on large screens */
+
+ @media screen and (min-width: 1440px) {
+  .pr-main-container {
+    width: 1438px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  .pr-main-container {
+    width: 1438px;
+  }
+}
+@media screen and (min-width: 1900px) {
+  .pr-main-container {
+    width: 1438px;
+  }
 }

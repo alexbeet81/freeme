@@ -1,140 +1,29 @@
 <%= render 'shared/navbar' %>
+<div class="pr-background">
+  <div class="pr-main-container">
 
-<div class="pr-main-container">
+    <section class="s1">
 
-  <section class="s1">
+    <!-- banner section contains profile pic and headline -->
+      <div class="pr-banner-container">
+        <div class="pr-banner-title">
 
-  <!-- banner section contains profile pic and headline -->
-    <div class="pr-banner-container">
-      <div class="pr-banner-title">
-
-        <div class="modal fade" id="editInfoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <div>
-                  <%= simple_form_for(@user) do |f| %>
-                    <%= f.input :first_name %>
-                    <%= f.input :last_name %>
-                    <%= f.input :headline, placeholder: "write a short attention getter!" %>
-                    <%= f.input :photo, as: :file %>
-                    <div class="modal-footer">
-                      <button type="button" class="modal-cancel-button" data-dismiss="modal">cancel</button>
-                      <%= f.submit "update", class: "modal-button" %>
-                    </div>
-                  <% end %>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-
-        <div class="left-column">
-          <div class="user-info">
-
-            <button id="user-info-btn" type="button" class="icon-btn" data-toggle="modal" data-target="#editInfoModal"><i class="fa fa-edit"></i></button>
-
-            <div class="oneUser"><h1>Hi, I'm <%= @user.first_name %></h1></div>
-            <div class="twoUser"><h2><%= @user.headline %></h2></div>
-            <div class="threeUser"><h3>Available for hire NOW!</h3></div>
-            <div class="oneTheme">
-              <h5 style="text-align: center; line-height: 0;">Personalize Theme</h5>
-            </div>
-            <div class="twoTheme">
-              <div data-mode='light' id="light-mode" class="theme-dot"></div>
-              <div data-mode='blue' id="blue-mode" class="theme-dot"></div>
-              <div data-mode='green' id="green-mode" class="theme-dot"></div>
-              <div data-mode='purple' id="purple-mode" class="theme-dot"></div>
-            </div>
-            <div class="threeTheme">
-              <p id="settings-note" >*Theme setting will be saved for next visit!</p>
-            </div>
-
-          </div>
-          <!-- <div class="theme-container">
-
-        </div> -->
-      </div>
-    </div>
-      <!-- user basic info end -->
-      <!-- user picture div start -->
-    <div class="pr-profile-pic">
-      <% if @user.photo.attached? %>
-        <%= cl_image_tag @user.photo.key, class: "pr-profile-pic" %>
-      <% else %>
-        <%= image_tag "avatar.svg", class: "sc-profile-pic" %>
-      <% end %>
-    </div>
-    <!-- user picture div end -->
-  </div>
-  </section>
-  <!-- end of banner section -->
-
-  <!-- skills section below -->
-  <section class="s2">
-    <div class="pr-cont-header">
-      <h1>Skills</h1>
-      <button type="button" class="icon-btn-plus" data-toggle="modal" data-target="#addSkillModal">
-        <i class="fa fa-plus" aria-hidden="true"></i>
-      </button>
-      <% unless @skills.empty? %>
-        <button class="save-button" id="save-skill">
-          save card order
-        </button>
-      <% end  %>
-    </div>
-    <div class="pr-skills-container">
-
-      <% if @skills.empty? %>
-        <h3 class="blue-text-h3">show off your skills!</h3>
-      <% else %>
-        <div class="pr-skills-grid">
-          <ul id="sort-skill" class="sort-list">
-          <% @skills.each_with_index do |skill, index| %>
-            <li draggable='true' data-skill="<%= skill.id %>" data-id="<%= index %>">
-              <div class="pr-skills-card">
-                <div class="pr-skills-info">
-                  <%= skill.skill_name %>
-
-                  <br>
-                  <%= skill.level %>
-                  <br>
-                  <%= skill.years_of_experience %>
-                  <br>
-                </div>
-                <div class="pr-skill-edit-btn">
-                  <button type="button" class="icon-btn" data-toggle="modal" data-target="#editSkillModal<%= skill.id %>"><i class="fa fa-edit"></i>
-                  </button>
-                  <%= link_to skill_path(skill), method: :delete,class: 'icon-btn', data: { confirm: 'Are you sure you want to delete this skill?' } do %>
-                    <i class="far fa-trash-alt"></i>
-                 <% end %>
-                </div>
-              </div>
-            </li>
-
-          <div class="modal fade" id="editSkillModal<%= skill.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal fade" id="editInfoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Edit Skill</h5>
+                  <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
                 <div class="modal-body">
-                  <div class="skill" id="skill-<%= skill.id %>">
-                    <%= skill.skill_name %>
-                    <%= simple_form_for(skill) do |f| %>
-                      <%= f.input :skill_name, placeholder: "ex: ruby on rails" %>
-                      <%= f.input :level, collection: %w(beginner intermediate expert) %>
-                      <%= f.input :years_of_experience %>
+                  <div>
+                    <%= simple_form_for(@user) do |f| %>
+                      <%= f.input :first_name %>
+                      <%= f.input :last_name %>
+                      <%= f.input :headline, placeholder: "write a short attention getter!" %>
+                      <%= f.input :photo, as: :file %>
                       <div class="modal-footer">
                         <button type="button" class="modal-cancel-button" data-dismiss="modal">cancel</button>
                         <%= f.submit "update", class: "modal-button" %>
@@ -142,106 +31,110 @@
                     <% end %>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-          <% end %>
-          </ul>
-        </div>
 
-      <% end %>
-      <div class="modal fade" id="addSkillModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Skill</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-            <%= simple_form_for([@user, @new_skill]) do |f| %>
-              <%= f.input :skill_name, placeholder: "ex: ruby on rails" %>
-              <%= f.input :level, placeholder: "How good are ya?", collection: %w(beginner intermediate expert) %>
-              <%= f.input :years_of_experience %>
-              <div class="modal-footer">
-                <button type="button" class="modal-cancel-button" data-dismiss="modal">cancel</button>
-                <%= f.submit "add", class: "modal-button" %>
               </div>
-            <% end %>
+            </div>
           </div>
+
+          <div class="left-column">
+            <div class="user-info">
+
+              <button id="user-info-btn" type="button" class="icon-btn" data-toggle="modal" data-target="#editInfoModal"><i class="fa fa-edit"></i></button>
+
+              <div class="oneUser"><h1>Hi, I'm <%= @user.first_name %></h1></div>
+              <div class="twoUser"><h2><%= @user.headline %></h2></div>
+              <div class="threeUser"><h3>Available for hire NOW!</h3></div>
+              <div class="oneTheme">
+                <h5 style="text-align: center; line-height: 0;">Personalize Theme</h5>
+              </div>
+              <div class="twoTheme">
+                <div data-mode='light' id="light-mode" class="theme-dot"></div>
+                <div data-mode='blue' id="blue-mode" class="theme-dot"></div>
+                <div data-mode='green' id="green-mode" class="theme-dot"></div>
+                <div data-mode='purple' id="purple-mode" class="theme-dot"></div>
+              </div>
+              <div class="threeTheme">
+                <p id="settings-note" >*Theme setting will be saved for next visit!</p>
+              </div>
+
+            </div>
+            <!-- <div class="theme-container">
+
+          </div> -->
         </div>
       </div>
- <!-- add skillmodal button -->
+        <!-- user basic info end -->
+        <!-- user picture div start -->
+      <div class="pr-profile-pic">
+        <% if @user.photo.attached? %>
+          <%= cl_image_tag @user.photo.key, class: "pr-profile-pic" %>
+        <% else %>
+          <%= image_tag "avatar.svg", class: "sc-profile-pic" %>
+        <% end %>
+      </div>
+      <!-- user picture div end -->
     </div>
-  </section>
-  <!-- end of skills section -->
+    </section>
+    <!-- end of banner section -->
 
-  <!-- projects section below -->
-  <section class="s3">
-
-    <div class="pr-cont-header">
-      <h1>Projects</h1>
-      <button type="button" class="icon-btn-plus" data-toggle="modal" data-target="#addProjectModal">
-        <i class="fa fa-plus" aria-hidden="true"></i>
-      </button>
-      <% unless @projects.empty? %>
-        <button class="save-button" id="save-project">
-          save card order
+    <!-- skills section below -->
+    <section class="s2">
+      <div class="pr-cont-header">
+        <h1>Skills</h1>
+        <button type="button" class="icon-btn-plus" data-toggle="modal" data-target="#addSkillModal">
+          <i class="fa fa-plus" aria-hidden="true"></i>
         </button>
-      <% end  %>
-    </div>
-
-      <% if @projects.empty? %>
-      <div class="pr-projects-container-no-projects">
-        <h3 class="blue-text-h3">What amazing projects have you worked on?</h3>
+        <% unless @skills.empty? %>
+          <button class="save-button" id="save-skill">
+            save card order
+          </button>
+        <% end  %>
       </div>
-      <% else %>
-      <div class="pr-projects-container">
-        <ul id="sort-project" class="sort-list">
-          <% @projects.each_with_index do |project, index| %>
-          <li draggable="true" data-project="<%= project.id %>" data-id="<%= index %>">
-            <div class="pr-project-card">
-              <div class="pr-project-card-body">
-                <div class="project-left">
-                  <h2><%= project.title %></h2>
+      <div class="pr-skills-container">
+
+        <% if @skills.empty? %>
+          <h3 class="blue-text-h3">show off your skills!</h3>
+        <% else %>
+          <div class="pr-skills-grid">
+            <ul id="sort-skill" class="sort-list">
+            <% @skills.each_with_index do |skill, index| %>
+              <li draggable='true' data-skill="<%= skill.id %>" data-id="<%= index %>">
+                <div class="pr-skills-card">
+                  <div class="pr-skills-info">
+                    <%= skill.skill_name %>
+
+                    <br>
+                    <%= skill.level %>
+                    <br>
+                    <%= skill.years_of_experience %>
+                    <br>
+                  </div>
+                  <div class="pr-skill-edit-btn">
+                    <button type="button" class="icon-btn" data-toggle="modal" data-target="#editSkillModal<%= skill.id %>"><i class="fa fa-edit"></i>
+                    </button>
+                    <%= link_to skill_path(skill), method: :delete,class: 'icon-btn', data: { confirm: 'Are you sure you want to delete this skill?' } do %>
+                      <i class="far fa-trash-alt"></i>
+                   <% end %>
+                  </div>
                 </div>
-                <div class="project-right">
-                  <button type="button" class="icon-btn" data-toggle="modal" data-target="#editProjectModal<%= project.id %>"><i class="fa fa-edit"></i></button>
+              </li>
 
-                  <%= link_to project_path(project), method: :delete,class: 'icon-btn', data: { confirm: 'Are you sure you want to delete this skill?' } do %>
-                        <i class="far fa-trash-alt"></i>
-                  <% end %>
-                </div>
-
-
-                <p class="pr-card-descrition"><%= project.description %></p>
-
-              </div>
-
-              <div class="pr-project-card-img">
-                <%= cl_image_tag project.photo.key, class: 'pr-project-card-img' %>
-              </div>
-            </div>
-          </li>
-
-          <div class="modal fade" id="editProjectModal<%= project.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade" id="editSkillModal<%= skill.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
               <div class="modal-dialog" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Edit Project</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Edit Skill</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                     </button>
                   </div>
                   <div class="modal-body">
-                    <div class="project" id="project-<%= project.id %>">
-                      <%= project.title %>
-                      <%= simple_form_for(project) do |f| %>
-                        <%= f.input :title, placeholder: "What is the name of the project?" %>
-                        <%= f.input :description, as: :text, placeholder: "describe your project.", maxlength: true %>
-                        <div class="under-input-text">Character limit: 250</div>
-                        <%= f.input :photo, as: :file %>
+                    <div class="skill" id="skill-<%= skill.id %>">
+                      <%= skill.skill_name %>
+                      <%= simple_form_for(skill) do |f| %>
+                        <%= f.input :skill_name, placeholder: "ex: ruby on rails" %>
+                        <%= f.input :level, collection: %w(beginner intermediate expert) %>
+                        <%= f.input :years_of_experience %>
                         <div class="modal-footer">
                           <button type="button" class="modal-cancel-button" data-dismiss="modal">cancel</button>
                           <%= f.submit "update", class: "modal-button" %>
@@ -252,259 +145,367 @@
                 </div>
               </div>
             </div>
-          <% end %>
-        </ul>
-      </div>
-      <% end %>
-
-    <div class="modal fade" id="addProjectModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Project</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <%= simple_form_for([@user, @new_project]) do |f| %>
-                <%= f.input :title, placeholder: "What is the name of the project?" %>
-                <%= f.input :description, as: :text, placeholder: "describe your project.", maxlength: true %>
-                <div class="under-input-text">Character limit: 250</div>
-                <%= f.input :photo, as: :file %>
-                <div class="modal-footer">
-                  <button type="button" class="modal-cancel-button" data-dismiss="modal">cancel</button>
-                  <%= f.submit "add", class: "modal-button" %>
-                </div>
-              <% end %>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- end of main div -->
-  </section>
-<!-- end of projects section -->
-
-
-<!-- experience section -->
-  <section class="s4">
-
-    <div class="pr-cont-header">
-    <h1>Experience</h1>
-    <button id="addExpBtn" type="button" class="icon-btn-plus" data-toggle="modal" data-target="#addExperienceModal">
-      <i class="fa fa-plus" aria-hidden="true"></i>
-    </button>
-    <% unless @experiences.empty? %>
-      <button class="save-button" id="save-experience">
-        save card order
-      </button>
-    <% end %>
-    </div>
-
-    <% if @experiences.empty? %>
-    <div class="pr-exp-container-no-exp">
-        <h3 class="blue-text-h3">You must have some kind of experience, right?</h3>
-    </div>
-    <% else %>
-    <div class="pr-exp-container">
-
-      <div class="pr-exp-grid">
-        <ul id="sort-experience" class="sort-list">
-          <% @experiences.each_with_index do |experience, index| %>
-          <li draggable="true" data-experience="<%= experience.id %>" data-id="<%= index %>">
-            <div class="pr-exp-card" id="experience-<%= experience.id %>">
-              <div class="sc-exp-card-body">
-                <h2><%= experience.role %></h2>
-                <h3><%= experience.company %>, <%= experience.location %></h3>
-                <p><%= experience.summary %></p>
-                <% if experience.end_date == nil %>
-                  <p class="sc-exp-card-body-date"><%= experience.start_date.strftime("%B %Y") %> to Present</p>
-                <% else %>
-                  <p class="sc-exp-card-body-date"><%= experience.start_date.strftime("%B %Y") %> to <%= experience.end_date.strftime("%B %Y") %></p>
-                <% end %>
-                <button type="button" class="icon-btn" data-toggle="modal" data-target="#editExperienceModal<%= experience.id %>"><i class="fa fa-edit"></i></button>
-
-                  <%= link_to experience_path(experience), method: :delete, class: 'icon-btn', data: { confirm: 'Are you sure you want to delete this experience?'} do %>
-                    <i class="far fa-trash-alt"></i>
-                      <% end %>
-              </div>
-            </div>
-          </li>
-
-          <div class="modal fade" id="editExperienceModal<%= experience.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Edit Experience</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  <%= simple_form_for(experience) do |f| %>
-
-                    <%= f.input :company, placeholder: "ex: google" %>
-                    <%= f.input :role, placeholder: "ex: CEO" %>
-                    <div class="d-flex justify-content-between">
-                      <%= f.input :start_date, as: :date, label: 'Start Date',
-                                  start_year: 1970, end_year: Date.today.year,
-                                  end_date: Date.today, discard_day: true %>
-                      <%= f.input :end_date, as: :date, include_blank: true,
-                                  prompt: "Present", label: "End Date (optional)",
-                                  start_year: 1970, discard_day: true %>
-                    </div>
-                    <%= f.input :location, placeholder: "ex: Shanghai" %>
-                    <%= f.input :summary, as: :text,
-                                placeholder: "What was it like being CEO of google?",
-                                maxlength: true %>
-                    <div class="under-input-text">Character limit: 250</div>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="modal-cancel-button" data-dismiss="modal">cancel</button>
-                  <%= f.submit "Update", class: "modal-button " %>
-                </div>
-                <% end %>
-              </div>
-            </div>
-          </div>
-          <% end %>
-        </ul>
-      </div>
-
-
-    </div>
-    <% end %>
-      <div class="modal fade" id="addExperienceModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Experience</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <%= simple_form_for([@user, @new_experience]) do |f| %>
-
-              <%= f.input :company, placeholder: "ex: google" %>
-              <%= f.input :role, placeholder: "ex: CEO" %>
-              <div class="d-flex justify-content-between">
-                <%= f.input :start_date, as: :date, label: "Start Date",
-                            start_year: 1970, end_year: Date.today.year,
-                            end_date: Date.today, discard_day: true %>
-                <%= f.input :end_date, as: :date, include_blank: true,
-                            prompt: "Present", label: "End Date (optional)",
-                            start_year: 1970, discard_day: true %>
-              </div>
-              <%= f.input :location, placeholder: "ex: Shanghai" %>
-              <%= f.input :summary, as: :text, placeholder: "What was it like being CEO of google?",
-                          maxlength: true %>
-              <div class="under-input-text">Character limit: 250</div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="modal-cancel-button" data-dismiss="modal">cancel</button>
-            <%= f.submit "add", class: "modal-button " %>
-          </div>
             <% end %>
+            </ul>
           </div>
-        </div>
-      </div>
-  </section>
-  <!-- end of experience section -->
-<div class="d-flex flex-row">
 
-  <!-- CV section -->
-
-  <section class="s5">
-    <div class="pr-cont-header">
-      <h1>CV</h1>
-      <button type="button" class="icon-btn-plus" data-toggle="modal" data-target="#addCVModal">
-        <i class="fa fa-plus" aria-hidden="true"></i>
-      </button>
-    </div>
-
-    <div class="pr-exp-container">
-      <% if @user.cv.present? %>
-        <h3 class="blue-text-h3">Your CV will redirect to the following link: <%= @user.cv %></h1>
-      <% else %>
-        <h3 class="blue-text-h3">Create a link to your CV</h2>
-      <% end %>
-      <div class="modal fade" id="addCVModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <% end %>
+        <div class="modal fade" id="addSkillModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">link to your CV</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Skill</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
               <div class="modal-body">
-                <div>
-                  <%= simple_form_for(@user) do |f| %>
-                    <%= f.input :cv, label: "CV" %>
-                    <div class="under-input-text">paste a link to your CV</div>
-                    <div class="modal-footer">
-                      <button type="button" class="modal-cancel-button" data-dismiss="modal">cancel</button>
-                        <% if @user.cv.present? %>
-                          <%= f.submit "Update", class: "modal-button" %>
-                        <% else %>
-                          <%= f.submit "Add", class: "modal-button" %>
-                        <% end %>
-                    </div>
-                  <% end %>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-  </section>
-  <!-- about section -->
-
-  <section class="s6">
-    <div class="pr-cont-header">
-      <h1>About</h1>
-        <button type="button" class="icon-btn-plus" data-toggle="modal" data-target="#addAboutModal">
-          <i class="fa fa-plus" aria-hidden="true"></i>
-        </button>
-    </div>
-    <div class="pr-exp-container">
-      <% if @user.about.present? %>
-        <h3 class="blue-text-h3"><%= @user.about %></h2>
-      <% else %>
-        <h3 class="blue-text-h3">Write something about yourself.. like... I think pizza is cool..</h2>
-      <% end %>
-    <div class="modal fade" id="addAboutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">About</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <div>
-              <%= simple_form_for(@user) do |f| %>
-                <%= f.input :about, as: :text, placeholder: "Write a little bit about yourself." %>
+              <%= simple_form_for([@user, @new_skill]) do |f| %>
+                <%= f.input :skill_name, placeholder: "ex: ruby on rails" %>
+                <%= f.input :level, placeholder: "How good are ya?", collection: %w(beginner intermediate expert) %>
+                <%= f.input :years_of_experience %>
                 <div class="modal-footer">
-                <button type="button" class="modal-cancel-button" data-dismiss="modal">cancel</button>
-                  <% if @user.about.present? %>
-                    <%= f.submit "Update", class: "modal-button" %>
-                  <% else %>
-                    <%= f.submit "Add", class: "modal-button" %>
-                  <% end %>
+                  <button type="button" class="modal-cancel-button" data-dismiss="modal">cancel</button>
+                  <%= f.submit "add", class: "modal-button" %>
                 </div>
               <% end %>
             </div>
           </div>
         </div>
+   <!-- add skillmodal button -->
+      </div>
+    </section>
+    <!-- end of skills section -->
+
+    <!-- projects section below -->
+    <section class="s3">
+
+      <div class="pr-cont-header">
+        <h1>Projects</h1>
+        <button type="button" class="icon-btn-plus" data-toggle="modal" data-target="#addProjectModal">
+          <i class="fa fa-plus" aria-hidden="true"></i>
+        </button>
+        <% unless @projects.empty? %>
+          <button class="save-button" id="save-project">
+            save card order
+          </button>
+        <% end  %>
+      </div>
+
+        <% if @projects.empty? %>
+        <div class="pr-projects-container-no-projects">
+          <h3 class="blue-text-h3">What amazing projects have you worked on?</h3>
+        </div>
+        <% else %>
+        <div class="pr-projects-container">
+          <ul id="sort-project" class="sort-list">
+            <% @projects.each_with_index do |project, index| %>
+            <li draggable="true" data-project="<%= project.id %>" data-id="<%= index %>">
+              <div class="pr-project-card">
+                <div class="pr-project-card-body">
+                  <div class="project-left">
+                    <h2><%= project.title %></h2>
+                  </div>
+                  <div class="project-right">
+                    <button type="button" class="icon-btn" data-toggle="modal" data-target="#editProjectModal<%= project.id %>"><i class="fa fa-edit"></i></button>
+
+                    <%= link_to project_path(project), method: :delete,class: 'icon-btn', data: { confirm: 'Are you sure you want to delete this skill?' } do %>
+                          <i class="far fa-trash-alt"></i>
+                    <% end %>
+                  </div>
+
+
+                  <p class="pr-card-descrition"><%= project.description %></p>
+
+                </div>
+
+                <div class="pr-project-card-img">
+                  <%= cl_image_tag project.photo.key, class: 'pr-project-card-img' %>
+                </div>
+              </div>
+            </li>
+
+            <div class="modal fade" id="editProjectModal<%= project.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Edit Project</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <div class="project" id="project-<%= project.id %>">
+                        <%= project.title %>
+                        <%= simple_form_for(project) do |f| %>
+                          <%= f.input :title, placeholder: "What is the name of the project?" %>
+                          <%= f.input :description, as: :text, placeholder: "describe your project.", maxlength: true %>
+                          <div class="under-input-text">Character limit: 250</div>
+                          <%= f.input :photo, as: :file %>
+                          <div class="modal-footer">
+                            <button type="button" class="modal-cancel-button" data-dismiss="modal">cancel</button>
+                            <%= f.submit "update", class: "modal-button" %>
+                          </div>
+                        <% end %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </ul>
+        </div>
+        <% end %>
+
+      <div class="modal fade" id="addProjectModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Project</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <%= simple_form_for([@user, @new_project]) do |f| %>
+                  <%= f.input :title, placeholder: "What is the name of the project?" %>
+                  <%= f.input :description, as: :text, placeholder: "describe your project.", maxlength: true %>
+                  <div class="under-input-text">Character limit: 250</div>
+                  <%= f.input :photo, as: :file %>
+                  <div class="modal-footer">
+                    <button type="button" class="modal-cancel-button" data-dismiss="modal">cancel</button>
+                    <%= f.submit "add", class: "modal-button" %>
+                  </div>
+                <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end of main div -->
+    </section>
+  <!-- end of projects section -->
+
+
+  <!-- experience section -->
+    <section class="s4">
+
+      <div class="pr-cont-header">
+      <h1>Experience</h1>
+      <button id="addExpBtn" type="button" class="icon-btn-plus" data-toggle="modal" data-target="#addExperienceModal">
+        <i class="fa fa-plus" aria-hidden="true"></i>
+      </button>
+      <% unless @experiences.empty? %>
+        <button class="save-button" id="save-experience">
+          save card order
+        </button>
+      <% end %>
+      </div>
+
+      <% if @experiences.empty? %>
+      <div class="pr-exp-container-no-exp">
+          <h3 class="blue-text-h3">You must have some kind of experience, right?</h3>
+      </div>
+      <% else %>
+      <div class="pr-exp-container">
+
+        <div class="pr-exp-grid">
+          <ul id="sort-experience" class="sort-list">
+            <% @experiences.each_with_index do |experience, index| %>
+            <li draggable="true" data-experience="<%= experience.id %>" data-id="<%= index %>">
+              <div class="pr-exp-card" id="experience-<%= experience.id %>">
+                <div class="sc-exp-card-body">
+                  <h2><%= experience.role %></h2>
+                  <h3><%= experience.company %>, <%= experience.location %></h3>
+                  <p><%= experience.summary %></p>
+                  <% if experience.end_date == nil %>
+                    <p class="sc-exp-card-body-date"><%= experience.start_date.strftime("%B %Y") %> to Present</p>
+                  <% else %>
+                    <p class="sc-exp-card-body-date"><%= experience.start_date.strftime("%B %Y") %> to <%= experience.end_date.strftime("%B %Y") %></p>
+                  <% end %>
+                  <button type="button" class="icon-btn" data-toggle="modal" data-target="#editExperienceModal<%= experience.id %>"><i class="fa fa-edit"></i></button>
+
+                    <%= link_to experience_path(experience), method: :delete, class: 'icon-btn', data: { confirm: 'Are you sure you want to delete this experience?'} do %>
+                      <i class="far fa-trash-alt"></i>
+                        <% end %>
+                </div>
+              </div>
+            </li>
+
+            <div class="modal fade" id="editExperienceModal<%= experience.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Edit Experience</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <%= simple_form_for(experience) do |f| %>
+
+                      <%= f.input :company, placeholder: "ex: google" %>
+                      <%= f.input :role, placeholder: "ex: CEO" %>
+                      <div class="d-flex justify-content-between">
+                        <%= f.input :start_date, as: :date, label: 'Start Date',
+                                    start_year: 1970, end_year: Date.today.year,
+                                    end_date: Date.today, discard_day: true %>
+                        <%= f.input :end_date, as: :date, include_blank: true,
+                                    prompt: "Present", label: "End Date (optional)",
+                                    start_year: 1970, discard_day: true %>
+                      </div>
+                      <%= f.input :location, placeholder: "ex: Shanghai" %>
+                      <%= f.input :summary, as: :text,
+                                  placeholder: "What was it like being CEO of google?",
+                                  maxlength: true %>
+                      <div class="under-input-text">Character limit: 250</div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="modal-cancel-button" data-dismiss="modal">cancel</button>
+                    <%= f.submit "Update", class: "modal-button " %>
+                  </div>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+            <% end %>
+          </ul>
+        </div>
+
+
+      </div>
+      <% end %>
+        <div class="modal fade" id="addExperienceModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Experience</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <%= simple_form_for([@user, @new_experience]) do |f| %>
+
+                <%= f.input :company, placeholder: "ex: google" %>
+                <%= f.input :role, placeholder: "ex: CEO" %>
+                <div class="d-flex justify-content-between">
+                  <%= f.input :start_date, as: :date, label: "Start Date",
+                              start_year: 1970, end_year: Date.today.year,
+                              end_date: Date.today, discard_day: true %>
+                  <%= f.input :end_date, as: :date, include_blank: true,
+                              prompt: "Present", label: "End Date (optional)",
+                              start_year: 1970, discard_day: true %>
+                </div>
+                <%= f.input :location, placeholder: "ex: Shanghai" %>
+                <%= f.input :summary, as: :text, placeholder: "What was it like being CEO of google?",
+                            maxlength: true %>
+                <div class="under-input-text">Character limit: 250</div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="modal-cancel-button" data-dismiss="modal">cancel</button>
+              <%= f.submit "add", class: "modal-button " %>
+            </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+    </section>
+    <!-- end of experience section -->
+  <div class="d-flex flex-row">
+
+    <!-- CV section -->
+
+    <section class="s5">
+      <div class="pr-cont-header">
+        <h1>CV</h1>
+        <button type="button" class="icon-btn-plus" data-toggle="modal" data-target="#addCVModal">
+          <i class="fa fa-plus" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <div class="pr-exp-container">
+        <% if @user.cv.present? %>
+          <h3 class="blue-text-h3">Your CV will redirect to the following link: <%= @user.cv %></h1>
+        <% else %>
+          <h3 class="blue-text-h3">Create a link to your CV</h2>
+        <% end %>
+        <div class="modal fade" id="addCVModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">link to your CV</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <div>
+                    <%= simple_form_for(@user) do |f| %>
+                      <%= f.input :cv, label: "CV" %>
+                      <div class="under-input-text">paste a link to your CV</div>
+                      <div class="modal-footer">
+                        <button type="button" class="modal-cancel-button" data-dismiss="modal">cancel</button>
+                          <% if @user.cv.present? %>
+                            <%= f.submit "Update", class: "modal-button" %>
+                          <% else %>
+                            <%= f.submit "Add", class: "modal-button" %>
+                          <% end %>
+                      </div>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+    <!-- about section -->
+
+    <section class="s6">
+      <div class="pr-cont-header">
+        <h1>About</h1>
+          <button type="button" class="icon-btn-plus" data-toggle="modal" data-target="#addAboutModal">
+            <i class="fa fa-plus" aria-hidden="true"></i>
+          </button>
+      </div>
+      <div class="pr-exp-container">
+        <% if @user.about.present? %>
+          <h3 class="blue-text-h3"><%= @user.about %></h2>
+        <% else %>
+          <h3 class="blue-text-h3">Write something about yourself.. like... I think pizza is cool..</h2>
+        <% end %>
+      <div class="modal fade" id="addAboutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">About</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div>
+                <%= simple_form_for(@user) do |f| %>
+                  <%= f.input :about, as: :text, placeholder: "Write a little bit about yourself." %>
+                  <div class="modal-footer">
+                  <button type="button" class="modal-cancel-button" data-dismiss="modal">cancel</button>
+                    <% if @user.about.present? %>
+                      <%= f.submit "Update", class: "modal-button" %>
+                    <% else %>
+                      <%= f.submit "Add", class: "modal-button" %>
+                    <% end %>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+    </section>
+
+    <!-- end of CV section -->
   </div>
-  </section>
-    
-  <!-- end of CV section -->
 </div>
 
 
