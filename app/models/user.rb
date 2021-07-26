@@ -25,6 +25,14 @@ class User < ApplicationRecord
     "#{first_name} #{last_name}"
   end
 
+  def available?
+    self.available
+  end
+
+  def switch_available
+    self.available? ? self.available = false : self.available = true
+  end
+
   private
 
   def set_slug
