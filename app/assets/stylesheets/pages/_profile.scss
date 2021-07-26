@@ -25,12 +25,11 @@
   border: none;
   background-color: transparent;
   margin-left: 1rem;
+  transition: 0.5s;
 }
 
 .icon-btn-plus:hover {
-  color: #0275d8;
-  border: none;
-  background-color: #f5f5f5;
+  color: #587499;
 }
 
 .pr-main-container {
@@ -240,18 +239,20 @@
   font-weight: 400;
 }
 
-.pr-cont-header, .save-button {
-  align-self: center;
-}
-
 .save-button {
   background-color: #6e8fbd;
   margin-left: 1rem;
 }
 
+.pr-cont-header, .save-button {
+  align-self: center;
+}
+
+
 .save-button:hover {
   background-color: #587499;
 }
+
 /* below is the skills section */
 
 .pr-skills-container {
