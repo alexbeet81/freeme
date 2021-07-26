@@ -106,9 +106,21 @@
                   <div class="pr-skills-info">
                     <%= skill.skill_name %>
 
-                    <br>
-                    <%= skill.level %>
-                    <br>
+                    <h3>Level</h3>
+                    <div id="progress-bar">
+                      <% if skill.level == 'beginner' %>
+                        <p class="progress-bar" id="beg"> </p>
+                      <% end -%>
+
+                      <% if skill.level == 'intermediate' %>
+                        <p class="progress-bar" id="int"></p>
+                      <% end -%>
+
+                      <% if skill.level == 'expert' %>
+                        <p class="progress-bar" id="exp"></p>
+                      <% end -%>
+                    </div>
+
                     <%= skill.years_of_experience %>
                     <br>
                   </div>
