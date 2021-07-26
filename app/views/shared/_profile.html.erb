@@ -103,6 +103,7 @@
             <% @skills.each_with_index do |skill, index| %>
               <li draggable='true' data-skill="<%= skill.id %>" data-id="<%= index %>">
                 <div class="pr-skills-card">
+
                   <div class="pr-skills-info">
                     <%= skill.skill_name %>
 
@@ -121,8 +122,8 @@
                       <% end -%>
                     </div>
 
-                    <%= skill.years_of_experience %>
-                    <br>
+                    <h3>Years: <%= skill.years_of_experience %> </h3>
+
                   </div>
                   <div class="pr-skill-edit-btn">
                     <button type="button" class="icon-btn" data-toggle="modal" data-target="#editSkillModal<%= skill.id %>"><i class="fa fa-edit"></i>
