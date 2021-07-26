@@ -86,6 +86,10 @@
     </section>
     <!-- end of banner section -->
 
+    <!-- what to do section below -->
+      <%= render 'shared/whattodo' %>
+    <!-- end of what to do section below -->
+
     <!-- skills section below -->
     <section class="s2">
       <div class="pr-cont-header">
@@ -100,10 +104,9 @@
         <% end  %>
       </div>
       <div class="pr-skills-container">
-
         <% if @skills.empty? %>
           <h3 class="blue-text-h3">show off your skills!</h3>
-        <% else %>
+        <% end %>
           <div class="pr-skills-grid">
             <ul id="sort-skill" class="sort-list">
             <% @skills.each_with_index do |skill, index| %>
@@ -157,8 +160,6 @@
             <% end %>
             </ul>
           </div>
-
-        <% end %>
         <div class="modal fade" id="addSkillModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -205,7 +206,7 @@
         <div class="pr-projects-container-no-projects">
           <h3 class="blue-text-h3">What amazing projects have you worked on?</h3>
         </div>
-        <% else %>
+        <% end %>
         <div class="pr-projects-container">
           <ul id="sort-project" class="sort-list">
             <% @projects.each_with_index do |project, index| %>
@@ -264,8 +265,6 @@
             <% end %>
           </ul>
         </div>
-        <% end %>
-
       <div class="modal fade" id="addProjectModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
@@ -314,9 +313,8 @@
       <div class="pr-exp-container-no-exp">
           <h3 class="blue-text-h3">You must have some kind of experience, right?</h3>
       </div>
-      <% else %>
+      <% end %>
       <div class="pr-exp-container">
-
         <div class="pr-exp-grid">
           <ul id="sort-experience" class="sort-list">
             <% @experiences.each_with_index do |experience, index| %>
@@ -382,7 +380,6 @@
 
 
       </div>
-      <% end %>
         <div class="modal fade" id="addExperienceModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">

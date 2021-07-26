@@ -35,7 +35,7 @@ document.addEventListener('turbolinks:load', () => {
 });
 
 
-getIcon('html')
+// getIcon('html')
 
 
 

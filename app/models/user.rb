@@ -33,6 +33,18 @@ class User < ApplicationRecord
     self.available? ? self.available = false : self.available = true
   end
 
+  # def profile_finished?
+  #   self.skills.empty? || self.projects.empty? || self.experiences.empty? ? false : true
+  # end
+
+  def profile_finished?
+    skills = self.skills.length
+    projects = self.projects.length
+    experiences = self.experiences.length
+
+    skills < 2 || projects < 2 || experiences < 2 ? false : true
+  end
+
   private
 
   def set_slug
