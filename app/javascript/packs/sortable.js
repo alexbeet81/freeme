@@ -24,6 +24,7 @@ const initSortable = () => {
 
   document.querySelector('#save-skill').addEventListener('click', (e) => {
     let order = sortableSkill.toArray();
+    console.log('hello')
 
     // set all posotions
     const newPositions = []
