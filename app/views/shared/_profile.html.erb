@@ -180,14 +180,24 @@
   <!-- projects section below -->
   <section class="s3">
 
-    <h1 class="pr-cont-header">Projects<button type="button" class="icon-btn-plus" data-toggle="modal" data-target="#addProjectModal"><i class="fa fa-plus" aria-hidden="true"></i>
-    </button></h1>
+    <div class="pr-cont-header">
+      <h1>Projects</h1>
+      <button type="button" class="icon-btn-plus" data-toggle="modal" data-target="#addProjectModal">
+        <i class="fa fa-plus" aria-hidden="true"></i>
+      </button>
+      <% unless @projects.empty? %>
+        <button class="save-button" id="save-project">
+          save card order
+        </button>
+      <% end  %>
+    </div>
+
+      <div class="pr-projects-container">
       <% if @projects.empty? %>
       <div class="pr-projects-container-no-projects">
         <h3 class="blue-text-h3">What amazing projects have you worked on?</h3>
       </div>
       <% else %>
-      <div class="pr-projects-container">
         <ul id="sort-project" class="sort-list">
           <% @projects.each_with_index do |project, index| %>
           <li draggable="true" data-project="<%= project.id %>" data-id="<%= index %>">
@@ -244,7 +254,6 @@
             </div>
           <% end %>
         </ul>
-        <button id="save-project">SAVE!</button>
       </div>
       <% end %>
 
