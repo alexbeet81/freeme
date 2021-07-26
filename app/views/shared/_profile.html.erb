@@ -192,12 +192,12 @@
       <% end  %>
     </div>
 
-      <div class="pr-projects-container">
       <% if @projects.empty? %>
       <div class="pr-projects-container-no-projects">
         <h3 class="blue-text-h3">What amazing projects have you worked on?</h3>
       </div>
       <% else %>
+      <div class="pr-projects-container">
         <ul id="sort-project" class="sort-list">
           <% @projects.each_with_index do |project, index| %>
           <li draggable="true" data-project="<%= project.id %>" data-id="<%= index %>">
@@ -289,8 +289,18 @@
 <!-- experience section -->
   <section class="s4">
 
-    <h1 class="pr-cont-header">Experience<button id="addExpBtn" type="button" class="icon-btn-plus" data-toggle="modal" data-target="#addExperienceModal"><i class="fa fa-plus" aria-hidden="true"></i>
-    </button></h1>
+    <div class="pr-cont-header">
+    <h1>Experience</h1>
+    <button id="addExpBtn" type="button" class="icon-btn-plus" data-toggle="modal" data-target="#addExperienceModal">
+      <i class="fa fa-plus" aria-hidden="true"></i>
+    </button>
+    <% unless @experiences.empty? %>
+      <button class="save-button" id="save-experience">
+        save card order
+      </button>
+    <% end %>
+    </div>
+
     <% if @experiences.empty? %>
     <div class="pr-exp-container-no-exp">
         <h3 class="blue-text-h3">You must have some kind of experience, right?</h3>
@@ -358,7 +368,6 @@
             </div>
           </div>
           <% end %>
-          <button id="save-experience">SAVE!</button>
         </ul>
       </div>
 
