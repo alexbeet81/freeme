@@ -77,6 +77,39 @@
     </section>
     <!-- end of banner section -->
 
+
+    <!-- what to do section below -->
+    <div class="pr-cont-header">
+      <h1>What to do</h1>
+    </div>
+    <div class="pr-whattodo-container">
+      <div class="whattodo-header">
+        <h2>It looks like you haven't finished your profile.
+            Do the following to make your showcase page amazing!</h2>
+      </div>
+      <% if @skills.empty? %>
+        <div class="whattodo-div">
+          <h2>Add some skills</h2>
+          <h3>🤐 It looks like you haven't added any skills yet.
+              click on the plus button and add your first skill.</h1>
+        </div>
+      <% end %>
+      <% if @projects.empty? %>
+        <div class="whattodo-div">
+          <h2>Add some Projects</h2>
+          <h3>💪 show some of the projects that you've worked on.
+              Big or small.</h1>
+        </div>
+      <% end %>
+      <% if @experiences.empty? %>
+        <div class="whattodo-div">
+          <h2>Add some experience</h2>
+          <h3>🚀 Doesn't even have to be code related. All experience counts!</h1>
+        </div>
+      <% end %>
+    </div>
+    <!-- end of what to do section below -->
+
     <!-- skills section below -->
     <section class="s2">
       <div class="pr-cont-header">
