@@ -257,12 +257,21 @@
 
 /* below is the skills section */
 
+.pr-skills-container,
+.pr-projects-container,
+.pr-exp-container,
+.pr-projects-container-no-projects,
+.pr-exp-container-no-exp {
+  box-shadow: 1px 1px 4px 0px rgba(0,0,0,0.2);
+  -webkit-box-shadow: 1px 1px 4px 0px rgba(0,0,0,0.2);
+  -moz-box-shadow: 1px 1px 4px 0px rgba(0,0,0,0.2);
+}
+
 .pr-skills-container {
   background-color: var(--backgroundcolor);
   display: flex;
   margin: 2rem;
   padding: 2rem 2rem;
-
 }
 
 .pr-skills-grid {
