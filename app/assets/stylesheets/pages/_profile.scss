@@ -63,7 +63,7 @@
   width: 1150px;
   background-color: var(--backgroundcolor);
   padding-right: 1rem;
-
+  padding-left:  1rem;
 }
 
 .pr-banner-title h1 {
@@ -330,6 +330,7 @@
 }
 /* below is the skills section */
 
+.pr-banner-container,
 .pr-skills-container,
 .pr-projects-container,
 .pr-exp-container,
@@ -379,7 +380,7 @@
 }
 
 #progress-bar{
-  background-color: var(--secondaryText);
+  background-color: var(--maincolor);
   border-radius: 20px;
   height: 10px;
   width: 150px;
@@ -387,7 +388,7 @@
 }
 
 .progress-bar{
-  background-color: var(--maincolor);
+  background-color: var(--secondaryText);
   border-radius: 20px;
   height: 10px;
   width: 150px;
