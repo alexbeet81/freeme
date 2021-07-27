@@ -262,11 +262,13 @@
   margin-left: 1rem;
 }
 
-#skill-saved-message {
+#skill-saved-message,
+#project-saved-message {
   opacity: 0;
 }
 
-#skill-saved-message.fade {
+#skill-saved-message.fade,
+#project-saved-message.fade {
   opacity: 1;
   animation: fadeinout 5s linear 1 forwards;
 }

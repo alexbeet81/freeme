@@ -52,9 +52,15 @@ const initSortable = () => {
     })
   }
 
+  const projectSavedMessage = document.getElementById('project-saved-message');
+
   if (sortProject.childNodes.length > 1) {
     document.querySelector('#save-project').addEventListener('click', (e) => {
       let order = sortableProject.toArray();
+
+      projectSavedMessage.classList.add('fade');
+      setTimeout(function() {
+        projectSavedMessage.classList.remove('fade')}, 5000);
 
       const newPositions = []
 
