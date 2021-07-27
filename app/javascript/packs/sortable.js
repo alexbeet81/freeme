@@ -22,10 +22,15 @@ const initSortable = () => {
     animation: 150,
   })
 
+  const skillSavedMessage = document.getElementById('skill-saved-message');
 
   if (sortSkills.childNodes.length > 1) {
     document.querySelector('#save-skill').addEventListener('click', (e) => {
       let order = sortableSkill.toArray();
+
+      skillSavedMessage.classList.add('fade');
+      setTimeout(function() {
+        skillSavedMessage.classList.remove('fade')}, 5000);
 
       // set all posotions
       const newPositions = []
@@ -47,9 +52,15 @@ const initSortable = () => {
     })
   }
 
+  const projectSavedMessage = document.getElementById('project-saved-message');
+
   if (sortProject.childNodes.length > 1) {
     document.querySelector('#save-project').addEventListener('click', (e) => {
       let order = sortableProject.toArray();
+
+      projectSavedMessage.classList.add('fade');
+      setTimeout(function() {
+        projectSavedMessage.classList.remove('fade')}, 5000);
 
       const newPositions = []
 
@@ -69,9 +80,16 @@ const initSortable = () => {
     })
   }
 
+  const experienceSavedMessage = document.getElementById('experience-saved-message');
+
+
   if (sortExperience.childNodes.length > 1) {
     document.querySelector('#save-experience').addEventListener('click', (e) => {
       let order = sortableExperience.toArray();
+
+      experienceSavedMessage.classList.add('fade');
+      setTimeout(function() {
+        experienceSavedMessage.classList.remove('fade')}, 5000);
 
       const newPositions = []
 

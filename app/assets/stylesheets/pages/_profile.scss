@@ -253,10 +253,34 @@
   align-self: center;
 }
 
-
 .save-button:hover {
   background-color: #587499;
 }
+
+.saved-message {
+  align-self: center;
+  margin-left: 1rem;
+  color: #5db779;
+}
+
+#skill-saved-message,
+#project-saved-message,
+#experience-saved-message {
+  opacity: 0;
+}
+
+#skill-saved-message.fade,
+#project-saved-message.fade,
+#experience-saved-message.fade {
+  opacity: 1;
+  animation: fadeinout 5s linear 1 forwards;
+}
+
+@keyframes fadeinout {
+  0%, 100% { opacity: 0; }
+  5%, 75% { opacity: 1; }
+}
+
 /* below is the what to do section */
 
 .pr-whattodo-container {
