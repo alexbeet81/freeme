@@ -320,13 +320,11 @@
       <% end %>
       </div>
 
-      <% if @experiences.empty? %>
-      <div class="pr-exp-container-no-exp">
-          <h3 class="blue-text-h3">You must have some kind of experience, right?</h3>
-      </div>
-      <% end %>
       <div class="pr-exp-container">
-        <div class="pr-exp-grid">
+      <% if @experiences.empty? %>
+          <h3 class="blue-text-h3">You must have some kind of experience, right?</h3>
+      <% end %>
+        <div class="pr-exp-grid" id="exp-grid">
           <ul id="sort-experience" class="sort-list">
             <% @experiences.each_with_index do |experience, index| %>
             <li draggable="true" data-experience="<%= experience.id %>" data-id="<%= index %>">
