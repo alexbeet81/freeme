@@ -28,7 +28,6 @@ const initSortable = () => {
     document.querySelector('#save-skill').addEventListener('click', (e) => {
       let order = sortableSkill.toArray();
 
-      // skillSavedMessage.classList.remove('fade');
       skillSavedMessage.classList.add('fade');
       setTimeout(function() {
         skillSavedMessage.classList.remove('fade')}, 5000);
