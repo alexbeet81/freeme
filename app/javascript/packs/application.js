@@ -35,9 +35,8 @@ initSweetalert('#sweet-alert-demo', {
   icon: "warning"
 }, (value) => {
   if (value) {
-    // const link = document.querySelector('#delete-link');
-    // link.click();
-    console.log('hello', value);
+    const link = document.querySelector('#delete-link');
+    link.click();
   }
 });
 
