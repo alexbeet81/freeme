@@ -41,19 +41,22 @@
               <div class="sc-banner-title">
                   <div class="pr-edit-avail">
                     <button id="user-info-btn" type="button" class="icon-btn" data-toggle="modal" data-target="#editInfoModal" style="padding: 0 15px 0 5px"><i class="fa fa-edit"></i></button>
-                    <% if @user.available? %>
+                    
+                  </div>
+                  <h1>Hi, I'm <%= @user.first_name %>.</h1>
+                  <h2><%= @user.headline %></h2>
+                  <% if @user.available? %>
+                    <h3 style="color: #6E8FBC;">Available for hire</h3>
+                  <% else %>
+                    <h3 style="color: #6E8FBC;">Available soon</h3>
+                  <% end %>
+                  <% if @user.available? %>
                       <input type="checkbox" id="available-checkbox" name="available" checked>
                       <label for="available" data-user="<%= @user.id %>" id="available-lable">Available</label>
                     <% else %>
                       <input type="checkbox" id="available-checkbox" name="available" unchecked>
                       <label for="available" data-user="<%= @user.id %>" id="available-lable">Unavailable</label>
                     <% end %>
-                  </div>
-                  <h1>Hi, I'm <%= @user.first_name %>.</h1>
-                  <h2><%= @user.headline %></h2>
-                  <% if @user.available? %>
-                    <h3>Available for hire</h3>
-                  <% end %>
                 </div>
 
             <!--   <div class="oneUser"><h1>Hi, I'm <%= @user.first_name %></h1></div>
