@@ -139,7 +139,7 @@
                     <button type="button" class="icon-btn" data-toggle="modal" data-target="#editSkillModal<%= skill.id %>"><i class="fa fa-edit"></i></button>
                     <button type="button" class="icon-btn" id="skill-alert-<%= skill.id %>"><i class="far fa-trash-alt"></i></button>
                     <%= link_to skill_path(skill), method: :delete, class: 'icon-btn' do %>
-                      <i id="delete-<%= skill.id %>"></i>
+                      <i id="delete-skill-<%= skill.id %>"></i>
                         <% end %>
                   </div>
                 </div>
@@ -244,10 +244,10 @@
                   </div>
                   <div class="project-right">
                     <button type="button" class="icon-btn" data-toggle="modal" data-target="#editProjectModal<%= project.id %>"><i class="fa fa-edit"></i></button>
-
-                    <%= link_to project_path(project), method: :delete,class: 'icon-btn', data: { confirm: 'Are you sure you want to delete this skill?' } do %>
-                          <i class="far fa-trash-alt"></i>
-                    <% end %>
+                    <button type="button" class="icon-btn" id="project-alert-<%= project.id %>"><i class="far fa-trash-alt"></i></button>
+                    <%= link_to project_path(project), method: :delete, class: 'icon-btn' do %>
+                      <i id="delete-project-<%= project.id %>"></i>
+                        <% end %>
                   </div>
 
 
@@ -355,10 +355,10 @@
                     <p class="sc-exp-card-body-date"><%= experience.start_date.strftime("%B %Y") %> to <%= experience.end_date.strftime("%B %Y") %></p>
                   <% end %>
                   <button type="button" class="icon-btn" data-toggle="modal" data-target="#editExperienceModal<%= experience.id %>"><i class="fa fa-edit"></i></button>
-
-                    <%= link_to experience_path(experience), method: :delete, class: 'icon-btn', data: { confirm: 'Are you sure you want to delete this experience?'} do %>
-                      <i class="far fa-trash-alt"></i>
-                        <% end %>
+                  <button type="button" class="icon-btn" id="experience-alert-<%= experience.id %>"><i class="far fa-trash-alt"></i></button>
+                  <%= link_to experience_path(experience), method: :delete, class: 'icon-btn' do %>
+                    <i id="delete-experience-<%= experience.id %>"></i>
+                      <% end %>
                 </div>
               </div>
             </li>

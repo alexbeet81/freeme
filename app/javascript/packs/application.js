@@ -33,17 +33,52 @@ document.querySelectorAll('#sort-skill li').forEach(e => {
   const id = e.dataset.skill
 
   initSweetalert(`#skill-alert-${id}`, {
-    title: "Are you sure?",
+    title: "Delete this skill?",
     text: "This action cannot be reversed",
-    icon: "warning"
+    icon: "warning",
+    dangerMode: true,
+    buttons: ["cancel", "delete"]
   }, (value) => {
     if (value) {
-      const link = document.querySelector(`#delete-${id}`);
+      const link = document.querySelector(`#delete-skill-${id}`);
       link.click();
     }
   });
 })
 
+document.querySelectorAll('#sort-project li').forEach(e => {
+  const id = e.dataset.project
+
+  initSweetalert(`#project-alert-${id}`, {
+    title: "Delete this project?",
+    text: "This action cannot be reversed",
+    icon: "warning",
+    dangerMode: true,
+    buttons: ["cancel", "delete"]
+  }, (value) => {
+    if (value) {
+      const link = document.querySelector(`#delete-project-${id}`);
+      link.click();
+    }
+  });
+})
+
+document.querySelectorAll('#sort-experience li').forEach(e => {
+  const id = e.dataset.experience
+
+  initSweetalert(`#experience-alert-${id}`, {
+    title: "Delete this experience?",
+    text: "This action cannot be reversed",
+    icon: "warning",
+    dangerMode: true,
+    buttons: ["cancel", "delete"]
+  }, (value) => {
+    if (value) {
+      const link = document.querySelector(`#delete-experience-${id}`);
+      link.click();
+    }
+  });
+})
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
