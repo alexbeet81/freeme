@@ -57,11 +57,13 @@
                 <p id="settings-note" >*Theme setting will be saved for next visit!</p>
               </div> -->
               <div>
-                <input type="checkbox" id="available-checkbox" name="available" checked>
+
                 <% if @user.available? %>
+                  <input type="checkbox" id="available-checkbox" name="available" checked>
                   <label for="available" data-user="<%= @user.id %>" id="available-lable">Available</label>
                 <% else %>
-                  <label for="available" data-user="<%= @user.id %>" id="available-lable">Unvailable</label>
+                  <input type="checkbox" id="available-checkbox" name="available" unchecked>
+                  <label for="available" data-user="<%= @user.id %>" id="available-lable">Unavailable</label>
                 <% end %>
               </div>
             </div>
