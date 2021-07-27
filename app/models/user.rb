@@ -45,6 +45,10 @@ class User < ApplicationRecord
     skills < 2 || projects < 2 || experiences < 2 ? false : true
   end
 
+  def profile_empty?
+    self.skills.empty? && self.projects.empty? && self.experiences.empty?
+  end
+
   private
 
   def set_slug
