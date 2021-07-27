@@ -47,7 +47,7 @@
               <div class="oneTheme">
                 <h5 style="text-align: center; line-height: 0;">Personalize Theme</h5>
               </div>
-              <div class="twoTheme">
+<!--               <div class="twoTheme">
                 <div data-mode='light' id="light-mode" class="theme-dot"></div>
                 <div data-mode='blue' id="blue-mode" class="theme-dot"></div>
                 <div data-mode='green' id="green-mode" class="theme-dot"></div>
@@ -55,8 +55,17 @@
               </div>
               <div class="threeTheme">
                 <p id="settings-note" >*Theme setting will be saved for next visit!</p>
-              </div>
+              </div> -->
+              <div>
 
+                <% if @user.available? %>
+                  <input type="checkbox" id="available-checkbox" name="available" checked>
+                  <label for="available" data-user="<%= @user.id %>" id="available-lable">Available</label>
+                <% else %>
+                  <input type="checkbox" id="available-checkbox" name="available" unchecked>
+                  <label for="available" data-user="<%= @user.id %>" id="available-lable">Unavailable</label>
+                <% end %>
+              </div>
             </div>
             <!-- <div class="theme-container">
 
@@ -135,8 +144,14 @@
                     <div class="skill" id="skill-<%= skill.id %>">
                       <%= skill.skill_name %>
                       <%= simple_form_for(skill) do |f| %>
-                        <%= f.input :skill_name, placeholder: "ex: ruby on rails" %>
-                        <%= f.input :level, collection: %w(beginner intermediate expert) %>
+                        <%= f.error_notification message: 'Something went wrong' %>
+                        <%= f.input :skill_name, placeholder: "ex: ruby on rails",
+                                    required: true %>
+                        <%= f.input :level,
+                                    placeholder: "How good are ya?",
+                                    collection: %w(beginner intermediate expert),
+                                    required: true,
+                                    error: "Please select your skill level." %>
                         <%= f.input :years_of_experience %>
                         <div class="modal-footer">
                           <button type="button" class="modal-cancel-button" data-dismiss="modal">cancel</button>
@@ -162,8 +177,13 @@
               </div>
               <div class="modal-body">
               <%= simple_form_for([@user, @new_skill]) do |f| %>
+                <%= f.error :base %>
                 <%= f.input :skill_name, placeholder: "ex: ruby on rails" %>
-                <%= f.input :level, placeholder: "How good are ya?", collection: %w(beginner intermediate expert) %>
+                <%= f.input :level,
+                            placeholder: "How good are ya?",
+                            collection: %w(beginner intermediate expert),
+                            required: true,
+                            error: "Please select your skill level." %>
                 <%= f.input :years_of_experience %>
                 <div class="modal-footer">
                   <button type="button" class="modal-cancel-button" data-dismiss="modal">cancel</button>

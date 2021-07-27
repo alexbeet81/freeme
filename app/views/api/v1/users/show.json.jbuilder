@@ -1,4 +1,4 @@
-json.extract! @user, :id, :first_name, :last_name, :email, :headline, :about
+json.extract! @user, :id, :first_name, :last_name, :email, :headline, :about, :available
 json.skills @user.skills do |skill|
   json.extract! skill, :id, :skill_name, :level, :years_of_experience, :position
 end
