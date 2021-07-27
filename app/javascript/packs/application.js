@@ -29,16 +29,21 @@ import { initSweetalert } from './init_sweetalert.js';
 available();
 hideExpGrid();
 
-initSweetalert('#sweet-alert-demo', {
-  title: "Are you sure?",
-  text: "This action cannot be reversed",
-  icon: "warning"
-}, (value) => {
-  if (value) {
-    const link = document.querySelector('#delete-link');
-    link.click();
-  }
-});
+document.querySelectorAll('#sort-skill li').forEach(e => {
+  const id = e.dataset.skill
+
+  initSweetalert(`#skill-alert-${id}`, {
+    title: "Are you sure?",
+    text: "This action cannot be reversed",
+    icon: "warning"
+  }, (value) => {
+    if (value) {
+      const link = document.querySelector(`#delete-link`);
+      link.click();
+    }
+  });
+})
+
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';

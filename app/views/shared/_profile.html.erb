@@ -137,7 +137,7 @@
                   </div>
                   <div class="pr-skill-edit-btn">
                     <button type="button" class="icon-btn" data-toggle="modal" data-target="#editSkillModal<%= skill.id %>"><i class="fa fa-edit"></i></button>
-                    <button type="button" class="icon-btn" id="sweet-alert-demo"><i class="far fa-trash-alt"></i></button>
+                    <button type="button" class="icon-btn" id="skill-alert-<%= skill.id %>"><i class="far fa-trash-alt"></i></button>
                     <%= link_to "", skill_path(skill), method: :delete, id: "delete-link", class: "hidden" %>
                   </div>
                 </div>
