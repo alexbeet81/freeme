@@ -22,10 +22,16 @@ const initSortable = () => {
     animation: 150,
   })
 
+  const skillSavedMessage = document.getElementById('skill-saved-message');
 
   if (sortSkills.childNodes.length > 1) {
     document.querySelector('#save-skill').addEventListener('click', (e) => {
       let order = sortableSkill.toArray();
+
+      // skillSavedMessage.classList.remove('fade');
+      skillSavedMessage.classList.add('fade');
+      setTimeout(function() {
+        skillSavedMessage.classList.remove('fade')}, 5000);
 
       // set all posotions
       const newPositions = []
