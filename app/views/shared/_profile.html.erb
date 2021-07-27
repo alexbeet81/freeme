@@ -44,18 +44,10 @@
               <div class="oneUser"><h1>Hi, I'm <%= @user.first_name %></h1></div>
               <div class="twoUser"><h2><%= @user.headline %></h2></div>
               <div class="threeUser"><h3>Available for hire NOW!</h3></div>
-              <div class="avaible-container">
-                <h2>click this switch to let people know you are available for hire!</h2>
-                <div class="custom-control custom-switch" data-user="<%= @user.id %>" id="available-switch">
-                  <input type="checkbox" class="custom-control-input" id="avaibleSwitch">
-                  <label class="custom-control-label" for="avaibleSwitch">available</label>
-                </div>
-              </div>
-
               <div class="oneTheme">
                 <h5 style="text-align: center; line-height: 0;">Personalize Theme</h5>
               </div>
-  <!--             <div class="twoTheme">
+<!--               <div class="twoTheme">
                 <div data-mode='light' id="light-mode" class="theme-dot"></div>
                 <div data-mode='blue' id="blue-mode" class="theme-dot"></div>
                 <div data-mode='green' id="green-mode" class="theme-dot"></div>
@@ -63,8 +55,15 @@
               </div>
               <div class="threeTheme">
                 <p id="settings-note" >*Theme setting will be saved for next visit!</p>
+              </div> -->
+              <div>
+                <input type="checkbox" id="available-checkbox" name="available" checked>
+                <% if @user.available? %>
+                  <label for="available" data-user="<%= @user.id %>" id="available-lable">Available</label>
+                <% else %>
+                  <label for="available" data-user="<%= @user.id %>" id="available-lable">Unvailable</label>
+                <% end %>
               </div>
- -->
             </div>
             <!-- <div class="theme-container">
 
@@ -143,8 +142,14 @@
                     <div class="skill" id="skill-<%= skill.id %>">
                       <%= skill.skill_name %>
                       <%= simple_form_for(skill) do |f| %>
-                        <%= f.input :skill_name, placeholder: "ex: ruby on rails" %>
-                        <%= f.input :level, collection: %w(beginner intermediate expert) %>
+                        <%= f.error_notification message: 'Something went wrong' %>
+                        <%= f.input :skill_name, placeholder: "ex: ruby on rails",
+                                    required: true %>
+                        <%= f.input :level,
+                                    placeholder: "How good are ya?",
+                                    collection: %w(beginner intermediate expert),
+                                    required: true,
+                                    error: "Please select your skill level." %>
                         <%= f.input :years_of_experience %>
                         <div class="modal-footer">
                           <button type="button" class="modal-cancel-button" data-dismiss="modal">cancel</button>
@@ -170,8 +175,13 @@
               </div>
               <div class="modal-body">
               <%= simple_form_for([@user, @new_skill]) do |f| %>
+                <%= f.error :base %>
                 <%= f.input :skill_name, placeholder: "ex: ruby on rails" %>
-                <%= f.input :level, placeholder: "How good are ya?", collection: %w(beginner intermediate expert) %>
+                <%= f.input :level,
+                            placeholder: "How good are ya?",
+                            collection: %w(beginner intermediate expert),
+                            required: true,
+                            error: "Please select your skill level." %>
                 <%= f.input :years_of_experience %>
                 <div class="modal-footer">
                   <button type="button" class="modal-cancel-button" data-dismiss="modal">cancel</button>
