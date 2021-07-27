@@ -38,7 +38,7 @@ document.querySelectorAll('#sort-skill li').forEach(e => {
     icon: "warning"
   }, (value) => {
     if (value) {
-      const link = document.querySelector(`#delete-link`);
+      const link = document.querySelector(`#delete-${id}`);
       link.click();
     }
   });
