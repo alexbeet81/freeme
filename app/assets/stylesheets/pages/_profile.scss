@@ -263,12 +263,14 @@
 }
 
 #skill-saved-message,
-#project-saved-message {
+#project-saved-message,
+#experience-saved-message {
   opacity: 0;
 }
 
 #skill-saved-message.fade,
-#project-saved-message.fade {
+#project-saved-message.fade,
+#experience-saved-message.fade {
   opacity: 1;
   animation: fadeinout 5s linear 1 forwards;
 }

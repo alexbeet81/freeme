@@ -80,9 +80,16 @@ const initSortable = () => {
     })
   }
 
+  const experienceSavedMessage = document.getElementById('experience-saved-message');
+
+
   if (sortExperience.childNodes.length > 1) {
     document.querySelector('#save-experience').addEventListener('click', (e) => {
       let order = sortableExperience.toArray();
+
+      experienceSavedMessage.classList.add('fade');
+      setTimeout(function() {
+        experienceSavedMessage.classList.remove('fade')}, 5000);
 
       const newPositions = []
 
