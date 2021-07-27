@@ -6,7 +6,16 @@ class SkillsController < ApplicationController
     @skill = Skill.new(skill_params)
     authorize @skill
     @skill.user = @user
-    
+
+    @icon = Icon.find_by_name(@skill[:skill_name].downcase)
+
+    if @icon.nil?
+      @skill.icon = @icon.where(id: 1)
+    else
+      @skill.icon = @icon
+    end
+
+
     if @skill.save
       redirect_to (user_path(@skill.user) + "#skill-#{@skill.id}")
     else

@@ -122,7 +122,8 @@
                 <div class="pr-skills-card">
 
                   <div class="pr-skills-info">
-                    <%= skill.skill_name %>
+
+                    <%= cl_image_tag skill.icon.photo.key, class:'skill-img' %>
 
                     <h3>Level</h3>
                     <div id="progress-bar">
