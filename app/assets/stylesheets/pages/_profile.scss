@@ -33,6 +33,11 @@
   color: #587499;
 }
 
+.pr-edit-avail {
+  display: flex;
+  align-items: baseline;
+}
+
 .pr-background {
   background: linear-gradient(180deg, rgba(248, 239, 208, 0), rgba(248, 239, 208, 0.8) 90% );
 }
