@@ -379,6 +379,16 @@
   text-align: center;
 }
 
+.skill-img-header{
+  display: flex;
+  justify-content: space-between;
+}
+
+.skill-img{
+  height: 35px;
+}
+
+
 #progress-bar{
   background-color: var(--maincolor);
   border-radius: 20px;

@@ -123,7 +123,11 @@
 
                   <div class="pr-skills-info">
 
-                    <%= cl_image_tag skill.icon.photo.key, class:'skill-img' %>
+                    <div class="skill-img-header">
+                      <%= cl_image_tag skill.icon.photo.key, class:'skill-img' %>
+
+                      <h2> <%= skill.skill_name %></h2>
+                    </div>
 
                     <h3>Level</h3>
                     <div id="progress-bar">
