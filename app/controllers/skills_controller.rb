@@ -10,11 +10,13 @@ class SkillsController < ApplicationController
     @icon = Icon.find_by_name(@skill[:skill_name].downcase)
 
     if @icon.nil?
-      @skill.icon = @icon.where(id: 1)
+      @skill.icon = Icon.find_by(id: 1)
     else
       @skill.icon = @icon
     end
-
+    # unless @icon.nil?
+    #   @skill.icon = @icon
+    # end
 
     if @skill.save
       redirect_to (user_path(@skill.user) + "#skill-#{@skill.id}")
