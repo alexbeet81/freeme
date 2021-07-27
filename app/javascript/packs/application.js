@@ -24,9 +24,22 @@ initSortable()
 import "bootstrap";
 import { available } from './available.js';
 import { hideExpGrid } from './hideExpGrid.js';
+import { initSweetalert } from './init_sweetalert.js';
 
 available();
 hideExpGrid();
+
+initSweetalert('#sweet-alert-demo', {
+  title: "Are you sure?",
+  text: "This action cannot be reversed",
+  icon: "warning"
+}, (value) => {
+  if (value) {
+    // const link = document.querySelector('#delete-link');
+    // link.click();
+    console.log('hello', value);
+  }
+});
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
