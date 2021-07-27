@@ -23,8 +23,10 @@ initSortable()
 // External imports
 import "bootstrap";
 import { available } from './available.js';
+import { hideExpGrid } from './hideExpGrid.js';
 
 available();
+hideExpGrid();
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
