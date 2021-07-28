@@ -7,6 +7,8 @@ class SkillsController < ApplicationController
     authorize @skill
     @skill.user = @user
 
+    # @icon = Icon.where('name ILIKE ?', "%#{@skill[:skill_name]}%")
+
     @icon = Icon.find_by_name(@skill[:skill_name].downcase)
 
     if @icon.nil?
@@ -19,6 +21,12 @@ class SkillsController < ApplicationController
     # end
 
     if @skill.save
+      @skill.icon = Icon.find_by_id(1)
+    else
+      @skill.icon = @icon
+    end
+
+    if @skill.save!
       redirect_to (user_path(@skill.user) + "#skill-#{@skill.id}")
     else
       # Can't render show - where should this lead to?
