@@ -8,9 +8,14 @@
 
 require "open-uri"
 
-puts "Destroying old Icons"
-Icon.destroy_all
-puts "Old Icons destroyed"
+# NOTE: comment out destroy old icons if you already have icons associated skills
+
+# puts "Destroying old Icons"
+# Icon.destroy_all
+# puts "Old Icons destroyed"
+
+# NOTES: When adding seeds comment out any icons that have already been added.
+# If you need to rebuild your seed - you will need to drop the database first.
 
 icons = [{name: 'default', image: "https://e7.pngegg.com/pngimages/451/517/png-clipart-computer-icons-program-optimization-computer-software-source-code-symbol-miscellaneous-angle.png"},
          {name: 'ruby', image: "https://image.flaticon.com/icons/png/512/919/919842.png"},
