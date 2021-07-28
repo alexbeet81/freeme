@@ -144,16 +144,18 @@
                       <% end -%>
                     </div>
 
-                    <h3>Years: <%= skill.years_of_experience %> </h3>
+                    <h6 id="skill-exp">I have <%= skill.years_of_experience %> years of experience in <%= skill.skill_name %></h6>
 
-                  </div>
-                  <div class="pr-skill-edit-btn">
+                    <div class="pr-skill-edit-btn">
                     <button type="button" class="icon-btn" data-toggle="modal" data-target="#editSkillModal<%= skill.id %>"><i class="fa fa-edit"></i></button>
                     <button type="button" class="icon-btn" id="skill-alert-<%= skill.id %>"><i class="far fa-trash-alt"></i></button>
                     <%= link_to skill_path(skill), method: :delete, class: 'icon-btn' do %>
                       <i id="delete-skill-<%= skill.id %>"></i>
                         <% end %>
                   </div>
+
+                  </div>
+
                 </div>
               </li>
 
