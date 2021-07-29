@@ -10,6 +10,15 @@ class SkillsController < ApplicationController
     @icon = Icon.find_by_name(@skill[:skill_name].downcase)
 
     if @icon.nil?
+      @skill.icon = Icon.find_by(id: 1)
+    else
+      @skill.icon = @icon
+    end
+    # unless @icon.nil?
+    #   @skill.icon = @icon
+    # end
+
+    if @skill.save
       @skill.icon = Icon.find_by_id(1)
     else
       @skill.icon = @icon

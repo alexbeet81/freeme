@@ -57,7 +57,6 @@
                 <label for="available" data-user="<%= @user.id %>" id="available-lable">Unavailable</label>
               <% end %>
             </div>
-
       </div>
         <!-- user basic info end -->
         <!-- user picture div start -->
@@ -116,7 +115,6 @@
                       </div>
                     </div>
 
-
                     <h6 style="color: slategray">Level</h6>
                     <div id="progress-bar">
                       <% if skill.level == 'novice' %>
@@ -141,7 +139,14 @@
                       <% end -%>
                     </div>
 
-                    <h6 id="skill-exp">I have <%= skill.years_of_experience %> years of experience in <%= skill.skill_name %></h6>
+
+                    <% if skill.years_of_experience == 0 %>
+                      <h6 id="skill-exp">I have limited professional experience in <%= skill.skill_name %></h6>
+                    <% elsif skill.years_of_experience == 1 %>
+                      <h6 id="skill-exp">I have <%= skill.years_of_experience %> year experience in <%= skill.skill_name %></h6>
+                    <% else %>
+                      <h6 id="skill-exp">I have <%= skill.years_of_experience %> years experience in <%= skill.skill_name %></h6>
+                    <% end %>
 
 
 
