@@ -6,7 +6,7 @@ const available = () => {
   document.querySelector('#available-checkbox').addEventListener('click', (e) => {
     if (document.getElementById('available-checkbox').checked) {
 
-      availableLable.innerHTML = "Available"
+      availableLable.innerHTML = "availability set to: <strong>available for hire</strong>"
 
       fetch(`http://localhost:3000/api/v1/users/${id}`, {
         method: 'PATCH',
@@ -20,7 +20,7 @@ const available = () => {
 
     } else {
       console.log('off')
-      availableLable.innerHTML = "Unavailable"
+      availableLable.innerHTML = "availability set to: <strong>avalilbe soon</strong>"
 
       fetch(`http://localhost:3000/api/v1/users/${id}`, {
         method: 'PATCH',

@@ -87,6 +87,15 @@
 
 }
 
+.availability {
+  display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
+}
+
+.availability h3 {
+  margin-left: 8px;
+}
 
 .left-column{
   padding: 10;
