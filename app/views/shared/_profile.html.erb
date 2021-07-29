@@ -118,7 +118,7 @@
           <div class="pr-skills-grid">
             <ul id="sort-skill" class="sort-list">
             <% @skills.each_with_index do |skill, index| %>
-              <li draggable='true' data-skill="<%= skill.id %>" data-id="<%= index %>">
+              <li draggable='true' id="#goto-skill-<%= skill.id %>" data-skill="<%= skill.id %>" data-id="<%= index %>">
                 <div class="pr-skills-card">
 
                   <div class="pr-skills-info">
@@ -252,8 +252,8 @@
         <div class="pr-projects-container">
           <ul id="sort-project" class="sort-list">
             <% @projects.each_with_index do |project, index| %>
-            <li draggable="true" data-project="<%= project.id %>" data-id="<%= index %>">
-              <div class="pr-project-card">
+            <li draggable="true" id="project-<%= project.id %>" data-project="<%= project.id %>" data-id="<%= index %>">
+              <div class="pr-project-card" >
                 <div class="pr-project-card-body">
                   <div class="project-left">
                     <h2><%= project.title %></h2>
@@ -359,8 +359,8 @@
         <div class="pr-exp-grid" id="exp-grid">
           <ul id="sort-experience" class="sort-list">
             <% @experiences.each_with_index do |experience, index| %>
-            <li draggable="true" data-experience="<%= experience.id %>" data-id="<%= index %>">
-              <div class="pr-exp-card" id="experience-<%= experience.id %>">
+            <li draggable="true" id="experience-<%= experience.id %>" data-experience="<%= experience.id %>" data-id="<%= index %>">
+              <div class="pr-exp-card" >
                 <div class="sc-exp-card-body">
                   <h2><%= experience.role %></h2>
                   <h3><%= experience.company %>, <%= experience.location %></h3>
