@@ -17,8 +17,9 @@ require "open-uri"
 # NOTES: When adding seeds comment out any icons that have already been added.
 # If you need to rebuild your seed - you will need to drop the database first.
 
-icons = [{name: 'default', image: "https://e7.pngegg.com/pngimages/451/517/png-clipart-computer-icons-program-optimization-computer-software-source-code-symbol-miscellaneous-angle.png"},
-         {name: 'ruby', image: "https://image.flaticon.com/icons/png/512/919/919842.png"},
+icons = [
+         {name: 'default', image: "https://e7.pngegg.com/pngimages/451/517/png-clipart-computer-icons-program-optimization-computer-software-source-code-symbol-miscellaneous-angle.png"},
+         {name: 'ruby', image: "https://e7.pngegg.com/pngimages/832/921/png-clipart-computer-icons-ruby-programming-language-computer-programming-ruby-angle-rectangle.png"},
          {name: 'javascript', image: "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png"},
          {name: 'java', image: "https://brandslogos.com/wp-content/uploads/images/large/java-logo-1.png"},
          {name: 'c++', image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/306px-ISO_C%2B%2B_Logo.svg.png"},
@@ -40,13 +41,12 @@ icons = [{name: 'default', image: "https://e7.pngegg.com/pngimages/451/517/png-c
          {name: 'bootstrap', image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bootstrap_logo.svg/2560px-Bootstrap_logo.svg.png"},
          {name: 'django', image: "https://pngimage.net/wp-content/uploads/2018/05/django-png-9.png"},
          {name: 'react', image: "https://image.pngaaa.com/875/2507875-middle.png"},
-         {name: 'figma', image: "https://cdn.freebiesupply.com/logos/thumbs/2x/figma-1-logo.png"},
-         {name: 'photoshop', image: "https://logos-world.net/wp-content/uploads/2020/11/Adobe-Photoshop-Logo.png"}
+         {name: 'figma', image: "https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg"}
         ]
 
-icons = [{name: 'default', image: "https://e7.pngegg.com/pngimages/451/517/png-clipart-computer-icons-program-optimization-computer-software-source-code-symbol-miscellaneous-angle.png"},
-         {name: 'photoshop', image: "https://logos-world.net/wp-content/uploads/2020/11/Adobe-Photoshop-Logo.png"}
-        ]
+# icons = [{name: 'default', image: "https://e7.pngegg.com/pngimages/451/517/png-clipart-computer-icons-program-optimization-computer-software-source-code-symbol-miscellaneous-angle.png"},
+#          {name: 'photoshop', image: "https://logos-world.net/wp-content/uploads/2020/11/Adobe-Photoshop-Logo.png"}
+#         ]
 
 icons.each do |icon|
   file = URI.open(icon[:image])
