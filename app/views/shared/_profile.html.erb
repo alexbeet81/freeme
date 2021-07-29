@@ -127,12 +127,20 @@
 
                     <h3>Level</h3>
                     <div id="progress-bar">
-                      <% if skill.level == 'beginner' %>
-                        <p class="progress-bar" id="beg"> </p>
+                      <% if skill.level == 'novice' %>
+                        <p class="progress-bar" id="nov"> </p>
                       <% end -%>
 
-                      <% if skill.level == 'intermediate' %>
-                        <p class="progress-bar" id="int"></p>
+                      <% if skill.level == 'advanced-beginner' %>
+                        <p class="progress-bar" id="advb"></p>
+                      <% end -%>
+
+                      <% if skill.level == 'competent' %>
+                        <p class="progress-bar" id="comp"></p>
+                      <% end -%>
+
+                      <% if skill.level == 'proficient' %>
+                        <p class="progress-bar" id="pro"></p>
                       <% end -%>
 
                       <% if skill.level == 'expert' %>

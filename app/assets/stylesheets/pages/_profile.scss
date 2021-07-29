@@ -399,34 +399,65 @@
   overflow: hidden;
   display: block;
 }
-#beg{
+
+#nov{
 
   width: 33%;
   box-shadow: 0 0 5px #2187e7b3;
   animation: beg 2s;
 }
 
-@keyframes beg {
+@keyframes nov {
   0%{
     width: 0%;
   }
   100%{
-    width: 33%;
+    width: 20%;
   }
 }
 
-#int{
+#advb{
   width: 66%;
   box-shadow: 0 0 5px #2187e7b3;
   animation: int 2s;
 }
 
-@keyframes int {
+@keyframes advb {
   0%{
     width: 0%;
   }
   100%{
-    width: 66%;
+    width: 40%;
+  }
+}
+
+#comp{
+  width: 100%;
+  box-shadow: 0 0 5px #2187e7b3;
+  animation: exp 2s;
+}
+
+@keyframes comp {
+  0%{
+    width: 0%;
+  }
+  100%{
+    width: 60%;
+  }
+}
+
+#pro{
+  width: 100%;
+  box-shadow: 0 0 5px #2187e7b3;
+  animation: exp 2s;
+}
+
+@keyframes pro {
+  0%{
+    width: 0%;
+  }
+  100%{
+    width: 80%;
   }
 }
 
