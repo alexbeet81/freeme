@@ -59,18 +59,6 @@
             </div>
 
 
-           <!--  <h5 style="text-align: center; line-height: 0;">Personalize Theme</h5>
-            <div class="twoTheme">
-              <div data-mode='light' id="light-mode" class="theme-dot"></div>
-              <div data-mode='blue' id="blue-mode" class="theme-dot"></div>
-              <div data-mode='green' id="green-mode" class="theme-dot"></div>
-              <div data-mode='purple' id="purple-mode" class="theme-dot"></div>
-            </div>
-            <div class="threeTheme">
-              <p id="settings-note" >*Theme setting will be saved for next visit!</p>
-            </div> -->
-
-
       </div>
         <!-- user basic info end -->
         <!-- user picture div start -->
@@ -154,7 +142,13 @@
                       <% end -%>
                     </div>
 
-                    <h6 id="skill-exp">I have <%= skill.years_of_experience %> years of experience in <%= skill.skill_name %></h6>
+                    <% if skill.years_of_experience == 0 %>
+                      <h6 id="skill-exp">I have limited professional experience in <%= skill.skill_name %></h6>
+                    <% elsif skill.years_of_experience == 1 %>
+                      <h6 id="skill-exp">I have <%= skill.years_of_experience %> year experience in <%= skill.skill_name %></h6>
+                    <% else %>
+                      <h6 id="skill-exp">I have <%= skill.years_of_experience %> years experience in <%= skill.skill_name %></h6>
+                    <% end %>
 
 
 
