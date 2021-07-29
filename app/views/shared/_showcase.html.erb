@@ -41,11 +41,45 @@
   <div class="sc-skills-container">
     <div class="sc-skills-grid">
       <% @skills.each do |skill| %>
-      <div class="sc-skills-card">
+      <div class="pr-skills-card">
+
+                  <div class="pr-skills-info">
+
+                    <div class="skill-img-header">
+                      <%= cl_image_tag skill.icon.photo.key, class:'skill-img' %>
+                      <h2> <%= skill.skill_name %></h2>
+                    </div>
+                    <h6 style="color: slategray">Level</h6>
+                    <div id="progress-bar">
+                      <% if skill.level == 'novice' %>
+                        <p class="progress-bar" id="nov"> </p>
+                      <% end -%>
+
+                      <% if skill.level == 'advanced-beginner' %>
+                        <p class="progress-bar" id="advb"></p>
+                      <% end -%>
+
+                      <% if skill.level == 'competent' %>
+                        <p class="progress-bar" id="comp"></p>
+
+                      <% end -%>
+
+                      <% if skill.level == 'proficient' %>
+                        <p class="progress-bar" id="pro"></p>
+                      <% end -%>
+
+                      <% if skill.level == 'expert' %>
+                        <p class="progress-bar" id="exp"></p>
+                      <% end -%>
+                    </div>
+                    <h6 id="skill-exp">I have <%= skill.years_of_experience %> years of experience in <%= skill.skill_name %></h6>
+                  </div>
+                </div>
+      <!-- <div class="sc-skills-card">
         <h5><%= skill.skill_name %></h5>
         <h6>Years: <%= skill.years_of_experience %></h6>
         <p><%= skill.level %></p>
-      </div>
+      </div> -->
       <% end %>
     </div>
   </div>
