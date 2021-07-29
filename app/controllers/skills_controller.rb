@@ -7,8 +7,6 @@ class SkillsController < ApplicationController
     authorize @skill
     @skill.user = @user
 
-    # @icon = Icon.where('name ILIKE ?', "%#{@skill[:skill_name]}%")
-
     @icon = Icon.find_by_name(@skill[:skill_name].downcase)
 
     if @icon.nil?

@@ -378,7 +378,7 @@
   height: 150px;
   font-family: 'Open Sans', sans-serif;
   padding: 1rem;
-  display: block;
+  display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: var(--backgroundcolor);
@@ -388,16 +388,24 @@
   /*box-shadow: rgba(66, 77, 88, 0.4) -5px 5px, rgba(66, 77, 88, 0.3) -10px 10px, rgba(66, 77, 88, 0.2) -15px 15px, rgba(66, 77, 88, 0.1) -20px 20px, rgba(66, 77, 88, 0.05) -25px 25px;*/
 }
 
-.pr-skills-info{
-  text-align: center;
+
+
+.skill-img-header{
+  display: flex;
+  justify-content: space-between;
 }
 
-#progress-bar{
+.skill-img{
+  height: 35px;
+}
+
+
+#progress-bar-div{
   background-color: var(--maincolor);
   border-radius: 20px;
   height: 10px;
   width: 150px;
-
+  margin-left: 10px;
 }
 
 .progress-bar{
@@ -407,7 +415,6 @@
   height: 10px;
   width: 150px;
   overflow: hidden;
-  display: block;
 }
 
 #nov{
@@ -505,10 +512,13 @@
   }
 }
 
+h6#skill-exp{
+  font-size: 12px;
+}
+
 .pr-skill-edit-btn{
-  position: relative;
-  align: right;
-  justify-content: start;
+  display: flex;
+
 }
 
 /* below is the projects section */

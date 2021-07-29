@@ -36,45 +36,28 @@
             </div>
           </div>
 
-         <!--  <div class="left-column"> -->
-              <div class="sc-banner-title">
-                  <div class="pr-edit-avail">
-                    <button id="user-info-btn" type="button" class="icon-btn" data-toggle="modal" data-target="#editInfoModal" style="padding: 0 15px 0 5px"><i class="fa fa-edit"></i></button>
-                    
-                  </div>
-                  <h1>Hi, I'm <%= @user.first_name %>.</h1>
-                  <h2><%= @user.headline %></h2>
-                  <div class="availability">
-                    <% if @user.available? %>
-                      <input type="checkbox" id="available-checkbox" name="available" checked>
-                      <h3 style="color: #6E8FBC;" for="available" data-user="<%= @user.id %>" id="available-lable">availability set to: <strong>available for hire</strong></label>
-                    <% else %>
-                      <input type="checkbox" id="available-checkbox" name="available" unchecked>
-                      <h3 style="color: #6E8FBC;" for="available" data-user="<%= @user.id %>" id="available-lable">availability set to: <strong>avalilbe soon</strong></label>
-                    <% end %>
-                  </div>
-                </div>
 
-            <!--   <div class="oneUser"><h1>Hi, I'm <%= @user.first_name %></h1></div>
-              <div class="twoUser"><h2><%= @user.headline %></h2></div>
-              <div class="threeUser"><h3>Available for hire NOW!</h3></div>
-              <div class="oneTheme">
-                <h5 style="text-align: center; line-height: 0;">Personalize Theme</h5>
-              </div> -->
-<!--               <div class="twoTheme">
-                <div data-mode='light' id="light-mode" class="theme-dot"></div>
-                <div data-mode='blue' id="blue-mode" class="theme-dot"></div>
-                <div data-mode='green' id="green-mode" class="theme-dot"></div>
-                <div data-mode='purple' id="purple-mode" class="theme-dot"></div>
-              </div>
-              <div class="threeTheme">
-                <p id="settings-note" >*Theme setting will be saved for next visit!</p>
-              </div> -->
-            
-            <!-- <div class="theme-container">
 
-          </div> -->
-        <!-- </div> -->
+
+
+          <div class="sc-banner-title">
+            <button id="user-info-btn" type="button" class="icon-btn" data-toggle="modal" data-target="#editInfoModal" style="padding: 0 15px 0 5px"><i class="fa fa-edit"></i></button>
+            <h1>Hi, I'm <%= @user.first_name %>.</h1>
+            <h2><%= @user.headline %></h2>
+            <% if @user.available? %>
+              <h3 style="color: #6E8FBC;">Available for hire</h3>
+            <% else %>
+              <h3 style="color: #6E8FBC;">Available soon</h3>
+            <% end %>
+            <% if @user.available? %>
+                <input type="checkbox" id="available-checkbox" name="available" checked>
+                <label for="available" data-user="<%= @user.id %>" id="available-lable">Available</label>
+              <% else %>
+                <input type="checkbox" id="available-checkbox" name="available" unchecked>
+                <label for="available" data-user="<%= @user.id %>" id="available-lable">Unavailable</label>
+              <% end %>
+            </div>
+
       </div>
         <!-- user basic info end -->
         <!-- user picture div start -->
@@ -120,9 +103,21 @@
 
                   <div class="pr-skills-info">
 
-                    <%= cl_image_tag skill.icon.photo.key, class:'skill-img' %>
+                    <div class="skill-img-header">
+                      <%= cl_image_tag skill.icon.photo.key, class:'skill-img' %>
 
-                    <h3>Level</h3>
+                      <h2> <%= skill.skill_name %></h2>
+                      <div class="pr-skill-edit-btn">
+                        <button style="padding:2px" type="button" class="icon-btn" data-toggle="modal" data-target="#editSkillModal<%= skill.id %>"><i class="fa fa-edit"></i></button>
+                        <button type="button" class="icon-btn" id="skill-alert-<%= skill.id %>"><i class="far fa-trash-alt"></i></button>
+                        <%= link_to skill_path(skill), method: :delete, class: 'icon-btn' do %>
+                          <i id="delete-skill-<%= skill.id %>"></i>
+                            <% end %>
+                      </div>
+                    </div>
+
+
+                    <h6 style="color: slategray">Level</h6>
                     <div id="progress-bar">
                       <% if skill.level == 'novice' %>
                         <p class="progress-bar" id="nov"> </p>
@@ -134,6 +129,7 @@
 
                       <% if skill.level == 'competent' %>
                         <p class="progress-bar" id="comp"></p>
+
                       <% end -%>
 
                       <% if skill.level == 'proficient' %>
@@ -145,16 +141,12 @@
                       <% end -%>
                     </div>
 
-                    <h3>Years: <%= skill.years_of_experience %> </h3>
+                    <h6 id="skill-exp">I have <%= skill.years_of_experience %> years of experience in <%= skill.skill_name %></h6>
+
+
 
                   </div>
-                  <div class="pr-skill-edit-btn">
-                    <button type="button" class="icon-btn" data-toggle="modal" data-target="#editSkillModal<%= skill.id %>"><i class="fa fa-edit"></i></button>
-                    <button type="button" class="icon-btn" id="skill-alert-<%= skill.id %>"><i class="far fa-trash-alt"></i></button>
-                    <%= link_to skill_path(skill), method: :delete, class: 'icon-btn' do %>
-                      <i id="delete-skill-<%= skill.id %>"></i>
-                        <% end %>
-                  </div>
+
                 </div>
               </li>
 
