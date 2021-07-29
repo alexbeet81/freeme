@@ -127,12 +127,20 @@
 
                     <h3>Level</h3>
                     <div id="progress-bar">
-                      <% if skill.level == 'beginner' %>
-                        <p class="progress-bar" id="beg"> </p>
+                      <% if skill.level == 'novice' %>
+                        <p class="progress-bar" id="nov"> </p>
                       <% end -%>
 
-                      <% if skill.level == 'intermediate' %>
-                        <p class="progress-bar" id="int"></p>
+                      <% if skill.level == 'advanced-beginner' %>
+                        <p class="progress-bar" id="advb"></p>
+                      <% end -%>
+
+                      <% if skill.level == 'competent' %>
+                        <p class="progress-bar" id="comp"></p>
+                      <% end -%>
+
+                      <% if skill.level == 'proficient' %>
+                        <p class="progress-bar" id="pro"></p>
                       <% end -%>
 
                       <% if skill.level == 'expert' %>
@@ -171,7 +179,7 @@
                                     required: true %>
                         <%= f.input :level,
                                     placeholder: "How good are ya?",
-                                    collection: %w(beginner intermediate expert),
+                                    collection: %w(novice advanced-beginner competent proficient expert),
                                     required: true,
                                     error: "Please select your skill level." %>
                         <%= f.input :years_of_experience %>
@@ -203,7 +211,7 @@
                 <%= f.input :skill_name, placeholder: "ex: ruby on rails" %>
                 <%= f.input :level,
                             placeholder: "How good are ya?",
-                            collection: %w(beginner intermediate expert),
+                            collection: %w(novice advanced-beginner competent proficient expert),
                             required: true,
                             error: "Please select your skill level." %>
                 <%= f.input :years_of_experience %>

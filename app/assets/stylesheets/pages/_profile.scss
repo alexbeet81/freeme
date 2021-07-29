@@ -394,54 +394,105 @@
 .progress-bar{
   background-color: var(--secondaryText);
   border-radius: 20px;
+  box-shadow: 0 0 5px #c5c5cb;
   height: 10px;
   width: 150px;
   overflow: hidden;
   display: block;
 }
-#beg{
 
-  width: 33%;
-  box-shadow: 0 0 5px #2187e7b3;
-  animation: beg 2s;
+#nov{
+  width: 20%;
+  background-color: #ff4e10;
+  animation: nov 2s;
 }
 
-@keyframes beg {
+@keyframes nov {
   0%{
     width: 0%;
+    background-color: #ff0d0d;
   }
   100%{
-    width: 33%;
+    width: 20%;
+    background-color: #ff4e10;
   }
 }
 
-#int{
-  width: 66%;
-  box-shadow: 0 0 5px #2187e7b3;
-  animation: int 2s;
+#advb{
+  width: 40%;
+  background-color: #ff8e16;
+  animation: advb 2s;
 }
 
-@keyframes int {
+@keyframes advb {
   0%{
     width: 0%;
+    background-color: #ff0d0d;
   }
   100%{
-    width: 66%;
+    width: 40%;
+    background-color: #ff8e16;
+  }
+}
+
+#comp{
+  width: 60%;
+  background-color: #fbb733;
+  animation: comp 2s;
+}
+
+@keyframes comp {
+  0%{
+    width: 0%;
+    background-color: #ff0d0d;
+  }
+  100%{
+    width: 60%;
+    background-color: #fbb733;
+  }
+}
+
+#pro{
+  width: 80%;
+  background-color: #acb335;
+  animation: pro 2s;
+}
+
+@keyframes pro {
+  0%{
+    width: 0%;
+    background-color: #ff0d0d;
+  }
+  100%{
+    width: 80%;
+    background-color: #acb335;
   }
 }
 
 #exp{
   width: 100%;
-  box-shadow: 0 0 5px #2187e7b3;
+  background-color: #6ab34c;
+  box-shadow: 0 0 5px #f7f19f;
   animation: exp 2s;
 }
 
 @keyframes exp {
   0%{
     width: 0%;
+    background-color: #ff0d0d;
+  }
+  70% {
+    box-shadow: 0 0 5px #f7f19f;
+    background-color: #6ab34c;
+  }
+  90% {
+    box-shadow: 0 0 20px #f7f19f;
+    background-color: #f7f19f;
   }
   100%{
     width: 100%;
+    box-shadow: 0 0 5px #f7f19f;
+    background-color: #6ab34c;
   }
 }
 
