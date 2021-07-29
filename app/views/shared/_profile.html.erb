@@ -37,6 +37,26 @@
           </div>
 
 
+         <!--  <div class="left-column"> -->
+              <div class="sc-banner-title">
+                  <div class="pr-edit-avail">
+                    <button id="user-info-btn" type="button" class="icon-btn" data-toggle="modal" data-target="#editInfoModal" style="padding: 0 15px 0 5px"><i class="fa fa-edit"></i></button>
+
+                  </div>
+                  <h1>Hi, I'm <%= @user.first_name %>.</h1>
+                  <h2><%= @user.headline %></h2>
+                  <div class="availability">
+                    <% if @user.available? %>
+                      <input type="checkbox" id="available-checkbox" name="available" checked>
+                      <h3 style="color: #6E8FBC;" for="available" data-user="<%= @user.id %>" id="available-lable">availability set to: <strong>available for hire</strong></label>
+                    <% else %>
+                      <input type="checkbox" id="available-checkbox" name="available" unchecked>
+                      <h3 style="color: #6E8FBC;" for="available" data-user="<%= @user.id %>" id="available-lable">availability set to: <strong>avalilbe soon</strong></label>
+                    <% end %>
+                  </div>
+                </div>
+
+
           <div class="sc-banner-title">
             <button id="user-info-btn" type="button" class="icon-btn" data-toggle="modal" data-target="#editInfoModal" style="padding: 0 15px 0 5px"><i class="fa fa-edit"></i></button>
             <h1>Hi, I'm <%= @user.first_name %>.</h1>
@@ -108,7 +128,7 @@
           <div class="pr-skills-grid">
             <ul id="sort-skill" class="sort-list">
             <% @skills.each_with_index do |skill, index| %>
-              <li draggable='true' data-skill="<%= skill.id %>" data-id="<%= index %>">
+              <li draggable='true' id="#goto-skill-<%= skill.id %>" data-skill="<%= skill.id %>" data-id="<%= index %>">
                 <div class="pr-skills-card">
 
                   <div class="pr-skills-info">
@@ -119,14 +139,24 @@
                       <h2> <%= skill.skill_name %></h2>
                     </div>
 
-                    <h3 style="opacity: .5;">Noob | NBD | Master</h3>
-                    <div id="progress-bar-div">
-                      <% if skill.level == 'beginner' %>
-                        <p class="progress-bar" id="beg"> </p>
+
+                    <h3>Level</h3>
+                    <div id="progress-bar">
+                      <% if skill.level == 'novice' %>
+                        <p class="progress-bar" id="nov"> </p>
                       <% end -%>
 
-                      <% if skill.level == 'intermediate' %>
-                        <p class="progress-bar" id="int"></p>
+                      <% if skill.level == 'advanced-beginner' %>
+                        <p class="progress-bar" id="advb"></p>
+                      <% end -%>
+
+                      <% if skill.level == 'competent' %>
+                        <p class="progress-bar" id="comp"></p>
+
+                      <% end -%>
+
+                      <% if skill.level == 'proficient' %>
+                        <p class="progress-bar" id="pro"></p>
                       <% end -%>
 
                       <% if skill.level == 'expert' %>
@@ -167,7 +197,7 @@
                                     required: true %>
                         <%= f.input :level,
                                     placeholder: "How good are ya?",
-                                    collection: %w(beginner intermediate expert),
+                                    collection: %w(novice advanced-beginner competent proficient expert),
                                     required: true,
                                     error: "Please select your skill level." %>
                         <%= f.input :years_of_experience %>
@@ -199,7 +229,7 @@
                 <%= f.input :skill_name, placeholder: "ex: ruby on rails" %>
                 <%= f.input :level,
                             placeholder: "How good are ya?",
-                            collection: %w(beginner intermediate expert),
+                            collection: %w(novice advanced-beginner competent proficient expert),
                             required: true,
                             error: "Please select your skill level." %>
                 <%= f.input :years_of_experience %>
@@ -240,8 +270,8 @@
         <div class="pr-projects-container">
           <ul id="sort-project" class="sort-list">
             <% @projects.each_with_index do |project, index| %>
-            <li draggable="true" data-project="<%= project.id %>" data-id="<%= index %>">
-              <div class="pr-project-card">
+            <li draggable="true" id="project-<%= project.id %>" data-project="<%= project.id %>" data-id="<%= index %>">
+              <div class="pr-project-card" >
                 <div class="pr-project-card-body">
                   <div class="project-left">
                     <h2><%= project.title %></h2>
@@ -347,8 +377,8 @@
         <div class="pr-exp-grid" id="exp-grid">
           <ul id="sort-experience" class="sort-list">
             <% @experiences.each_with_index do |experience, index| %>
-            <li draggable="true" data-experience="<%= experience.id %>" data-id="<%= index %>">
-              <div class="pr-exp-card" id="experience-<%= experience.id %>">
+            <li draggable="true" id="experience-<%= experience.id %>" data-experience="<%= experience.id %>" data-id="<%= index %>">
+              <div class="pr-exp-card" >
                 <div class="sc-exp-card-body">
                   <h2><%= experience.role %></h2>
                   <h3><%= experience.company %>, <%= experience.location %></h3>
