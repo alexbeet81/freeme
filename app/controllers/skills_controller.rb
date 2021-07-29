@@ -6,9 +6,17 @@ class SkillsController < ApplicationController
     @skill = Skill.new(skill_params)
     authorize @skill
     @skill.user = @user
-    
-    if @skill.save
-      redirect_to (user_path(@skill.user) + "#skill-#{@skill.id}")
+
+    @icon = Icon.find_by_name(@skill[:skill_name].downcase)
+
+    if @icon.nil?
+      @skill.icon = Icon.find_by_id(1)
+    else
+      @skill.icon = @icon
+    end
+
+    if @skill.save!
+      redirect_to (user_path(@skill.user) + "#goto-skill-#{@skill.id}")
     else
       # Can't render show - where should this lead to?
       render 'users/show'
@@ -19,7 +27,7 @@ class SkillsController < ApplicationController
     @skill.update(skill_params)
 
     if @skill.save
-      redirect_to (user_path(@skill.user) + "#skill-#{@skill.id}")
+      redirect_to (user_path(@skill.user) + "#goto-skill-#{@skill.id}")
     else
       render 'users/show'
     end

@@ -36,41 +36,28 @@
             </div>
           </div>
 
-          <div class="left-column">
-            <div class="user-info">
 
-              <button id="user-info-btn" type="button" class="icon-btn" data-toggle="modal" data-target="#editInfoModal"><i class="fa fa-edit"></i></button>
 
-              <div class="oneUser"><h1>Hi, I'm <%= @user.first_name %></h1></div>
-              <div class="twoUser"><h2><%= @user.headline %></h2></div>
-              <div class="threeUser"><h3>Available for hire NOW!</h3></div>
-              <div class="oneTheme">
-                <h5 style="text-align: center; line-height: 0;">Personalize Theme</h5>
-              </div>
-<!--               <div class="twoTheme">
-                <div data-mode='light' id="light-mode" class="theme-dot"></div>
-                <div data-mode='blue' id="blue-mode" class="theme-dot"></div>
-                <div data-mode='green' id="green-mode" class="theme-dot"></div>
-                <div data-mode='purple' id="purple-mode" class="theme-dot"></div>
-              </div>
-              <div class="threeTheme">
-                <p id="settings-note" >*Theme setting will be saved for next visit!</p>
-              </div> -->
-              <div>
 
-                <% if @user.available? %>
-                  <input type="checkbox" id="available-checkbox" name="available" checked>
-                  <label for="available" data-user="<%= @user.id %>" id="available-lable">Available</label>
-                <% else %>
-                  <input type="checkbox" id="available-checkbox" name="available" unchecked>
-                  <label for="available" data-user="<%= @user.id %>" id="available-lable">Unavailable</label>
-                <% end %>
-              </div>
+
+          <div class="sc-banner-title">
+            <button id="user-info-btn" type="button" class="icon-btn" data-toggle="modal" data-target="#editInfoModal" style="padding: 0 15px 0 5px"><i class="fa fa-edit"></i></button>
+            <h1>Hi, I'm <%= @user.first_name %>.</h1>
+            <h2><%= @user.headline %></h2>
+            <% if @user.available? %>
+              <h3 style="color: #6E8FBC;">Available for hire</h3>
+            <% else %>
+              <h3 style="color: #6E8FBC;">Available soon</h3>
+            <% end %>
+            <% if @user.available? %>
+                <input type="checkbox" id="available-checkbox" name="available" checked>
+                <label for="available" data-user="<%= @user.id %>" id="available-lable">Available</label>
+              <% else %>
+                <input type="checkbox" id="available-checkbox" name="available" unchecked>
+                <label for="available" data-user="<%= @user.id %>" id="available-lable">Unavailable</label>
+              <% end %>
             </div>
-            <!-- <div class="theme-container">
 
-          </div> -->
-        </div>
       </div>
         <!-- user basic info end -->
         <!-- user picture div start -->
@@ -111,20 +98,42 @@
           <div class="pr-skills-grid">
             <ul id="sort-skill" class="sort-list">
             <% @skills.each_with_index do |skill, index| %>
-              <li draggable='true' data-skill="<%= skill.id %>" data-id="<%= index %>">
+              <li draggable='true' id="#goto-skill-<%= skill.id %>" data-skill="<%= skill.id %>" data-id="<%= index %>">
                 <div class="pr-skills-card">
 
                   <div class="pr-skills-info">
-                    <%= skill.skill_name %>
 
-                    <h3>Level</h3>
+                    <div class="skill-img-header">
+                      <%= cl_image_tag skill.icon.photo.key, class:'skill-img' %>
+
+                      <h2> <%= skill.skill_name %></h2>
+                      <div class="pr-skill-edit-btn">
+                        <button style="padding:2px" type="button" class="icon-btn" data-toggle="modal" data-target="#editSkillModal<%= skill.id %>"><i class="fa fa-edit"></i></button>
+                        <button type="button" class="icon-btn" id="skill-alert-<%= skill.id %>"><i class="far fa-trash-alt"></i></button>
+                        <%= link_to skill_path(skill), method: :delete, class: 'icon-btn' do %>
+                          <i id="delete-skill-<%= skill.id %>"></i>
+                            <% end %>
+                      </div>
+                    </div>
+
+
+                    <h6 style="color: slategray">Level</h6>
                     <div id="progress-bar">
-                      <% if skill.level == 'beginner' %>
-                        <p class="progress-bar" id="beg"> </p>
+                      <% if skill.level == 'novice' %>
+                        <p class="progress-bar" id="nov"> </p>
                       <% end -%>
 
-                      <% if skill.level == 'intermediate' %>
-                        <p class="progress-bar" id="int"></p>
+                      <% if skill.level == 'advanced-beginner' %>
+                        <p class="progress-bar" id="advb"></p>
+                      <% end -%>
+
+                      <% if skill.level == 'competent' %>
+                        <p class="progress-bar" id="comp"></p>
+
+                      <% end -%>
+
+                      <% if skill.level == 'proficient' %>
+                        <p class="progress-bar" id="pro"></p>
                       <% end -%>
 
                       <% if skill.level == 'expert' %>
@@ -132,16 +141,12 @@
                       <% end -%>
                     </div>
 
-                    <h3>Years: <%= skill.years_of_experience %> </h3>
+                    <h6 id="skill-exp">I have <%= skill.years_of_experience %> years of experience in <%= skill.skill_name %></h6>
+
+
 
                   </div>
-                  <div class="pr-skill-edit-btn">
-                    <button type="button" class="icon-btn" data-toggle="modal" data-target="#editSkillModal<%= skill.id %>"><i class="fa fa-edit"></i>
-                    </button>
-                    <%= link_to skill_path(skill), method: :delete,class: 'icon-btn', data: { confirm: 'Are you sure you want to delete this skill?' } do %>
-                      <i class="far fa-trash-alt"></i>
-                   <% end %>
-                  </div>
+
                 </div>
               </li>
 
@@ -163,7 +168,7 @@
                                     required: true %>
                         <%= f.input :level,
                                     placeholder: "How good are ya?",
-                                    collection: %w(beginner intermediate expert),
+                                    collection: %w(novice advanced-beginner competent proficient expert),
                                     required: true,
                                     error: "Please select your skill level." %>
                         <%= f.input :years_of_experience %>
@@ -195,7 +200,7 @@
                 <%= f.input :skill_name, placeholder: "ex: ruby on rails" %>
                 <%= f.input :level,
                             placeholder: "How good are ya?",
-                            collection: %w(beginner intermediate expert),
+                            collection: %w(novice advanced-beginner competent proficient expert),
                             required: true,
                             error: "Please select your skill level." %>
                 <%= f.input :years_of_experience %>
@@ -236,18 +241,18 @@
         <div class="pr-projects-container">
           <ul id="sort-project" class="sort-list">
             <% @projects.each_with_index do |project, index| %>
-            <li draggable="true" data-project="<%= project.id %>" data-id="<%= index %>">
-              <div class="pr-project-card">
+            <li draggable="true" id="project-<%= project.id %>" data-project="<%= project.id %>" data-id="<%= index %>">
+              <div class="pr-project-card" >
                 <div class="pr-project-card-body">
                   <div class="project-left">
                     <h2><%= project.title %></h2>
                   </div>
                   <div class="project-right">
                     <button type="button" class="icon-btn" data-toggle="modal" data-target="#editProjectModal<%= project.id %>"><i class="fa fa-edit"></i></button>
-
-                    <%= link_to project_path(project), method: :delete,class: 'icon-btn', data: { confirm: 'Are you sure you want to delete this skill?' } do %>
-                          <i class="far fa-trash-alt"></i>
-                    <% end %>
+                    <button type="button" class="icon-btn" id="project-alert-<%= project.id %>"><i class="far fa-trash-alt"></i></button>
+                    <%= link_to project_path(project), method: :delete, class: 'icon-btn' do %>
+                      <i id="delete-project-<%= project.id %>"></i>
+                        <% end %>
                   </div>
 
 
@@ -343,8 +348,8 @@
         <div class="pr-exp-grid" id="exp-grid">
           <ul id="sort-experience" class="sort-list">
             <% @experiences.each_with_index do |experience, index| %>
-            <li draggable="true" data-experience="<%= experience.id %>" data-id="<%= index %>">
-              <div class="pr-exp-card" id="experience-<%= experience.id %>">
+            <li draggable="true" id="experience-<%= experience.id %>" data-experience="<%= experience.id %>" data-id="<%= index %>">
+              <div class="pr-exp-card" >
                 <div class="sc-exp-card-body">
                   <h2><%= experience.role %></h2>
                   <h3><%= experience.company %>, <%= experience.location %></h3>
@@ -355,10 +360,10 @@
                     <p class="sc-exp-card-body-date"><%= experience.start_date.strftime("%B %Y") %> to <%= experience.end_date.strftime("%B %Y") %></p>
                   <% end %>
                   <button type="button" class="icon-btn" data-toggle="modal" data-target="#editExperienceModal<%= experience.id %>"><i class="fa fa-edit"></i></button>
-
-                    <%= link_to experience_path(experience), method: :delete, class: 'icon-btn', data: { confirm: 'Are you sure you want to delete this experience?'} do %>
-                      <i class="far fa-trash-alt"></i>
-                        <% end %>
+                  <button type="button" class="icon-btn" id="experience-alert-<%= experience.id %>"><i class="far fa-trash-alt"></i></button>
+                  <%= link_to experience_path(experience), method: :delete, class: 'icon-btn' do %>
+                    <i id="delete-experience-<%= experience.id %>"></i>
+                      <% end %>
                 </div>
               </div>
             </li>
