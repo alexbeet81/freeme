@@ -393,12 +393,12 @@
 }
 
 
-#progress-bar{
+#progress-bar-div{
   background-color: var(--maincolor);
   border-radius: 20px;
   height: 10px;
   width: 150px;
-
+  margin-left: 10px;
 }
 
 .progress-bar{
@@ -407,8 +407,6 @@
   height: 10px;
   width: 150px;
   overflow: hidden;
-  display: block;
-  align:center;
 }
 #beg{
 
@@ -458,7 +456,6 @@
 
 h6#skill-exp{
   font-size: 12px;
-  text-align: right;
   padding-top: 5px;
 }
 
