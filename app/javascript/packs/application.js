@@ -25,6 +25,7 @@ import "bootstrap";
 import { available } from './available.js';
 import { hideExpGrid } from './hideExpGrid.js';
 import { initSweetalert } from './init_sweetalert.js';
+import { showcaseAni } from './showcase';
 
 available();
 hideExpGrid();
