@@ -44,6 +44,9 @@ icons = [{name: 'default', image: "https://e7.pngegg.com/pngimages/451/517/png-c
          {name: 'photoshop', image: "https://logos-world.net/wp-content/uploads/2020/11/Adobe-Photoshop-Logo.png"}
         ]
 
+icons = [{name: 'default', image: "https://e7.pngegg.com/pngimages/451/517/png-clipart-computer-icons-program-optimization-computer-software-source-code-symbol-miscellaneous-angle.png"},
+         {name: 'photoshop', image: "https://logos-world.net/wp-content/uploads/2020/11/Adobe-Photoshop-Logo.png"}
+        ]
 
 icons.each do |icon|
   file = URI.open(icon[:image])
