@@ -115,13 +115,13 @@ html {
 }
 
 .pimg2{
-  background: image_url('home_profile_img_sm.jpg');
-  min-height: 400px;
+  background: image_url('blank_profile_index.jpg');
+  min-height: 600px;
 }
 
 .pimg3{
-  background-image: image_url('skydiving.webp');
-  min-height: 400px;
+  background-image: image_url('complete_profile_index.jpg');
+  min-height: 600px;
 }
 
 .pimg1, .pimg2, .pimg3{
@@ -187,7 +187,7 @@ html {
 
 
 .inner-header {
-  height:25vh;
+  height:200px;
   width:100%;
   margin: 0;
   padding: 0;
@@ -198,6 +198,14 @@ html {
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.btn-txt-sm {
+  font-size: 12px;
 }
 
 .waves {
