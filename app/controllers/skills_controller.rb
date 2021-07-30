@@ -15,7 +15,7 @@ class SkillsController < ApplicationController
       @skill.icon = @icon
     end
 
-    if @skill.save!
+    if @skill.save
       redirect_to (user_path(@skill.user) + "#goto-skill-#{@skill.id}")
     else
       # Can't render show - where should this lead to?
