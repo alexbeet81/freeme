@@ -24,8 +24,6 @@ function showcaseAni(){
       expGrid.classList.add('exp-appear')
     }
 };
-showcaseAni();
-
 
 window.addEventListener('scroll', showcaseAni);
 
