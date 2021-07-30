@@ -141,7 +141,7 @@
 
 
                     <% if skill.years_of_experience == 0 %>
-                      <h6 id="skill-exp"><strong>Experience:</strong> less than one year</h6>
+                      <h6 id="skill-exp">Experience: less than one year</h6>
                     <% elsif skill.years_of_experience == 1 %>
                       <h6 id="skill-exp"><strong>Experience:</strong> <%= skill.years_of_experience %> year</h6>
                     <% else %>
@@ -466,7 +466,8 @@
 
       <div class="pr-exp-container">
         <% if @user.cv.present? %>
-          <h3 class="blue-text-h3">Your CV will redirect to the following link: <%= @user.cv %></h1>
+          <h3 class="blue-text-h3">Your CV will redirect to the following link:</h1>
+          <h4 class="blue-text-h4"><%= @user.cv %></h4>
         <% else %>
           <h3 class="blue-text-h3">Create a link to your CV</h2>
         <% end %>
