@@ -107,17 +107,10 @@
                     <div class="skill-img-header">
                       <%= cl_image_tag skill.icon.photo.key, class:'skill-img' %>
 
-                      <h2> <%= skill.skill_name %></h2>
-                      <div class="pr-skill-edit-btn">
-                        <button style="padding:2px" type="button" class="icon-btn" data-toggle="modal" data-target="#editSkillModal<%= skill.id %>"><i class="fa fa-edit"></i></button>
-                        <button type="button" class="icon-btn" id="skill-alert-<%= skill.id %>"><i class="far fa-trash-alt"></i></button>
-                        <%= link_to skill_path(skill), method: :delete, class: 'icon-btn' do %>
-                          <i id="delete-skill-<%= skill.id %>"></i>
-                            <% end %>
-                      </div>
+                      <h2 class="skill-name"> <%= skill.skill_name %></h2>
                     </div>
 
-                    <h6 style="color: slategray">Level</h6>
+                    <h6 class="skill-level-name">skill progress</h6>
                     <div id="progress-bar">
                       <% if skill.level == 'novice' %>
                         <p class="progress-bar" id="nov"> </p>
@@ -152,8 +145,14 @@
 
 
 
+                  <div class="pr-skill-edit-btn">
+                    <button style="padding:2px" type="button" class="icon-btn" data-toggle="modal" data-target="#editSkillModal<%= skill.id %>"><i class="fa fa-edit"></i></button>
+                    <button type="button" class="icon-btn" id="skill-alert-<%= skill.id %>"><i class="far fa-trash-alt"></i></button>
+                    <%= link_to skill_path(skill), method: :delete, class: 'icon-btn' do %>
+                      <i id="delete-skill-<%= skill.id %>"></i>
+                        <% end %>
                   </div>
-
+                  </div>
                 </div>
               </li>
 
