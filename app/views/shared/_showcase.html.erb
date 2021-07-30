@@ -71,14 +71,16 @@
                         <p class="progress-bar" id="exp"></p>
                       <% end -%>
                     </div>
-                    <h6 id="skill-exp">I have <%= skill.years_of_experience %> years of experience in <%= skill.skill_name %></h6>
+
+                    <% if skill.years_of_experience == 0 %>
+                      <h6 id="skill-exp"><strong>Experience:</strong> less than one year</h6>
+                    <% elsif skill.years_of_experience == 1 %>
+                      <h6 id="skill-exp"><strong>Experience:</strong> <%= skill.years_of_experience %> year</h6>
+                    <% else %>
+                      <h6 id="skill-exp"><strong>Experience:</strong> <%= skill.years_of_experience %> years</h6>
+                    <% end %>
                   </div>
                 </div>
-      <!-- <div class="sc-skills-card">
-        <h5><%= skill.skill_name %></h5>
-        <h6>Years: <%= skill.years_of_experience %></h6>
-        <p><%= skill.level %></p>
-      </div> -->
       <% end %>
     </div>
   </div>
