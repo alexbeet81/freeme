@@ -10,21 +10,12 @@ class SkillsController < ApplicationController
     @icon = Icon.find_by_name(@skill[:skill_name].downcase)
 
     if @icon.nil?
-      @skill.icon = Icon.find_by(id: 1)
+      @skill.icon = Icon.find_by(id: 2)
     else
       @skill.icon = @icon
     end
-    # unless @icon.nil?
-    #   @skill.icon = @icon
-    # end
 
     if @skill.save
-      @skill.icon = Icon.find_by_id(1)
-    else
-      @skill.icon = @icon
-    end
-
-    if @skill.save!
       redirect_to (user_path(@skill.user) + "#goto-skill-#{@skill.id}")
     else
       # Can't render show - where should this lead to?
