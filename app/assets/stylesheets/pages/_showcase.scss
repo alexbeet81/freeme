@@ -108,6 +108,15 @@
   flex-grow: 1;
   justify-content: center;
 	align-items: center;
+
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 0.5s all ease-in-out;
+}
+
+.skill-appear{
+  opacity: 1;
+  transform: translateY(0px);
 }
 
 .sc-skills-card {
@@ -148,6 +157,14 @@
 	border-radius: 8px 8px 50px 8px;
 	box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
 /*	box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;*/
+  opacity: 0;
+  transform: translateY(100px);
+  transition: 1s all ease-in-out;
+}
+
+.pro-appear{
+  opacity: 1;
+  transform: translateY(0px);
 }
 
 .sc-project-card-body {
@@ -155,6 +172,7 @@
 	padding:  1rem;
 	height: 100%;
 	width: 60%;
+
 }
 
 .sc-project-card-img {
@@ -180,6 +198,14 @@
   flex-grow: 1;
   justify-content: space-between;
 	align-items: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 1s all ease-in-out;
+}
+
+.exp-appear{
+  opacity: 1;
+  transform: translateY(0px);
 }
 
  .sc-exp-card {
