@@ -115,18 +115,18 @@ html {
 }
 
 .pimg2{
-  background: image_url('blank_profile_index.jpg');
+  background: image_url('index_pimg1.jpg');
   min-height: 600px;
 }
 
 .pimg3{
-  background-image: image_url('complete_profile_index.jpg');
+  background-image: image_url('index_pimg2.jpg');
   min-height: 600px;
 }
 
 .pimg1, .pimg2, .pimg3{
   position: relative;
-  opacity: 0.70;
+  opacity: 1;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
