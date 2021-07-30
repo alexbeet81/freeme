@@ -45,16 +45,11 @@
             <h1>Hi, I'm <%= @user.first_name %>.</h1>
             <h2><%= @user.headline %></h2>
             <% if @user.available? %>
-              <h3 style="color: #6E8FBC;">Available for hire</h3>
-            <% else %>
-              <h3 style="color: #6E8FBC;">Available soon</h3>
-            <% end %>
-            <% if @user.available? %>
                 <input type="checkbox" id="available-checkbox" name="available" checked>
-                <label for="available" data-user="<%= @user.id %>" id="available-lable">Available</label>
+                <label class="available-label" for="available" data-user="<%= @user.id %>" id="available-lable">availability set to: <strong>available for hire</strong></label>
               <% else %>
                 <input type="checkbox" id="available-checkbox" name="available" unchecked>
-                <label for="available" data-user="<%= @user.id %>" id="available-lable">Unavailable</label>
+                <label class="available-label" for="available" data-user="<%= @user.id %>" id="available-lable">availability set to: <strong>avalilbe soon</strong></label>
               <% end %>
             </div>
       </div>
