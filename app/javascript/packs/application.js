@@ -25,9 +25,11 @@ import "bootstrap";
 import { available } from './available.js';
 import { hideExpGrid } from './hideExpGrid.js';
 import { initSweetalert } from './init_sweetalert.js';
+import { showcaseAni } from './showcase.js';
 
 available();
 hideExpGrid();
+
 
 document.querySelectorAll('#sort-skill li').forEach(e => {
   const id = e.dataset.skill

@@ -72,18 +72,43 @@
   font-size: 68px;
 }
 
+.pr-banner-contents {
+  height: 300px;
+  width: 600px;
+  border-radius: 8px;
+  background-color: #FFFFFF;
+  padding-right: 1rem;
+}
+
+.pr-banner-edit-details {
+  display: flex;
+}
+
+.pr-banner-inner {
+  padding-left: 16px;
+}
+
+.pr-banner-available {
+  padding-left: 3px;
+}
+
+.pr-banner-contents h1 {
+  padding-bottom: 0px;
+  padding-top: 25px;
+  margin-bottom: 70px;
+}
 .pr-banner-title h2 {
   font-family: 'Open Sans', sans-serif;
   font-weight: 500;
-  font-size: 24px;
+  font-size: 32px;
   color: var(--secondaryText);
 }
 
 .pr-banner-title h3 {
   font-family: 'Open Sans', sans-serif;
-  font-weight: 300;
+  font-weight: 500;
   font-size: 24px;
-  color: var(--mainText);
+  color: #6E8FBC;
 
 }
 
@@ -94,6 +119,12 @@
 }
 
 .availability h3 {
+  margin-left: 8px;
+}
+
+.available-label {
+  color: #6E8FBC;
+  font-size: 24px;
   margin-left: 8px;
 }
 
@@ -378,8 +409,7 @@
   height: 150px;
   font-family: 'Open Sans', sans-serif;
   padding: 1rem;
-  display: flex;
-  justify-content: space-between;
+
   background-color: var(--backgroundcolor);
   border-radius: 8px 8px 50px 8px;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
@@ -387,7 +417,15 @@
   /*box-shadow: rgba(66, 77, 88, 0.4) -5px 5px, rgba(66, 77, 88, 0.3) -10px 10px, rgba(66, 77, 88, 0.2) -15px 15px, rgba(66, 77, 88, 0.1) -20px 20px, rgba(66, 77, 88, 0.05) -25px 25px;*/
 }
 
+.skill-name {
 
+}
+
+.skill-level-name {
+  color: #6f8fbd;
+  margin-bottom: 4px;
+  margin-top: 8px
+}
 
 .skill-img-header{
   display: flex;
@@ -407,6 +445,7 @@
 }
 
 .progress-bar{
+  margin-bottom: 10px;
   background-color: var(--secondaryText);
   border-radius: 20px;
   box-shadow: 0 0 5px #c5c5cb;
@@ -512,11 +551,11 @@
 
 h6#skill-exp{
   font-size: 12px;
+  margin: 0px;
 }
 
 .pr-skill-edit-btn{
   display: flex;
-
 }
 
 /* below is the projects section */
@@ -699,6 +738,11 @@ p.pr-card-descrition{
 
 .blue-text-h3 {
   font-size: 18px;
+  color: #6e8fbd;
+}
+
+.blue-text-h4 {
+  font-size: 14px;
   color: #6e8fbd;
 }
 
