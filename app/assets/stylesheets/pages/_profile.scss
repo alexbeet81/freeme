@@ -72,18 +72,43 @@
   font-size: 68px;
 }
 
+.pr-banner-contents {
+  height: 300px;
+  width: 600px;
+  border-radius: 8px;
+  background-color: #FFFFFF;
+  padding-right: 1rem;
+}
+
+.pr-banner-edit-details {
+  display: flex;
+}
+
+.pr-banner-inner {
+  padding-left: 16px;
+}
+
+.pr-banner-available {
+  padding-left: 3px;
+}
+
+.pr-banner-contents h1 {
+  padding-bottom: 0px;
+  padding-top: 25px;
+  margin-bottom: 70px;
+}
 .pr-banner-title h2 {
   font-family: 'Open Sans', sans-serif;
   font-weight: 500;
-  font-size: 24px;
+  font-size: 32px;
   color: var(--secondaryText);
 }
 
 .pr-banner-title h3 {
   font-family: 'Open Sans', sans-serif;
-  font-weight: 300;
+  font-weight: 500;
   font-size: 24px;
-  color: var(--mainText);
+  color: #6E8FBC;
 
 }
 
