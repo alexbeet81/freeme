@@ -110,7 +110,7 @@
 	align-items: center;
 }
 
-.sc-skills-card {
+.pr-skills-card {
 	width: 200px;
 	height: 150px;
 	font-family: 'Open Sans', sans-serif;
@@ -118,7 +118,14 @@
 	background-color: ghostwhite;
 	border-radius: 8px 8px 50px 8px;
 	box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+  -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 2s; /* Firefox < 16 */
+  -ms-animation: fadein 2s; /* Internet Explorer */
+  -o-animation: fadein 2s; /* Opera < 12.1 */
+  animation: fadein 2s;
 }
+
+
 
 .sc-skills-card h5 {
 	font-size: 24px;
@@ -134,7 +141,7 @@
 	align-items: center;
 	margin: 2rem 4rem;
 	padding: 0 2rem;
-
+  opacity: 0;
 }
 
 .sc-project-card {
@@ -145,6 +152,13 @@
 	margin: 1rem;
 	border-radius: 8px 8px 50px 8px;
 	box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+  transform: translateY(100px);
+}
+
+.pro-appear{
+  opacity: 1;
+  transform: translateY(0px);
+  transition: 1.5s all ease-in-out;
 }
 
 .sc-project-card-body {
@@ -164,6 +178,14 @@
 
 
 /* below is the experience section */
+.sc-cont-header-exp {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  color: slategray;
+  font-size: 2rem;
+  margin-left: 6rem;
+  padding-top: 100px;
+}
 
 .sc-exp-container {
 	display: flex;
@@ -178,6 +200,14 @@
   flex-grow: 1;
   justify-content: space-between;
 	align-items: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 1s all ease-in-out;
+}
+
+.exp-appear{
+  opacity: 1;
+  transform: translateY(0px);
 }
 
  .sc-exp-card {
@@ -244,4 +274,33 @@
   .sc-main-container {
     width: 1438px;
   }
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
 }
