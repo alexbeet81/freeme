@@ -2,7 +2,7 @@
 function showcaseAni(){
 
     let skillsGrid = document.querySelector('.sc-skills-grid');
-    let projGrid = document.querySelector('.sc-project-card');
+    let projGrid = document.querySelector('.sc-projects-container');
     let expGrid = document.querySelector('.sc-exp-grid');
 
     let skillPos = skillsGrid.getBoundingClientRect().top;
