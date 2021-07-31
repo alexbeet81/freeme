@@ -8,7 +8,7 @@ const available = () => {
 
       availableLable.innerHTML = "Availability set to: <strong>available for hire</strong>"
 
-      fetch(`http://localhost:3000/api/v1/users/${id}`, {
+      fetch(`https://www.hellofree.me/api/v1/users/${id}`, {
         method: 'PATCH',
         headers: {
           "Content-type": "application/json",
@@ -22,7 +22,7 @@ const available = () => {
       console.log('off')
       availableLable.innerHTML = "Availability set to: <strong>avalilbe soon</strong>"
 
-      fetch(`http://localhost:3000/api/v1/users/${id}`, {
+      fetch(`https://www.hellofree.me/api/v1/users/${id}`, {
         method: 'PATCH',
         headers: {
           "Content-type": "application/json",
