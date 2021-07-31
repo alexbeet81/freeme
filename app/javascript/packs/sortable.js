@@ -40,7 +40,7 @@ const initSortable = () => {
         newPositions.push({skill: e.dataset.skill, position: index})
       })
 
-      fetch(`http://localhost:3000/api/v1/skills`, {
+      fetch(`https://www.hellofree.me/api/v1/skills`, {
         method: 'POST',
         headers: {
           "Content-type": "application/json",
@@ -68,7 +68,7 @@ const initSortable = () => {
         newPositions.push({project: e.dataset.project, position: index})
       })
 
-      fetch(`http://localhost:3000/api/v1/projects`, {
+      fetch(`https://www.hellofree.me/api/v1/projects`, {
         method: 'POST',
         headers: {
           "Content-type": "application/json",
@@ -97,7 +97,7 @@ const initSortable = () => {
         newPositions.push({experience: e.dataset.experience, position: index})
       })
 
-      fetch(`http://localhost:3000/api/v1/experiences`, {
+      fetch(`https://www.hellofree.me/api/v1/experiences`, {
         method: 'POST',
         headers: {
           "Content-type": "application/json",
