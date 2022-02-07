@@ -25,30 +25,34 @@
         </div>
       <% end %>
     <% end%>
-    <% if @projects.empty? %>
-      <div class="whattodo-div">
-        <h2>💪 Add some projects</h2>
-        <h3>Show some of the projects that you've worked on.
-            Big or small.</h1>
-      </div>
+    <% if @projects!= nil %>
+      <% if @projects.empty? %>
+        <div class="whattodo-div">
+          <h2>💪 Add some projects</h2>
+          <h3>Show some of the projects that you've worked on.
+              Big or small.</h1>
+        </div>
+      <% end %>
+      <% if @projects.length == 1 %>
+        <div class="whattodo-div">
+          <h2>😎 Add some more projects</h2>
+          <h3>You can even add that css race game you made back in week 3 of your bootcamp.</h1>
+        </div>
+      <% end %>
     <% end %>
-    <% if @projects.length == 1 %>
-      <div class="whattodo-div">
-        <h2>😎 Add some more projects</h2>
-        <h3>You can even add that css race game you made back in week 3 of your bootcamp.</h1>
-      </div>
-    <% end %>
-    <% if @experiences.empty? %>
-      <div class="whattodo-div">
-        <h2>👢 Add some experience</h2>
-        <h3>Finishing a bootcamp is a massive achievement. Add it now!</h1>
-      </div>
-    <% end %>
-    <% if @experiences.length == 1 %>
-      <div class="whattodo-div">
-        <h2>🚀 Add some more experience</h2>
-        <h3>Doesn't even have to be code related. All experience counts!</h1>
-      </div>
+    <% if @experiences != nil %>
+      <% if @experiences.empty? %>
+        <div class="whattodo-div">
+          <h2>👢 Add some experience</h2>
+          <h3>Finishing a bootcamp is a massive achievement. Add it now!</h1>
+        </div>
+      <% end %>
+      <% if @experiences.length == 1 %>
+        <div class="whattodo-div">
+          <h2>🚀 Add some more experience</h2>
+          <h3>Doesn't even have to be code related. All experience counts!</h1>
+        </div>
+      <% end %>
     <% end %>
   </div>
 <% end %>
