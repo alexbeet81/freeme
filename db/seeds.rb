@@ -49,11 +49,14 @@ icons = [
 #         ]
 
 
-
+puts "line 52: about to open URI cloudinary.com..."
 file = URI.open("https://res.cloudinary.com/alexbeet/image/upload/v1627560243/vezkvnq5ls9ol7oyhnsrxescid0k.png")
+puts "line 54: Successfully openeing URI cloudinary.com!"
 
 icons.each do |icon|
+  puts "opening URI for image..."
   file = URI.open("#{icon[:image]}", 'User-Agent' => 'ruby')
+  puts "opened URI now createing icon..."
   icon = Icon.create!(name: icon[:name])
   icon.photo.attach(io: file, filename: "#{icon[:name]}.png", content_type: 'image/png')
   p "created icon with NAME: #{icon[:name]} and ID: #{icon.id}"
